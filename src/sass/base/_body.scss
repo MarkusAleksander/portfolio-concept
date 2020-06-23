@@ -2,12 +2,19 @@ html,
 body {
     width: 100%;
     min-height: 100%;
+    overflow: hidden;
 }
 
 body {
     &,
     & * {
-        box-sizing: border-box;
+        &,
+        &:after,
+        &:before {
+            box-sizing: border-box;
+        }
+
+        text-rendering: optimizeLegibility;
         margin: 0;
         padding: 0;
         color: $light-black;
@@ -25,6 +32,12 @@ body {
             color: currentColor;
             text-decoration: none;
         }
+    }
+
+    span {
+        color: currentColor;
+        font-size: inherit;
+        line-height: inherit;
     }
 
     ul {
