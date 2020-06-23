@@ -1,0 +1,42 @@
+.container--home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-height: 1000px;
+    height: 100vh;
+    min-height: 0;
+
+    h1,
+    p {
+        .app--black-white & {
+            color: #fff;
+        }
+    }
+
+    h1 {
+        font-size: 8vw;
+
+        @media (min-width: 1440px) {
+            font-size: 115px;
+        }
+    }
+
+    p {
+        margin-top: 1em;
+        font-size: 2vw;
+
+        @media (min-width: 1440px) {
+            font-size: 29px;
+        }
+    }
+
+    .block {
+        width: 80%;
+        max-width: 1110px;
+    }
+
+    .navigator-hint {
+        margin-top: 5em;
+    }
+}

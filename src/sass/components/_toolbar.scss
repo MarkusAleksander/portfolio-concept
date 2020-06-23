@@ -1,0 +1,147 @@
+.toolbar {
+    $toolbar: &;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    z-index: 20;
+    position: fixed;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        background-color: $white;
+        @media (min-width: 1024px) {
+            background-color: $black;
+        }
+    }
+
+    &__block {
+        position: absolute;
+        left: 100%;
+        right: 100%;
+        width: 100%;
+
+        &--btn,
+        &--logo {
+            position: static;
+            width: auto;
+        }
+        &--btn {
+            order: 1;
+
+            @media (min-width: 1024px) {
+                display: none;
+            }
+        }
+        &--logo {
+            order: 2;
+
+            @media (min-width: 1024px) {
+                order: 1;
+            }
+        }
+
+        &--main,
+        &--secondary {
+            @media (min-width: 1024px) {
+                transition: none;
+                top: 0;
+            }
+            #{$toolbar}.open-menu & {
+                left: 0;
+            }
+        }
+
+        &--main {
+            top: -100%;
+            transition: left 0.3s 0.1s ease-in;
+
+            #{$toolbar}.open-menu & {
+                transition: left 0.4s 0s ease-out;
+            }
+            @media (min-width: 1024px) {
+                order: 2;
+            }
+        }
+
+        &--secondary {
+            top: -200%;
+            transition: left 0.3s ease-in;
+
+            #{$toolbar}.open-menu & {
+                transition: left 0.4s 0.1s ease-out;
+            }
+            @media (min-width: 1024px) {
+                order: 3;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            position: static;
+            top: 0;
+            right: 0;
+            width: auto;
+            left: 0;
+        }
+    }
+
+    &__menu-btn {
+        width: 80px;
+        height: 50px;
+        position: relative;
+        -webkit-appearance: none;
+        border: 0;
+        border-radius: 0;
+        display: block;
+        background: none;
+        outline: 0;
+
+        span#{$toolbar}__menu-btn--line {
+            display: block;
+            position: absolute;
+            height: 2px;
+            background-color: $black;
+            width: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &:nth-of-type(1) {
+                top: 35%;
+                transition: transform 0.3s ease-out, top 0.3s ease-out;
+
+                #{$toolbar}.open-menu & {
+                    top: 50%;
+                    transform: translateX(-50%) rotate(45deg);
+                    transition: transform 0.3s ease-out, top 0.3s ease-out;
+                }
+            }
+            &:nth-of-type(2) {
+                transition: transform 0.3s ease-out, top 0.3s ease-out;
+
+                #{$toolbar}.open-menu & {
+                    transform: translateX(-50%) rotate(-45deg);
+                    transition: transform 0.3s ease-out, top 0.3s ease-out;
+                }
+            }
+            &:nth-of-type(3) {
+                top: 65%;
+                opacity: 1;
+                transition: opacity 0.2s ease-out, top 0.3s ease-out;
+
+                #{$toolbar}.open-menu & {
+                    top: 90%;
+                    opacity: 0;
+                    transition: opacity 0.2s ease-in, top 0.3s ease-in;
+                }
+            }
+        }
+
+        @media (min-width: 1024px) {
+            display: none;
+        }
+    }
+}

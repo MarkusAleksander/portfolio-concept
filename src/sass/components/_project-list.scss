@@ -1,0 +1,19 @@
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+
+    &__item {
+        flex: 1 0 100%;
+        margin: 0.5em;
+
+        @media (min-width: 560px) {
+            flex: 1 0 calc(50% - 1em);
+        }
+
+        @media (min-width: 1024px) {
+            flex: 1 0 calc(33% - 1em);
+        }
+    }
+}

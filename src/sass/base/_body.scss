@@ -1,0 +1,33 @@
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    &,
+    & * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: $light-black;
+        font-size: 1rem;
+    }
+
+    font-family: $body-font;
+
+    a {
+        font-size: 1em;
+        &,
+        &:focus,
+        &:active,
+        &:hover {
+            color: currentColor;
+            text-decoration: none;
+        }
+    }
+
+    ul {
+        list-style: none;
+    }
+}

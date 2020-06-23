@@ -1,0 +1,53 @@
+.logo {
+    $logo: &;
+
+    width: 80px;
+    position: relative;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    height: 100%;
+
+    @media (min-width: 768px) {
+        width: 80px;
+    }
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        white-space: nowrap;
+        color: $black;
+        font-family: $headline-font;
+
+        @media (min-width: 1024px) {
+            color: $white;
+        }
+
+        &--icon {
+            font-size: 17px;
+            opacity: 1;
+            transition: opacity 0.3s 0.2s ease-in;
+
+            #{$logo}:hover & {
+                opacity: 0;
+                transition: opacity 0.3s 0s ease-out;
+            }
+        }
+
+        &--text {
+            opacity: 0;
+            transition: opacity 0.3s 0s ease-in;
+
+            #{$logo}:hover & {
+                opacity: 1;
+                transition: opacity 0.3s 0.2s ease-out;
+            }
+        }
+    }
+}

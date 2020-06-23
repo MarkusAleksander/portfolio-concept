@@ -1,0 +1,28 @@
+.container--project {
+    .block {
+        h2 {
+            text-align: center;
+            color: $white;
+            font-size: 2vw;
+            text-align: right;
+            line-height: 1;
+            padding-right: 15px;
+        }
+
+        p {
+            line-height: 1;
+            text-align: left;
+            padding-left: 15px;
+            color: $white;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2em 0;
+
+        & > * {
+            flex: 1 0 50%;
+            max-width: 300px;
+        }
+    }
+}

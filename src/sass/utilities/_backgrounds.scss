@@ -1,0 +1,8 @@
+.bg-gradient {
+    &.bg--black-white {
+        background: linear-gradient(to right, $light-black 50%, $off-white 50%);
+    }
+    &.bg--white-black {
+        background: linear-gradient(to right, $off-white 50%, $light-black 50%);
+    }
+}
