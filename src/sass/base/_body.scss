@@ -2,7 +2,6 @@ html,
 body {
     width: 100%;
     min-height: 100%;
-    overflow: hidden;
 }
 
 body {
@@ -22,6 +21,7 @@ body {
     }
 
     font-family: $body-font;
+    overflow: hidden;
 
     a {
         font-size: 1em;
@@ -43,4 +43,23 @@ body {
     ul {
         list-style: none;
     }
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $off-white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #111;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

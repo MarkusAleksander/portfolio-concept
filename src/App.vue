@@ -1,15 +1,18 @@
 <template>
     <div id="app" class="app--black-white" ref="app">
+        <personal-icon />
         <router-view />
         <toolbar-component />
     </div>
 </template>
 <script>
 import ToolbarComponent from "./components/ToolbarComponent/ToolbarComponent";
+import PersonalIcon from "./components/PersonalIcon/PersonalIcon";
 
 export default {
     components: {
         ToolbarComponent,
+        PersonalIcon,
     },
     data: function() {
         return {
@@ -20,19 +23,7 @@ export default {
         // * mock a timeout
         window.setTimeout(() => {
             window.hideLoadingOverlay(this.onLoaded);
-        }, 0);
-        // * setup scroll events
-        let app = this.$refs.app;
-        app.addEventListener("wheel", (e) => {
-            if (this.is_scrolling) return;
-            this.is_scrolling = true;
-            this.handleScroll(e, "wheel");
-        });
-        window.addEventListener("keydown", (e) => {
-            if (this.is_scrolling) return;
-            this.is_scrolling = true;
-            this.handleScroll(e, "key");
-        });
+        }, 500);
     },
     methods: {
         onLoaded: function() {
@@ -42,24 +33,6 @@ export default {
                 app.classList.add("is-loaded");
                 app.classList.remove("is-loading");
             }, 1200);
-        },
-        handleScroll: function(evt, evtType) {
-            console.log(evt);
-            let direction;
-            // -1 == upwards, 1 == downwards
-            if (evtType === "wheel") {
-                direction = evt.deltaY > 0 ? 1 : -1;
-            } else if (evtType === "key") {
-                direction =
-                    evt.code == "ArrowDown"
-                        ? 1
-                        : evt.code == "ArrowUp"
-                        ? -1
-                        : 0;
-            } else if (evtType === "drag") {
-                // ...
-            }
-            console.log(direction);
         },
     },
 };

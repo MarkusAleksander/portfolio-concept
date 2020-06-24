@@ -1,6 +1,6 @@
 <template>
-    <div class="toolbar bg-gradient bg--white-black" v-bind:class="{ 'open-menu': isOpen }">
-        <div class="toolbar__inner blend--difference">
+    <div class="toolbar" v-bind:class="{ 'open-menu': isOpen }">
+        <div class="toolbar__inner">
             <div class="toolbar__block toolbar__block--logo">
                 <a href="/home" title="Home" class="logo">
                     <span class="logo__content logo__content--icon">M</span>
