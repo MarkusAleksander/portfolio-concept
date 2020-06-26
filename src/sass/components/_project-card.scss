@@ -2,13 +2,14 @@
     position: relative;
     padding-top: 100%;
     cursor: pointer;
+    overflow: hidden;
 
     @media (min-width: 1320px) {
         padding: 0;
         height: 400px;
     }
 
-    .project-card__content {
+    &__content {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -19,5 +20,19 @@
             user-select: none;
             color: #fff;
         }
+    }
+
+    &__image {
+        position: absolute;
+        z-index: 0;
+        top: 20%;
+        left: 20%;
+        bottom: auto;
+        right: auto;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease-out;
     }
 }

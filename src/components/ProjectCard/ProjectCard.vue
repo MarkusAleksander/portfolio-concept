@@ -1,5 +1,6 @@
 <template>
     <div class="project-card" :style="style">
+        <img class="project-card__image" :src="project.image" />
         <div class="project-card__content">
             <project-tag-list :tags="project.tags"></project-tag-list>
             <h3 class="blend--difference">{{ project.title }}</h3>
