@@ -16,10 +16,10 @@ export default {
             projects: [
                 {
                     id: 1,
-                    title: "Samework",
+                    title: "Joanne McClung",
                     background_color: "#235d7b",
                     url: "/project/samework",
-                    tags: ["CSS"],
+                    tags: ["VueJS", "Laravel", "SCSS", "React"],
                 },
                 {
                     id: 2,
@@ -33,28 +33,28 @@ export default {
                     title: "Samework",
                     background_color: "#7ad4cb",
                     url: "/project/samework",
-                    tags: ["CSS"],
+                    tags: ["HTML", "CSS", "JS"],
                 },
                 {
                     id: 4,
-                    title: "Music Library App",
+                    title: "Game Engine",
                     background_color: "#f9edde",
                     url: "/project/samework",
-                    tags: ["React", "Bulma", "Firebase", "Netlify"],
+                    tags: ["ThreeJS"],
                 },
                 {
                     id: 5,
-                    title: "Samework",
+                    title: "Countdown Timer",
                     background_color: "#0e294c",
                     url: "/project/samework",
-                    tags: ["CSS"],
+                    tags: ["JS"],
                 },
                 {
                     id: 6,
-                    title: "Music Library App",
+                    title: "Blackjack",
                     background_color: "#f9f9f9",
                     url: "/project/samework",
-                    tags: ["React", "Bulma", "Firebase", "Netlify"],
+                    tags: ["JS"],
                 },
             ],
         };

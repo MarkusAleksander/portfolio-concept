@@ -1,17 +1,20 @@
 .bg-gradient {
-    &.bg--black-white {
-        background: linear-gradient(
-                to right,
-                rgba(17, 17, 17, 0.9) 50%,
-                rgba(238, 238, 238, 0.9) 50%
-            ),
-            url(https://www.3dxo.com/images/textures/m/wm_marble125_1024.png);
-    }
-    &.bg--white-black {
-        background: linear-gradient(
+    background-attachment: fixed;
+    background-image: linear-gradient(
             to right,
-            rgba(238, 238, 238, 0.9) 50%,
-            rgba(17, 17, 17, 0.9) 50%
-        );
-    }
+            rgba(17, 17, 17, 0.9) 50%,
+            rgba(238, 238, 238, 0.9) 50%
+        ),
+        url(https://www.3dxo.com/images/textures/m/wm_marble125_1024.png);
+
+    // &.bg--black-white {
+    // }
+    // &.bg--white-black {
+    //     background-image: linear-gradient(
+    //             to right,
+    //             rgba(238, 238, 238, 0.9) 50%,
+    //             rgba(17, 17, 17, 0.9) 50%
+    //         ),
+    //         url(https://www.3dxo.com/images/textures/m/wm_marble125_1024.png);
+    // }
 }

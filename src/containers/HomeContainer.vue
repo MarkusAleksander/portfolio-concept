@@ -16,6 +16,7 @@
             </p>
             <div class="navigator-hint">
                 <svg
+                    v-on:click="onscrollbuttonclick"
                     version="1.1"
                     baseProfile="full"
                     width="50"
@@ -46,5 +47,6 @@
 <script>
 export default {
     name: "HomeContainer",
+    props: ["onscrollbuttonclick"],
 };
 </script>

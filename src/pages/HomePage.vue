@@ -1,10 +1,13 @@
 <template>
     <div class="page page--home bg-gradient bg--black-white">
-        <home-container />
-        <project-container>
+        <home-container :onscrollbuttonclick="scrollButtonHandler" />
+        <project-container ref="project_container">
             <div slot="header" class="block blend--difference">
                 <h2>Selected Projects</h2>
-                <p>Below is a selection of recent work and personal projects</p>
+                <p>
+                    Below is a selection of recent work
+                    <br />and personal projects
+                </p>
             </div>
         </project-container>
     </div>
@@ -17,6 +20,14 @@ export default {
     components: {
         HomeContainer,
         ProjectContainer,
+    },
+    methods: {
+        scrollButtonHandler: function() {
+            this.$emit("selectscroll", {
+                to: this.$refs.project_container.$el,
+                duration: 1500,
+            });
+        },
     },
 };
 </script>

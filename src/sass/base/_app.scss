@@ -1,7 +1,10 @@
+$app_transition_timing: 1.2s;
+
 #app {
     width: 100%;
     height: 100vh;
-    overflow-y: scroll;
+    overflow: hidden;
+    position: relative;
 
     &:after {
         background-color: $light-black;
@@ -11,7 +14,7 @@
         top: 0;
         bottom: 0;
         content: "";
-        transition: right 1.2s ease-in-out;
+        transition: right $app_transition_timing ease-in-out;
         z-index: 1;
     }
 
@@ -21,6 +24,7 @@
         }
     }
     &.is-loaded {
+        overflow-y: scroll;
         &:after {
             display: none;
         }

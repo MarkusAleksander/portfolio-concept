@@ -1,6 +1,7 @@
 .project-card {
     position: relative;
     padding-top: 100%;
+    cursor: pointer;
 
     @media (min-width: 1320px) {
         padding: 0;
