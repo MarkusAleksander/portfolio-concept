@@ -1,8 +1,8 @@
 <template>
-    <div class="page page--home bg-gradient bg--black-white">
+    <div class="page page--home">
         <home-container :onscrollbuttonclick="scrollButtonHandler" />
         <project-container ref="project_container">
-            <div slot="header" class="block blend--difference">
+            <div slot="header" class="block">
                 <h2>Selected Projects</h2>
                 <p>
                     Below is a selection of recent work

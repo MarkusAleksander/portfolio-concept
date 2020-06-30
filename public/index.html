@@ -17,7 +17,7 @@
         <style>
             /* Loading overlay */
             #loading-overlay {
-                background-color: #111;
+                background-color: #fff;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -39,7 +39,7 @@
                 z-index: -100;
             }
             #loading-overlay p {
-                color: #fff;
+                color: #111;
                 text-align: center;
             }
             #loading-overlay .loading-overlay__logo {
@@ -55,7 +55,7 @@
                 height: 100px;
                 width: 100px;
                 z-index: -1;
-                border-top: 3px solid #fff;
+                border-top: 3px solid #111;
                 border-radius: 50%;
                 position: absolute;
                 top: 50%;
@@ -65,8 +65,8 @@
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
                 animation-duration: 2s;
-                border-left: 0px solid #111;
-                border-right: 2px solid #111;
+                border-left: 0px solid #fff;
+                border-right: 2px solid #fff;
             }
             #loading-overlay .loading-overlay__block:after {
                 position: absolute;

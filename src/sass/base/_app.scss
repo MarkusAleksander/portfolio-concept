@@ -5,9 +5,10 @@ $app_transition_timing: 1.2s;
     height: 100vh;
     overflow: hidden;
     position: relative;
+    background-image: linear-gradient(to right, #fff 33%, #fb4a44 33%);
 
     &:after {
-        background-color: $light-black;
+        background-color: #fff;
         position: fixed;
         left: 0;
         right: 0;
@@ -20,7 +21,7 @@ $app_transition_timing: 1.2s;
 
     &.is-loading {
         &:after {
-            right: 100%;
+            right: 67%;
         }
     }
     &.is-loaded {

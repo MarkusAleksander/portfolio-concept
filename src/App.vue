@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="app--black-white" ref="app">
+    <div id="app" ref="app">
         <personal-icon />
         <router-view v-on:selectscroll="scrollHandler" />
         <toolbar-component />
@@ -16,14 +16,14 @@ export default {
     },
     data: function() {
         return {
-            is_scrolling: false,
+            has_scrolled_away_from_top: false,
         };
     },
     mounted: function() {
         // * mock a timeout
         window.setTimeout(() => {
             window.hideLoadingOverlay(this.onLoaded);
-        }, 500);
+        }, 1500);
     },
     methods: {
         onLoaded: function() {
@@ -33,38 +33,29 @@ export default {
                 app.classList.add("is-loaded");
                 app.classList.remove("is-loading");
             }, 1200);
+            app.addEventListener("scroll", this.scrollHandler);
         },
-        scrollHandler: function(data) {
-            const el = this.$refs.app;
-            const { to, duration } = data;
-            const start = el.scrollTop,
-                target = to.getBoundingClientRect().top,
-                increment = 10;
-            let currentTime = 0;
-
-            if (!Math.easeInOutQuad) {
-                Math.easeInOutQuad = function(t, b, c, d) {
-                    t /= d / 2;
-                    if (t < 1) return (c / 2) * t * t + b;
-                    t--;
-                    return (-c / 2) * (t * (t - 2) - 1) + b;
-                };
+        scrollHandler: function() {
+            let app = this.$refs.app;
+            if (!this.has_scrolled_away_from_top && app.scrollTop > 10) {
+                app.classList.add("move-headline");
+                app.classList.add("show-preamble");
+                this.has_scrolled_away_from_top = true;
+            } else if (this.has_scrolled_away_from_top && app.scrollTop < 10) {
+                app.classList.remove("move-headline");
+                app.classList.remove("show-preamble");
+                this.has_scrolled_away_from_top = false;
             }
 
-            const animateScroll = function() {
-                currentTime += increment;
-                const val = Math.easeInOutQuad(
-                    currentTime,
-                    start,
-                    target,
-                    duration
-                );
-                el.scrollTo(0, val);
-                if (currentTime < duration) {
-                    window.setTimeout(animateScroll, increment);
-                }
-            };
-            animateScroll();
+            if (app.scrollTop >= window.innerHeight) {
+                app.classList.add("sideline-intro");
+                app.classList.remove("move-headline");
+                app.classList.remove("show-preamble");
+            } else if (app.scrollTop < window.innerHeight) {
+                app.classList.add("move-headline");
+                app.classList.add("show-preamble");
+                app.classList.remove("sideline-intro");
+            }
         },
     },
 };
