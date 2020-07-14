@@ -1,8 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%= require('html-loader!./partials/head.html') %>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+    <!--<![endif]-->
+    <head>
+        <%= require('html-loader!./partials/head.html') %>
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
     <body>
-        <%= require('html-loader!./partials/main.html') %> <%=
-        require('html-loader!./partials/footer.html') %>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">
+                You are using an <strong>outdated</strong> browser. Please
+                <a href="#">upgrade your browser</a> to improve your experience.
+            </p>
+        <![endif]-->
+        <div id="app">
+            <%= require('html-loader!./partials/introduction/index.html') %> <%=
+            require('html-loader!./partials/projects/index.html') %> <%=
+            require('html-loader!./partials/about/index.html') %> <%=
+            require('html-loader!./partials/contact/index.html') %>
+        </div>
     </body>
 </html>

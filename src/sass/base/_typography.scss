@@ -5,9 +5,11 @@ h4,
 h5,
 h6 {
     font-family: $headline-font;
+    -webkit-font-smoothing: antialiased;
 }
 
 p,
 li,
 a {
+    -webkit-font-smoothing: antialiased;
 }

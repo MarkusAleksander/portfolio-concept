@@ -3,6 +3,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // * Clean up the dist before build
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+// * extract css to file
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
     src_dir: "src",
@@ -25,6 +27,7 @@ module.exports = {
     entry: `./${config.src_dir}/${config.js.input_filename}`,
     // * list of plugins that will be used
     plugins: [
+        new MiniCssExtractPlugin(),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             // * set html title tag
@@ -44,6 +47,11 @@ module.exports = {
     // * specify where to run the webpack dev server from
     devServer: {
         contentBase: `./${config.output_dir}`,
+        hot: true,
+        writeToDisk: true,
+        open: "chrome",
+        index: `index.html`,
+        compress: true,
     },
     module: {
         // * create a rule to handle import within a JS module
@@ -58,7 +66,7 @@ module.exports = {
             // * Handling SCSS
             {
                 test: /\.scss$/,
-                use: ["style-loader", "css-loader", "sass-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
             // * Handling images
             {

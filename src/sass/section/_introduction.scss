@@ -1,0 +1,34 @@
+.section--introduction {
+    h1,
+    p {
+        margin: 0;
+    }
+
+    .block {
+        position: absolute;
+        top: 50%;
+        padding: 0 1em;
+        overflow: hidden;
+
+        &--header {
+            transform: translateY(-50%);
+            width: 66%;
+            left: 15%;
+
+            h1 {
+                font-size: 7vw;
+            }
+        }
+
+        &--preamble {
+            transform: translateY(-50%);
+            width: 33%;
+            left: 0;
+
+            p {
+                transform: translate3d(0, 100%, 0);
+                text-align: center;
+            }
+        }
+    }
+}

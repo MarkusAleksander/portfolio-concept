@@ -1,3 +1,5 @@
+@import "./../../node_modules/normalize.css/normalize.css";
+
 @import "./base/variables";
 
 @import "./base/body";
@@ -6,25 +8,32 @@
 
 @import "./base/app";
 
-// Containers
-@import "./containers/container";
+// // Containers
+// // @import "./containers/container";
 
-@import "./containers/home";
-@import "/containers/project";
+// // @import "./containers/home";
+// // @import "/containers/project";
 
-// Components
-@import "./components/toolbar";
-@import "./components/logo";
-@import "./components/navigation";
+// // Sections
+@import "./section/section";
+@import "./section/introduction";
+@import "./section/projects";
+@import "./section/about";
+@import "./section/contact";
 
-@import "./components/navigator-hint";
+// // Components
+// @import "./components/toolbar";
+// @import "./components/logo";
+// @import "./components/navigation";
 
-@import "./components/project-list";
-@import "./components/project-card";
-@import "./components/project-tag-list";
+// @import "./components/navigator-hint";
 
-@import "./components/personal-icon";
+// @import "./components/project-list";
+// @import "./components/project-card";
+// @import "./components/project-tag-list";
 
-// Utilities
-@import "./utilities/blend";
-@import "./utilities/backgrounds";
+// @import "./components/personal-icon";
+
+// // Utilities
+// // @import "./utilities/blend";
+// // @import "./utilities/backgrounds";

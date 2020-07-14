@@ -1,0 +1,44 @@
+.section--projects {
+    overflow: hidden;
+    .inner-section {
+        // overflow-x: scroll;
+        // overflow-y: hidden;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        bottom: auto;
+        left: 0;
+        right: 0;
+        height: 80vh;
+        transform: translateY(-50%);
+    }
+
+    .inner-content {
+        padding: 1em;
+        width: 200vw;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    .custom-scroller {
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translateX(-50%);
+        width: 90vw;
+        height: 2px;
+        background-color: #000;
+
+        &__thumb {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background-color: #000;
+            transform: translateY(-50%);
+        }
+    }
+}

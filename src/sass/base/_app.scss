@@ -1,33 +1,35 @@
 $app_transition_timing: 1.2s;
 
 #app {
-    width: 100%;
+    width: auto;
+    display: inline-flex;
+    flex-wrap: nowrap;
     height: 100vh;
     overflow: hidden;
     position: relative;
-    background-image: linear-gradient(to right, #fff 33%, #fb4a44 33%);
+    justify-content: flex-start;
 
-    &:after {
-        background-color: #fff;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        content: "";
-        transition: right $app_transition_timing ease-in-out;
-        z-index: 1;
-    }
+    // &:after {
+    //     background-color: #fff;
+    //     position: fixed;
+    //     left: 0;
+    //     right: 0;
+    //     top: 0;
+    //     bottom: 0;
+    //     content: "";
+    //     transition: right $app_transition_timing ease-in-out;
+    //     z-index: 1;
+    // }
 
-    &.is-loading {
-        &:after {
-            right: 67%;
-        }
-    }
-    &.is-loaded {
-        overflow-y: scroll;
-        &:after {
-            display: none;
-        }
-    }
+    // &.is-loading {
+    //     &:after {
+    //         right: 67%;
+    //     }
+    // }
+    // &.is-loaded {
+    // overflow-y: scroll;
+    // &:after {
+    //     display: none;
+    // }
+    // }
 }
