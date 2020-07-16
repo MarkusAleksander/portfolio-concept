@@ -1,26 +1,28 @@
-.project-tag-list {
+.project__tag-list {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 1em;
+    justify-content: center;
 
-    .project-tag-list__item {
+    &__item {
         padding: 0.2em 0.5em;
         border-radius: 3em;
         text-align: center;
         line-height: 1;
         user-select: none;
-        background-color: rgba(255, 255, 255, 0.6);
-        color: $black;
+        color: #fe4066;
         transition: background-color 0.35s, color 0.35s, border-color 0.35s;
-        margin-bottom: 0.5em;
         cursor: default;
+        border: 2px solid #fe4066;
+        font-weight: 600;
 
         &:hover {
-            background-color: rgba(255, 255, 255, 1);
+            color: #fff;
+            background-color: #fe4066;
         }
 
-        & + .project-tag-list__item {
-            margin-left: 0.5em;
+        & + .project__tag-list__item {
+            margin-left: 1em;
         }
 
         p {

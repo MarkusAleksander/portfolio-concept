@@ -1,8 +1,8 @@
 import "./sass/main.scss";
 import GSAP from "gsap";
-import { ScrollToPlugin } from "gsap/all";
+import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
 
-// GSAP.registerPlugin(ScrollTrigger);
+GSAP.registerPlugin(ScrollTrigger);
 GSAP.registerPlugin(ScrollToPlugin);
 
 window.gsap = GSAP;
@@ -30,12 +30,15 @@ intro_tl
 // let new_slide = 0;
 // let active_slide = 0;
 
+var slide_time = 2.5;
+
 var activeSlide = 0;
 var oldSlide = 0;
 var slides = GSAP.utils.toArray(".section");
 var container = document.querySelector("#app");
 var inner_scrollables = document.querySelectorAll(".inner-scrollable");
 var tl;
+var is_scrolling = false;
 
 const snap_points = [];
 
@@ -52,9 +55,24 @@ container.style.width = total_width + "px";
 console.log(snap_points);
 console.log(total_width);
 
+function updateValues() {
+    total_width = slides.reduce(function(acc, cur, idx) {
+        let width = slides[idx].clientWidth;
+        let slide_width = acc + width;
+        snap_points[idx] = {
+            start: acc,
+            end: slide_width,
+        };
+        return slide_width;
+    }, 0);
+    container.style.width = total_width + "px";
+    console.log(snap_points);
+    console.log(total_width);
+}
+
 function slideAnim(e) {
     // if the container is animating the wheel won't work
-    if (tl && tl.isActive()) {
+    if ((tl && tl.isActive()) || is_scrolling) {
         return;
     }
 
@@ -80,8 +98,29 @@ function slideAnim(e) {
     if (oldSlide === activeSlide) {
         return;
     }
+
+    //  custom scrolling tracking
+    is_scrolling = true;
     // if not at the beginning or end, we can animate the container
     // and the targets to the new position
+
+    // if going away from slide 0 (intro) - run animation
+    if (oldSlide === 1 && activeSlide === 0) {
+        gsap.to(".block--header", {
+            duration: slide_time,
+            left: "33%",
+            ease: "Sine.easeInOut",
+        });
+    }
+    // if going to slide 0 - run animation
+    if (activeSlide === 1 && oldSlide === 0) {
+        gsap.to(".block--header", {
+            duration: slide_time,
+            left: "50%",
+            ease: "Sine.easeInOut",
+        });
+    }
+
     tl = GSAP.timeline();
 
     let target_percent = (100 / total_width) * snap_points[activeSlide].start;
@@ -89,7 +128,26 @@ function slideAnim(e) {
     console.log(activeSlide);
     console.log(target_percent);
 
-    tl.to(container, 0.4, { xPercent: target_percent * -1 });
+    tl.to(container, slide_time, {
+        ease: "Sine.easeInOut",
+        xPercent: target_percent * -1,
+    });
+
+    // bg offset
+    let bg_offset = 5;
+    let base_bg_x_offset = 100;
+
+    let result = base_bg_x_offset - bg_offset * activeSlide;
+
+    gsap.to("#app", slide_time, {
+        ease: "Sine.easeInOut",
+        backgroundPositionX: result,
+    });
+
+    window.setTimeout(() => {
+        // give it time before user can scroll again
+        is_scrolling = false;
+    }, 1000);
 }
 
 function getScrollPercent(el) {
@@ -102,6 +160,15 @@ function innerScroll(e) {
     if (!event.deltaY) return;
 
     // * get current pos
+
+    let current_progress = getScrollPercent(this);
+    console.log("inner scroll");
+    if (
+        (current_progress < 1 && event.deltaY < 0) ||
+        (current_progress > 99 && event.deltaY >= 0)
+    ) {
+        return;
+    }
 
     let change = this.scrollLeft + event.deltaY;
 
@@ -125,3 +192,25 @@ container.addEventListener("wheel", slideAnim);
 inner_scrollables.forEach(function(scrollable) {
     scrollable.addEventListener("wheel", innerScroll.bind(scrollable));
 });
+
+window.addEventListener("resize", () => {
+    window.setTimeout(updateValues, 200);
+});
+
+// const title_tl_out = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".section--projects",
+//         start: "center top",
+//         scrub: false,
+//     },
+// });
+// gsap.to(".block--header", {
+//     scrollTrigger: {
+//         trigger: ".section--projects",
+//         toggleActions: "restart pause reverse pause",
+//         start: "center top",
+//     },
+//     duration: 2,
+//     x: "300%",
+//     ease: "none",
+// });

@@ -1,4 +1,6 @@
 .section--introduction {
+    background-image: linear-gradient(to right, #fff 33%, transparent 33%);
+
     h1,
     p {
         margin: 0;
@@ -17,6 +19,9 @@
 
             h1 {
                 font-size: 7vw;
+                color: #137d95;
+                // text-shadow: 3px 3px #902d42;
+                text-shadow: 3px 3px #fe4066;
             }
         }
 
@@ -26,6 +31,7 @@
             left: 0;
 
             p {
+                font-size: 1.8vw;
                 transform: translate3d(0, 100%, 0);
                 text-align: center;
             }

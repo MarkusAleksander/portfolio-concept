@@ -1,21 +1,26 @@
 .section--projects {
+    // background-image: url(https://www.transparenttextures.com/patterns/stardust.png),
+    //     linear-gradient(to top, #094c72 0%, #01293f);
+    // background-size: 60%, cover;
+    // background-repeat: repeat, no-repeat;
+
     overflow: hidden;
+    padding: 0em 2em;
+
     .inner-section {
-        // overflow-x: scroll;
-        // overflow-y: hidden;
         overflow: hidden;
         position: absolute;
         top: 50%;
         bottom: auto;
-        left: 0;
+        left: 50%;
         right: 0;
         height: 80vh;
-        transform: translateY(-50%);
+        width: calc(100% - 4em);
+        transform: translate3d(-50%, -50%, 0);
     }
 
     .inner-content {
         padding: 1em;
-        width: 200vw;
         position: absolute;
         top: 50%;
         left: 0;
