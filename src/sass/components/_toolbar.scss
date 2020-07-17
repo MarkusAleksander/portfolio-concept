@@ -101,6 +101,7 @@
 
     &__menu-btn {
         width: 60px;
+        cursor: pointer;
         height: 50px;
         position: relative;
         -webkit-appearance: none;
@@ -114,7 +115,7 @@
             display: block;
             position: absolute;
             height: 2px;
-            background-color: $black;
+            background-color: #fe4066;
             width: 25px;
             left: 50%;
             transform: translateX(-50%);

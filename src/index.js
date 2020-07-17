@@ -1,4 +1,6 @@
 import "./sass/main.scss";
+// import "./assets/me.jpg";
+
 import GSAP from "gsap";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
 
@@ -68,6 +70,87 @@ function updateValues() {
     container.style.width = total_width + "px";
     console.log(snap_points);
     console.log(total_width);
+}
+
+let slide_links = document.querySelectorAll(".toolbar__block--main a");
+
+slide_links.forEach(function(el, idx) {
+    el.addEventListener("click", function(e) {
+        e.preventDefault();
+        goToSlide(idx);
+    });
+});
+
+function goToSlide(idx) {
+    // if the container is animating the wheel won't work
+    if ((tl && tl.isActive()) || is_scrolling) {
+        return;
+    }
+
+    document.querySelector(".toolbar").classList.remove("open-menu");
+
+    oldSlide = activeSlide;
+    // which way did we scroll the mousewheel
+    activeSlide = idx;
+    // are we at the beginning of the slides?
+    activeSlide = activeSlide < 0 ? 0 : activeSlide;
+    // are we at the end of the slides?
+    activeSlide =
+        activeSlide > slides.length - 1 ? slides.length - 1 : activeSlide;
+    // if at the beginning or end there is nothing to animate
+    if (oldSlide === activeSlide) {
+        return;
+    }
+
+    //  custom scrolling tracking
+    is_scrolling = true;
+    // if not at the beginning or end, we can animate the container
+    // and the targets to the new position
+
+    // if going away from slide 0 (intro) - run animation
+    if (oldSlide > 0 && activeSlide === 0) {
+        gsap.to(".block--header", {
+            duration: slide_time,
+            left: "33%",
+            ease: "Sine.easeInOut",
+        });
+    }
+    // if going to slide 0 - run animation
+    if (activeSlide > 0 && oldSlide === 0) {
+        gsap.to(".block--header", {
+            duration: slide_time,
+            left: "50%",
+            ease: "Sine.easeInOut",
+        });
+    }
+
+    tl = GSAP.timeline();
+
+    let target_percent = (100 / total_width) * snap_points[activeSlide].start;
+
+    console.log(activeSlide);
+    console.log(target_percent);
+
+    tl.to(container, slide_time, {
+        ease: "Sine.easeInOut",
+        xPercent: target_percent * -1,
+    });
+
+    // bg offset
+    let bg_offset = 5;
+    let base_bg_x_offset = 100;
+
+    let result = base_bg_x_offset - bg_offset * activeSlide;
+
+    gsap.to("#app", slide_time, {
+        ease: "Sine.easeInOut",
+        backgroundPositionX: result,
+    });
+
+    window.setTimeout(() => {
+        // give it time before user can scroll again
+        is_scrolling = false;
+    }, 1000);
 }
 
 function slideAnim(e) {
@@ -170,7 +253,16 @@ function innerScroll(e) {
         return;
     }
 
-    let change = this.scrollLeft + event.deltaY;
+    let project_items = document.querySelectorAll(".projects-list__item");
+
+    let project_item_width = project_items[0].clientWidth;
+
+    let direction = event.deltaY >= 0 ? 1 : -1;
+
+    let total_width = project_items * project_item_width;
+
+    // * needs direction
+    let change = this.scrollLeft + project_item_width * direction;
 
     GSAP.to(this, {
         duration: 0.2,
@@ -196,21 +288,3 @@ inner_scrollables.forEach(function(scrollable) {
 window.addEventListener("resize", () => {
     window.setTimeout(updateValues, 200);
 });
-
-// const title_tl_out = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: ".section--projects",
-//         start: "center top",
-//         scrub: false,
-//     },
-// });
-// gsap.to(".block--header", {
-//     scrollTrigger: {
-//         trigger: ".section--projects",
-//         toggleActions: "restart pause reverse pause",
-//         start: "center top",
-//     },
-//     duration: 2,
-//     x: "300%",
-//     ease: "none",
-// });

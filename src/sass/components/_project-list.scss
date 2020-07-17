@@ -6,12 +6,9 @@
     flex-wrap: nowrap;
 
     &__item {
-        flex: 0 0 320px;
-        height: 450px;
-
-        & + & {
-            margin-left: 2em;
-        }
+        flex: 0 0 300px;
+        max-height: 450px;
+        height: auto;
 
         // transition: transform 0.5s ease-out;
 
