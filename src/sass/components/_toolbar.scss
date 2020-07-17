@@ -111,6 +111,38 @@
         background: none;
         outline: 0;
 
+        span#{$toolbar}__menu-btn--text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            color: #fe4066;
+            font-size: 0.8em;
+            font-weight: bold;
+            transform-origin: center center;
+            text-transform: uppercase;
+            transform: translate(0.5em, -0.5em) rotateZ(-90deg);
+            letter-spacing: 0.11em;
+        }
+
+        &:hover {
+            span#{$toolbar}__menu-btn--line {
+                &:nth-of-type(1),
+                &:nth-of-type(2),
+                &:nth-of-type(3) {
+                    transition: opacity 0.2s ease-out, transform 0.3s ease-out,
+                        top 0.3s ease-out;
+                }
+                &:nth-of-type(2) {
+                    transform: translateX(-60%);
+                }
+                &:nth-of-type(1),
+                &:nth-of-type(3) {
+                    transform: translateX(-40%);
+                }
+            }
+        }
+
         span#{$toolbar}__menu-btn--line {
             display: block;
             position: absolute;
@@ -127,7 +159,7 @@
 
                 #{$toolbar}.open-menu & {
                     top: 50%;
-                    transform: translateX(-50%) rotate(45deg);
+                    transform: translate3d(-50%, 0, 0) rotate(45deg);
                     transition: transform 0.3s ease-out, top 0.3s ease-out;
                 }
             }
@@ -137,7 +169,7 @@
 
                 #{$toolbar}.open-menu & {
                     width: 20px;
-                    transform: translateX(-50%) rotate(-45deg);
+                    transform: translate3d(-50%, 0, 0) rotate(-45deg);
                     transition: transform 0.3s ease-out, top 0.3s ease-out,
                         width 0.3s ease-out;
                 }
@@ -146,7 +178,8 @@
                 width: 20px;
                 top: 65%;
                 opacity: 1;
-                transition: opacity 0.2s ease-out, top 0.3s ease-out;
+                transition: opacity 0.2s ease-out, transform 0.3s ease-out,
+                    top 0.3s ease-out;
 
                 #{$toolbar}.open-menu & {
                     top: 90%;
