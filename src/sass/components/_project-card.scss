@@ -21,10 +21,9 @@
         position: relative;
         width: $hex_box_width;
         height: $hex_box_height;
-        background-color: #fff;
         margin: 0 auto;
-        margin-top: $hex_border_height * 1.5;
-        margin-bottom: $hex_border_height * 1.5;
+        margin-top: $hex_border_height * 1.25;
+        margin-bottom: $hex_border_height * 1.25;
 
         $outer_border_width: 4px;
 
@@ -64,50 +63,24 @@
             width: 90%;
             overflow: hidden;
             transform: translateY(-50%) translateX(-50%);
-            // background-color: red;
+            background-color: #fff;
             z-index: 1;
             padding-top: 90%;
-        }
-
-        &:after,
-        &:before {
-            position: absolute;
-            content: "";
-            height: 0;
-        }
-
-        &:before {
-            border-bottom: $hex_border_height solid #fff;
-            border-left: $hex_border_width solid transparent;
-            border-right: $hex_border_width solid transparent;
-            bottom: $hex_box_height - 1;
-            height: 0;
-            width: 0;
-        }
-
-        &:after {
-            width: 0;
-            border-top: $hex_border_height solid #fff;
-            border-left: $hex_border_width solid transparent;
-            border-right: $hex_border_width solid transparent;
-            top: $hex_box_height - 1;
-            height: 0;
-            width: 0;
         }
     }
 
     &__image {
         position: absolute;
         z-index: 0;
-        top: 20%;
-        left: 20%;
+        top: 50%;
+        left: 50%;
         bottom: auto;
         right: auto;
         width: 100%;
         max-width: 100%;
         height: auto;
         display: block;
-        transition: transform 0.5s ease-out;
+        transform: translate3d(-50%, -50%, 0);
     }
 
     &__view-more {
@@ -125,6 +98,7 @@
         height: 2.3em;
         margin: 0 auto;
         margin-top: 1.8em;
+        margin-bottom: 1.8em;
 
         &:hover,
         &:focus,

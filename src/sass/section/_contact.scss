@@ -1,2 +1,37 @@
 .section--contact {
+    h1,
+    p {
+        margin: 0;
+    }
+
+    .block {
+        position: absolute;
+        top: 50%;
+        padding: 0 1em;
+        overflow: hidden;
+
+        &--header {
+            transform: translateY(-50%);
+            width: 33%;
+            left: 0%;
+
+            h2 {
+                font-size: 5vw;
+                color: #137d95;
+                text-shadow: 3px 3px #fe4066;
+            }
+        }
+
+        &--form {
+            transform: translateY(-50%);
+            width: 66%;
+            left: 33%;
+
+            p {
+                font-size: 1.8vw;
+                transform: translate3d(0, 100%, 0);
+                text-align: center;
+            }
+        }
+    }
 }

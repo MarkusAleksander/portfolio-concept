@@ -12,12 +12,12 @@ window.gsap = GSAP;
 var intro_tl = GSAP.timeline();
 
 intro_tl
-    .to(".block--header", {
+    .to(".section--introduction .block--header", {
         duration: 1.5,
         ease: "power3.out",
         left: "33%",
     })
-    .to(".block--preamble p", {
+    .to(".section--introduction .block--preamble p", {
         duration: 1.5,
         ease: "power2.out",
         y: "0%",
@@ -109,7 +109,7 @@ function goToSlide(idx) {
 
     // if going away from slide 0 (intro) - run animation
     if (oldSlide > 0 && activeSlide === 0) {
-        gsap.to(".block--header", {
+        gsap.to(".section--introduction .block--header", {
             duration: slide_time,
             left: "33%",
             ease: "Sine.easeInOut",
@@ -117,7 +117,7 @@ function goToSlide(idx) {
     }
     // if going to slide 0 - run animation
     if (activeSlide > 0 && oldSlide === 0) {
-        gsap.to(".block--header", {
+        gsap.to(".section--introduction .block--header", {
             duration: slide_time,
             left: "50%",
             ease: "Sine.easeInOut",
@@ -189,7 +189,7 @@ function slideAnim(e) {
 
     // if going away from slide 0 (intro) - run animation
     if (oldSlide === 1 && activeSlide === 0) {
-        gsap.to(".block--header", {
+        gsap.to(".section--introduction .block--header", {
             duration: slide_time,
             left: "33%",
             ease: "Sine.easeInOut",
@@ -197,7 +197,7 @@ function slideAnim(e) {
     }
     // if going to slide 0 - run animation
     if (activeSlide === 1 && oldSlide === 0) {
-        gsap.to(".block--header", {
+        gsap.to(".section--introduction .block--header", {
             duration: slide_time,
             left: "50%",
             ease: "Sine.easeInOut",
@@ -259,10 +259,10 @@ function innerScroll(e) {
 
     let direction = event.deltaY >= 0 ? 1 : -1;
 
-    let total_width = project_items * project_item_width;
-
     // * needs direction
     let change = this.scrollLeft + project_item_width * direction;
+
+    GSAP.to(".custom-scroller", { duration: 0.5, width: 400 });
 
     GSAP.to(this, {
         duration: 0.2,
@@ -272,6 +272,9 @@ function innerScroll(e) {
             gsap.to(".custom-scroller__thumb", {
                 duration: 0.5,
                 left: newPos + "%",
+                onComplete: () => {
+                    GSAP.to(".custom-scroller", { duration: 0.5, width: 50 });
+                },
             });
         },
     });
