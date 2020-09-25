@@ -1,41 +1,5 @@
 #app {
-    width: auto;
-    display: inline-flex;
-    flex-wrap: nowrap;
-    height: 100vh;
+    width: 100%;
     overflow: hidden;
     position: relative;
-    justify-content: flex-start;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000;
-
-    background-image: url(https://www.transparenttextures.com/patterns/stardust.png),
-        linear-gradient(to top, #094c72 0%, #01293f);
-    background-size: contain, cover;
-    background-position: 100% 50%, center center;
-
-    // &:after {
-    //     background-color: #fff;
-    //     position: fixed;
-    //     left: 0;
-    //     right: 0;
-    //     top: 0;
-    //     bottom: 0;
-    //     content: "";
-    //     transition: right $app_transition_timing ease-in-out;
-    //     z-index: 1;
-    // }
-
-    // &.is-loading {
-    //     &:after {
-    //         right: 67%;
-    //     }
-    // }
-    // &.is-loaded {
-    // overflow-y: scroll;
-    // &:after {
-    //     display: none;
-    // }
-    // }
 }

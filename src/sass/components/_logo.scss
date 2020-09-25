@@ -23,12 +23,12 @@
         height: auto;
         margin: 0 auto;
         white-space: nowrap;
-        color: $black;
+        // color: $black;
+        color: $white;
         font-family: $headline-font;
 
-        @media (min-width: 1024px) {
-            color: $white;
-        }
+        // @media (min-width: 768px) {
+        // }
 
         &--icon {
             font-size: 17px;

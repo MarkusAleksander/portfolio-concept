@@ -1,40 +1,40 @@
 .section--introduction {
-    background-image: linear-gradient(to right, #fff 33%, transparent 33%);
 
-    h1,
-    p {
+    // h1,
+    // p {
+    h1 {
         margin: 0;
     }
 
     .block {
-        position: absolute;
-        top: 50%;
-        padding: 0 1em;
-        overflow: hidden;
+        // position: absolute;
+        // top: 50%;
+        // padding: 0 1em;
+        // overflow: hidden;
 
         &--header {
-            transform: translateY(-50%);
-            width: 66%;
-            left: 15%;
+            // transform: translateY(-50%);
+            // width: 66%;
+            // left: 15%;
 
             h1 {
                 font-size: 7vw;
-                color: #137d95;
+                // color: #137d95;
                 // text-shadow: 3px 3px #902d42;
-                text-shadow: 3px 3px #fe4066;
+                // text-shadow: 3px 3px #fe4066;
             }
         }
 
-        &--preamble {
-            transform: translateY(-50%);
-            width: 33%;
-            left: 0;
+        // &--preamble {
+        //     transform: translateY(-50%);
+        //     width: 33%;
+        //     left: 0;
 
-            p {
-                font-size: 1.8vw;
-                transform: translate3d(0, 100%, 0);
-                text-align: center;
-            }
-        }
+        //     p {
+        //         font-size: 1.8vw;
+        //         transform: translate3d(0, 100%, 0);
+        //         text-align: center;
+        //     }
+        // }
     }
 }
