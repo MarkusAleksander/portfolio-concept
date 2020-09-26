@@ -4,155 +4,428 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
+    <!--<![endif]-->
 
-<head>
-    <%= require('html-loader!./partials/head.html') %>
-    <title><%= htmlWebpackPlugin.options.title %></title>
-</head>
+    <head>
+        <%= require('html-loader!./partials/head.html') %>
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
 
-<body>
-    <!--[if lt IE 7]>
+    <body>
+        <!--[if lt IE 7]>
             <p class="browsehappy">
                 You are using an <strong>outdated</strong> browser. Please
                 <a href="#">upgrade your browser</a> to improve your experience.
             </p>
         <![endif]-->
-    <div class="personal-icon">
-        <div class="personal-icon__rotations"></div>
-        <div class="personal-icon__frame">
-            <img
-                class="personal-icon__img"
-                src="<%= require('./assets/me.jpg').default %>"
-            />
+        <div class="personal-icon">
+            <div class="personal-icon__rotations"></div>
+            <div class="personal-icon__frame">
+                <img
+                    class="personal-icon__img"
+                    src="<%= require('./assets/me.jpg').default %>"
+                />
+            </div>
+            <div class="personal-icon__popup">
+                <p class="personal-icon__copy">That's me!</p>
+            </div>
         </div>
-        <div class="personal-icon__popup">
-            <p class="personal-icon__copy">That's me!</p>
+
+        <div id="app">
+            <%= require('html-loader!./partials/introduction/index.html') %>
+
+            <div class="section section--about" id="about">
+                <div class="inner-content">
+                    <div class="block block--about">
+                        <h2>About.</h2>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="block block--work-history">
+                        <ul class="work-history">
+                            <li class="work-history__item">
+                                <h3 class="work-history__company">
+                                    <img
+                                        src="<%= require('./assets/rivendell-logo.png').default %>"
+                                        alt=""
+                                        class="work-history__company__logo"
+                                    />
+                                    <span>Rivendell Europe Ltd</span>
+                                </h3>
+                                <p class="work-history__role">
+                                    Front End Developer
+                                </p>
+                                <p class="work-history__dates">
+                                    <span class="work-history__dates__start"
+                                        >May 2018</span
+                                    >
+                                    to
+                                    <span class="work-history__dates__end"
+                                        >Present</span
+                                    >
+                                </p>
+                                <p class="work-history__description">
+                                    Lorem ipsum
+                                </p>
+                            </li>
+                            <li class="work-history__item">
+                                <h3 class="work-history__company">
+                                    <span>Freelancing</span>
+                                </h3>
+                                <p class="work-history__dates">
+                                    <span class="work-history__dates__start"
+                                        >February 2018</span
+                                    >
+                                    to
+                                    <span class="work-history__dates__end"
+                                        >May 2018</span
+                                    >
+                                </p>
+                                <p class="work-history__description">
+                                    Lorem ipsum
+                                </p>
+                            </li>
+                            <li class="work-history__item">
+                                <h3 class="work-history__company">
+                                    <img
+                                        src="<%= require('./assets/web-best-practice-logo.png').default %>"
+                                        alt=""
+                                        class="work-history__company__logo"
+                                    />
+                                    <span>Web Best Practice Ltd</span>
+                                </h3>
+                                <p class="work-history__role">
+                                    Junior Web Developer
+                                </p>
+                                <p class="work-history__dates">
+                                    <span class="work-history__dates__start"
+                                        >April 2017</span
+                                    >
+                                    to
+                                    <span class="work-history__dates__end"
+                                        >February 2018</span
+                                    >
+                                </p>
+                                <p class="work-history__description">
+                                    Lorem ipsum
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section--projects" id="projects">
+                <div class="inner-content">
+                    <div class="block block--projects-list">
+                        <ul class="projects-list">
+                            <li class="projects-list__item">
+                                <div class="project-card">
+                                    <div class="project-card__main">
+                                        <div
+                                            class="project-card__corner project-card__corner--top-left"
+                                        >
+                                            <a href="#">
+                                                <img
+                                                    class="project-card__corner__icon"
+                                                    src="<%= require('./assets/github_142.svg').default %>"
+                                                />
+                                            </a>
+                                        </div>
+                                        <div
+                                            class="project-card__image-container"
+                                        >
+                                            <img
+                                                class="project-card__image"
+                                                src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQ2LjQ2IDI4OC4xNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBjbGFzcz0ibG9nb19faWNvbiI+PHBhdGggZD0iTTQ0Ni40NiAyMDUuNTFjLTQuOTQgNy4wNy02LjU2IDE4LjI2LTE1LjYxIDI5LjMtNC40NyA1LjQ1LTkuNyA4LjU0LTE1LjcgMTAuODFhNTQuNTYgNTQuNTYgMCAwMS03LjQ4IDEuODVjNC43Ny0xNS41NyAxMC41MS0zMS44NiAxMC01OC4wOC0uMzMtMTcuMTctNC4xNC0zOS41NC0xMi44OS00OS43OS04LTkuNC0yMS41NS0xNy43OS0zMy44OC0xNy4yMi04LjI3LjM4LTE0LjcyIDIuODctMjMuMTIgMTAtMTAuOSA5LjI1LTE3Ljk1IDI4LjE1LTE4LjQgNDQuMzItLjQ0IDE2IC43MiAyNS40NSA3LjM0IDQwLjQ3IDYuOTMgMTUuNyAxNi43MiAyNS4xNCAyOC4xNCAzMC40MiAxNC43NyA2LjgyIDI3LjQ1IDcuNTQgNDAuMzIgNi41NWE4MiA4MiAwIDAxLTEwLjYxIDEzLjM2Yy0xMi4zNCAxMi4xMy00MS4zIDIxLjc1LTYyLjEuMTgtNS4xMi01LjMyLTE0LjQzLTIwLTE5LjY1LTMxLjc5LTMtNi42Ni0xMy41OS01MS4yNS0xNS45NC03NS0zLTMwLjUtMy44Ny00Ni4xLTUuMzMtNjUuNTggMS41My0uODQgMy4xNC0yLjYzIDQuNTItMy43MyA4LTYuMzQgMTguODgtMTUuNDUgMjYuMDYtMzIuMDkgMi40My01LjYzIDUuNDYtMTYuNjUgMy43OS0yMy4xNS0xLTQuMDctMy44MS02LTcuNjUtNy45My0zLjE3LTEuNjItOS4zMi0xLjQ3LTEyLjI2LS4wNi00IDEuOTQtNy42NSA1LjkyLTEwIDkuMzlDMjg0LjU2IDU0LjggMjgyLjU2IDcyIDI4MS4zNCA5Mi44NWMtNS45NCA0LjgxLTEwLjkgNi4zNy0xOC4yNiA0IC42Ny0xNy43MSAxLjA4LTM2LjgtMS01NWEzNS44NSAzNS44NSAwIDAwLTYuODQtMTguMDdjLTQuNDItNS45NC0xMy40MS05Ljg3LTIwLjgtNi4xNy02LjExIDMuMDctOC40MyA5LjgtOS43NyAxNS4zMWE3MS42NyA3MS42NyAwIDAwLjE0IDM1LjY4QzIyOCA4MS44OSAyMzUuMTIgOTQgMjQ2LjE0IDk5LjM2YzMuMTcgMS41MyAzLjE3IDEuNTMgNi41OSAyLjkxLTIuODMgMjUtNy43NSA0Ny43LTExLjI1IDY5LjM0LTEuNDggOS4xMy0yLjczIDE0LjYxLTUuMjcgMjEuNjgtMy4zOSA5LjQyLTQuNDkgMTYuMzMtMTQuMjggMTYuMTktNy44MS0uMTEtMTMuMTQtMTcuODgtMTUuNzMtMjctOC0yOC4zNS0xMi41OS02MS41MS0yMC44Ny05My43OGwtMS4xLTcuNDgtNC43NiA2Yy03LjM2IDkuMjYtMTQuMjcgMTguNDgtMTguNzUgMjguMTlhNzYuNjQgNzYuNjQgMCAwMC0yNi0zLjEyIDIuNTYgMi41NiAwIDAxLS4xMS0uMjQgMTY5LjM3IDE2OS4zNyAwIDAxLTkuODEtMjUuODQgMTIyLjc5IDEyMi43OSAwIDAwMjIuNi0xMi42OGMxNC40OC0xMC4yNiAxOS4yNC0xMy42MyAyNS4wNy0yNi45NSA5LjM1LTIxLjM1IDMuMzctMzQuODMtLjE3LTM5LjE4LTcuOS05Ljc0LTI1LjY1LTguNjItMzYtMy43NS0xMy4zOCA2LjMtMjMuNzUgMjcuNjctMjUuOTMgNDYtMS40MiAxMS44OS0uNTEgMjYuNjUgMS4yNiAzNC41OS0yMC4wOSA3LjU5LTM3LjM4IDguNC02MC4xNSA1LjY3YTI1LjA4IDI1LjA4IDAgMDAuMjktMTQuMDhjLTEuNjEtNS40NC02LjY1LTEwLjE0LTEyLjU0LTExLjY5QTEyLjkgMTIuOSAwIDAwMjcgNjYuODNhMTIuNDYgMTIuNDYgMCAwMC0zLjkxIDkuMjggMTcgMTcgMCAwMDUuMzggMTIuMjRjNCAzLjY5IDExLjM0IDUuODYgMTYuNDUgNy0uNTcgMS4yNS0yIDQuMTEtMi41NCA1LjMzLTEwLjU3IDIzLjcxLTE5LjYgMzMuNTUtNDIuMzggNDAuODd2MS44MmMxNy00LjkyIDM0LjE5LTE2LjY0IDQ2LjgtNDEuOTEuODktMS43NyAxLjc0LTMuNTYgMi41MS01LjM3IDI0IDMuMDkgNDIuNTcgMi4yOCA2My44Ny01LjYxIDIgOC45MSAyLjU0IDEyLjI0IDUuMTcgMTkuNTUtNC42IDEuMDktNy42NSAyLTkuMTUgMi40Ny0xNy4xMSA1LjUtMzQuNDMgMTQuMTItNDguMiAyNi44Ny0xNS41NSAxNC40MS0yNy42OCAzMi40NC0zMC43NiA1MS4yNC0zLjE0IDE5LjE5LTEuNjQgNDQuMSA4LjIgNjEuNzMgNy4wNiAxMi42OCAyNyAzMy45MiA1My42OSAzNS43MiAxMy41My45MSAzMy44OS02IDQ0Ljk0LTE2LjM0IDkuMS04LjUgMTgtMjIuNjQgMjIuNTItMzcuMzMgNi43LTIxLjY0IDQtNDcuMTctMi4wNS02OS0zLjg4LTE0LTEwLjM0LTI3LjI4LTE2LjYtNDAuMDlsLTMuMjktNi43OWE2OC4yIDY4LjIgMCAwMTIwLjY2IDIuNzYgNDcuMTEgNDcuMTEgMCAwMC0yLjY3IDE3LjkzYy4zNiA3IDIuNTggMTIuNzQgNi40MSAxNi43NiA1IDUuMjQgMTIuOTMgNyAxOC44NiA0LjE5YTEzLjY0IDEzLjY0IDAgMDA3LjUyLTkuMzYgMTkuOSAxOS45IDAgMDAuNDgtNi4zNmMzIDEzLjQ5IDYuMTQgMjYuOTUgMTAgNDAuMTUgMy41NCAxMiA4LjA2IDIxLjkxIDIwLjA2IDI3IDEwLjQ4IDQuNDMgMjEuNjctMy43IDI3LTExLjM0czctMTYuNDMgOC42My0yNi4zM2MzLjUxLTIxLjczIDYuODUtNDUuNyA4LjE3LTcwLjczYTQ4LjgyIDQ4LjgyIDAgMDAxOC4yOC0zLjI4Yy0uMzUgMTguODIgMS43NSA0OC4xMSA0LjYxIDcxLjU2IDMuNzUgMzAuNjMgMS45NCA0OC4yNyAyMS44NyA4MC40NCA2LjYxIDEwLjY4IDE0LjIxIDE3LjcyIDIxLjQxIDIzLjUyIDcuNTkgNi4xIDE3LjQgOC43MiAyOC41OSA4LjcyYTU0LjM5IDU0LjM5IDAgMDAzNC4yNi0xMi4yM2M2LTUuMSAxMC40My0xMS41NiAxNC4wNy0xOEE3NC41NyA3NC41NyAwIDAwNDE4IDI0OC44YzQuNjktMi4yNCAxMC4wNi02Ljg4IDE0LTEyLjA4IDktMTEuOTIgMTAtMjMuNzIgMTQuNDYtMjkuMjJhMTguODcgMTguODcgMCAwMTAtMS45OXpNNDYuMzggODkuMzFjLTQuNTUtLjg3LTEwLjI3LTIuNjUtMTMuNC01LjU2LTItMS45LTQuNzUtNC40My01LjEyLTcuNTQtLjE2LTEuMzQtLjc1LTQuNzggMS43Ny03LjMzQTEwLjQ2IDEwLjQ2IDAgMDEzNSA2Ni41NmExNC44OSAxNC44OSAwIDAxNC40NS41NmMzLjY5IDEgNS40MiA1LjE4IDYuNDEgOC41MSAxLjE0IDMuNjYgMS42NiA5Ljg3LjUyIDEzLjY4em03NS4yMS0zMS4xNWMuMjgtMTYuNDMgMS4zOC0zOCAxOC00Ni4zIDMuODItMS45IDE0LTIuNyAxOC44OC0xLjUzIDcuMTMgMi45NCAxMC4wNiA2LjkyIDEwLjQgMTIuMDdBMjkuNiAyOS42IDAgMDExNjcgMzYuM2MtNC45NCAxMi4zNS0xMCAyMi41NS0yMy41IDMyLjA5YTExNS42MyAxMTUuNjMgMCAwMS0yMC4yOCAxMS40NCA5NS41NiA5NS41NiAwIDAxLTEuNjMtMjEuNjd6bTE4LjMyIDExMi4xOWM1LjY0IDIwLjM5IDguNTUgNDAuNzUgNi43NCA2MC4zMS0xLjMxIDE0LjE3LTcgMjMuODEtMTUuMjQgMzEuNTQtOS42NiA5LTIyLjMyIDEzLjY1LTMzLjg4IDEyLjM5LTIwLjc4LTIuMjUtMzQuNzItMjItNDEuMTctMzMuNTktOS4yNi0xNi42LTExLjc4LTMwLjUyLTExLTQ0Ljg0LjkyLTE3LjM5IDcuODgtMzYuNzQgMjIuMjItNTAgMTIuOS0xMiAzMC4zMS0yMC43IDUwLjM1LTI1LjI2bDQtLjkyYzEuMTEgMy4zMiAyLjcyIDcuNTYgMy44NSAxMC4zNmEzNjcuNzUgMzY3Ljc1IDAgMDExNC4xMyA0MC4wMXptMzguNTgtMTEuNDNjLTMuOSAxLjc4LTkuOC4xNC0xMy41NS00Ljc2LTMuMDgtNC0zLjI1LTExLjI4LTMuNDUtMTUuMDctLjI3LTUuMjIgMS4zMi0xMC41IDMtMTUuNDYgNS40NiAyLjU1IDExLjI4IDUuNzUgMTUgMTAuNjUgMy4yMSA0LjIgNC41OCA3Ljc4IDQuNjkgMTQuNTVhMTEuMDYgMTEuMDYgMCAwMS01LjY5IDEwLjA5em01LjI4LTI4YTQzLjU2IDQzLjU2IDAgMDAtMTYuOTEtMTMuMmMzLjI1LTcgNy45Mi0xMy44IDEzLjEtMjAuNnEzLjIxIDIwLjM5IDcuNTIgNDAuNjlhMjUuMzMgMjUuMzMgMCAwMC0zLjcxLTYuOTJ6bTY5LjM4LTM0LjgyYTcuNjggNy42OCAwIDAxLTQuMDctMi40MmMtNy4zNi02LjgzLTEwLjYyLTE1LjI5LTEzLjQxLTI2LjgzLTIuMzItOS41OS01LTIxLjUxLTItMzQuNjcgMS00LjU3IDIuMzEtMTIuNTggNy40NS0xMy44NCA1LjY2LS4zMiA4LjMzIDQuNjcgOS42NSA3LjMzIDIuNDIgNC44NiAzLjMzIDEyLjA3IDQgMTcuNzUgMS45OSAxNy43Mi0uOTcgMzUuMzctMS42MiA1Mi42NXptNDguNzUtNTQuMjljMS43NC0yLjgyIDQtNi45MiA4LjgzLTEwLjEzIDIuMjItMS40MSA1Ljc4LTEuNjkgNi41LTEuMzMgMi4yIDEuMTMgMi42MiAzIDIuOTQgNS40NC42NCA0Ljc5LTUuMSAxNy03LjIyIDIxLjktNi4xNCAxNC4yMi0xMyAyMi42My0yMiAyOS4zNyAxLjUtMTguMiAzLjI1LTMyLjc0IDEwLjk1LTQ1LjI1em02NiAxOTUuNjFjLTkuNTktNi4xOC0xNC0xMC4yNy0yMC4xNC0yNS44NC02LjQxLTE2LjItNi45My0yOC44NC02LjE4LTQwLjkzIDEtMTUuNTkgNS4xNS0yNi41OCAxMi4xMy0zMy45MiAzLjc5LTQgMTEuNDMtOS4xNSAxOS44OS05LjE1IDIxLjA4IDAgMzEuMzMgMTUuMDYgMzUuNDkgMjMuNzYgNS40MSAxMS4zMiA3LjgxIDM2Ljk1IDcuMTIgNTIuMDctLjQ5IDEwLjg4LTUuMzUgMjguODItOS4yIDQ0LjEyLTExLjU3LjA1LTMwLjUxLTQuNTktMzkuMDctMTAuMTF6IiBmaWxsPSIjMWQxZDFiIiBkYXRhLW5hbWU9IkxheWVyIDIiPjwvcGF0aD48L3N2Zz4="
+                                                alt=""
+                                            />
+                                        </div>
+                                        <ul class="project-card__tech-list">
+                                            <li
+                                                class="project-card__tech-list__item"
+                                            >
+                                                <img
+                                                    src="<%= require('./assets/react-logo.svg').default %>"
+                                                    alt="React logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                            </li>
+                                            <li
+                                                class="project-card__tech-list__item"
+                                            >
+                                                <img
+                                                    src="<%= require('./assets/firebase-logo.svg').default %>"
+                                                    alt="Firebase logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                            </li>
+                                            <li
+                                                class="project-card__tech-list__item"
+                                            >
+                                                <img
+                                                    src="<%= require('./assets/netlify-logo.svg').default %>"
+                                                    alt="Netlify logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-card__pullout">
+                                        <p class="project-card__title">
+                                            React Music Library
+                                        </p>
+                                        <p class="project-card__url">
+                                            <a href="#"></a>
+                                        </p>
+                                        <p class="project-card__read-more">
+                                            Read more...
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="projects-list__item">
+                                <div class="project-card">
+                                    <div class="project-card__main">
+                                        <div
+                                            class="project-card__image-container"
+                                        >
+                                            <img
+                                                class="project-card__image"
+                                                src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQ2LjQ2IDI4OC4xNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBjbGFzcz0ibG9nb19faWNvbiI+PHBhdGggZD0iTTQ0Ni40NiAyMDUuNTFjLTQuOTQgNy4wNy02LjU2IDE4LjI2LTE1LjYxIDI5LjMtNC40NyA1LjQ1LTkuNyA4LjU0LTE1LjcgMTAuODFhNTQuNTYgNTQuNTYgMCAwMS03LjQ4IDEuODVjNC43Ny0xNS41NyAxMC41MS0zMS44NiAxMC01OC4wOC0uMzMtMTcuMTctNC4xNC0zOS41NC0xMi44OS00OS43OS04LTkuNC0yMS41NS0xNy43OS0zMy44OC0xNy4yMi04LjI3LjM4LTE0LjcyIDIuODctMjMuMTIgMTAtMTAuOSA5LjI1LTE3Ljk1IDI4LjE1LTE4LjQgNDQuMzItLjQ0IDE2IC43MiAyNS40NSA3LjM0IDQwLjQ3IDYuOTMgMTUuNyAxNi43MiAyNS4xNCAyOC4xNCAzMC40MiAxNC43NyA2LjgyIDI3LjQ1IDcuNTQgNDAuMzIgNi41NWE4MiA4MiAwIDAxLTEwLjYxIDEzLjM2Yy0xMi4zNCAxMi4xMy00MS4zIDIxLjc1LTYyLjEuMTgtNS4xMi01LjMyLTE0LjQzLTIwLTE5LjY1LTMxLjc5LTMtNi42Ni0xMy41OS01MS4yNS0xNS45NC03NS0zLTMwLjUtMy44Ny00Ni4xLTUuMzMtNjUuNTggMS41My0uODQgMy4xNC0yLjYzIDQuNTItMy43MyA4LTYuMzQgMTguODgtMTUuNDUgMjYuMDYtMzIuMDkgMi40My01LjYzIDUuNDYtMTYuNjUgMy43OS0yMy4xNS0xLTQuMDctMy44MS02LTcuNjUtNy45My0zLjE3LTEuNjItOS4zMi0xLjQ3LTEyLjI2LS4wNi00IDEuOTQtNy42NSA1LjkyLTEwIDkuMzlDMjg0LjU2IDU0LjggMjgyLjU2IDcyIDI4MS4zNCA5Mi44NWMtNS45NCA0LjgxLTEwLjkgNi4zNy0xOC4yNiA0IC42Ny0xNy43MSAxLjA4LTM2LjgtMS01NWEzNS44NSAzNS44NSAwIDAwLTYuODQtMTguMDdjLTQuNDItNS45NC0xMy40MS05Ljg3LTIwLjgtNi4xNy02LjExIDMuMDctOC40MyA5LjgtOS43NyAxNS4zMWE3MS42NyA3MS42NyAwIDAwLjE0IDM1LjY4QzIyOCA4MS44OSAyMzUuMTIgOTQgMjQ2LjE0IDk5LjM2YzMuMTcgMS41MyAzLjE3IDEuNTMgNi41OSAyLjkxLTIuODMgMjUtNy43NSA0Ny43LTExLjI1IDY5LjM0LTEuNDggOS4xMy0yLjczIDE0LjYxLTUuMjcgMjEuNjgtMy4zOSA5LjQyLTQuNDkgMTYuMzMtMTQuMjggMTYuMTktNy44MS0uMTEtMTMuMTQtMTcuODgtMTUuNzMtMjctOC0yOC4zNS0xMi41OS02MS41MS0yMC44Ny05My43OGwtMS4xLTcuNDgtNC43NiA2Yy03LjM2IDkuMjYtMTQuMjcgMTguNDgtMTguNzUgMjguMTlhNzYuNjQgNzYuNjQgMCAwMC0yNi0zLjEyIDIuNTYgMi41NiAwIDAxLS4xMS0uMjQgMTY5LjM3IDE2OS4zNyAwIDAxLTkuODEtMjUuODQgMTIyLjc5IDEyMi43OSAwIDAwMjIuNi0xMi42OGMxNC40OC0xMC4yNiAxOS4yNC0xMy42MyAyNS4wNy0yNi45NSA5LjM1LTIxLjM1IDMuMzctMzQuODMtLjE3LTM5LjE4LTcuOS05Ljc0LTI1LjY1LTguNjItMzYtMy43NS0xMy4zOCA2LjMtMjMuNzUgMjcuNjctMjUuOTMgNDYtMS40MiAxMS44OS0uNTEgMjYuNjUgMS4yNiAzNC41OS0yMC4wOSA3LjU5LTM3LjM4IDguNC02MC4xNSA1LjY3YTI1LjA4IDI1LjA4IDAgMDAuMjktMTQuMDhjLTEuNjEtNS40NC02LjY1LTEwLjE0LTEyLjU0LTExLjY5QTEyLjkgMTIuOSAwIDAwMjcgNjYuODNhMTIuNDYgMTIuNDYgMCAwMC0zLjkxIDkuMjggMTcgMTcgMCAwMDUuMzggMTIuMjRjNCAzLjY5IDExLjM0IDUuODYgMTYuNDUgNy0uNTcgMS4yNS0yIDQuMTEtMi41NCA1LjMzLTEwLjU3IDIzLjcxLTE5LjYgMzMuNTUtNDIuMzggNDAuODd2MS44MmMxNy00LjkyIDM0LjE5LTE2LjY0IDQ2LjgtNDEuOTEuODktMS43NyAxLjc0LTMuNTYgMi41MS01LjM3IDI0IDMuMDkgNDIuNTcgMi4yOCA2My44Ny01LjYxIDIgOC45MSAyLjU0IDEyLjI0IDUuMTcgMTkuNTUtNC42IDEuMDktNy42NSAyLTkuMTUgMi40Ny0xNy4xMSA1LjUtMzQuNDMgMTQuMTItNDguMiAyNi44Ny0xNS41NSAxNC40MS0yNy42OCAzMi40NC0zMC43NiA1MS4yNC0zLjE0IDE5LjE5LTEuNjQgNDQuMSA4LjIgNjEuNzMgNy4wNiAxMi42OCAyNyAzMy45MiA1My42OSAzNS43MiAxMy41My45MSAzMy44OS02IDQ0Ljk0LTE2LjM0IDkuMS04LjUgMTgtMjIuNjQgMjIuNTItMzcuMzMgNi43LTIxLjY0IDQtNDcuMTctMi4wNS02OS0zLjg4LTE0LTEwLjM0LTI3LjI4LTE2LjYtNDAuMDlsLTMuMjktNi43OWE2OC4yIDY4LjIgMCAwMTIwLjY2IDIuNzYgNDcuMTEgNDcuMTEgMCAwMC0yLjY3IDE3LjkzYy4zNiA3IDIuNTggMTIuNzQgNi40MSAxNi43NiA1IDUuMjQgMTIuOTMgNyAxOC44NiA0LjE5YTEzLjY0IDEzLjY0IDAgMDA3LjUyLTkuMzYgMTkuOSAxOS45IDAgMDAuNDgtNi4zNmMzIDEzLjQ5IDYuMTQgMjYuOTUgMTAgNDAuMTUgMy41NCAxMiA4LjA2IDIxLjkxIDIwLjA2IDI3IDEwLjQ4IDQuNDMgMjEuNjctMy43IDI3LTExLjM0czctMTYuNDMgOC42My0yNi4zM2MzLjUxLTIxLjczIDYuODUtNDUuNyA4LjE3LTcwLjczYTQ4LjgyIDQ4LjgyIDAgMDAxOC4yOC0zLjI4Yy0uMzUgMTguODIgMS43NSA0OC4xMSA0LjYxIDcxLjU2IDMuNzUgMzAuNjMgMS45NCA0OC4yNyAyMS44NyA4MC40NCA2LjYxIDEwLjY4IDE0LjIxIDE3LjcyIDIxLjQxIDIzLjUyIDcuNTkgNi4xIDE3LjQgOC43MiAyOC41OSA4LjcyYTU0LjM5IDU0LjM5IDAgMDAzNC4yNi0xMi4yM2M2LTUuMSAxMC40My0xMS41NiAxNC4wNy0xOEE3NC41NyA3NC41NyAwIDAwNDE4IDI0OC44YzQuNjktMi4yNCAxMC4wNi02Ljg4IDE0LTEyLjA4IDktMTEuOTIgMTAtMjMuNzIgMTQuNDYtMjkuMjJhMTguODcgMTguODcgMCAwMTAtMS45OXpNNDYuMzggODkuMzFjLTQuNTUtLjg3LTEwLjI3LTIuNjUtMTMuNC01LjU2LTItMS45LTQuNzUtNC40My01LjEyLTcuNTQtLjE2LTEuMzQtLjc1LTQuNzggMS43Ny03LjMzQTEwLjQ2IDEwLjQ2IDAgMDEzNSA2Ni41NmExNC44OSAxNC44OSAwIDAxNC40NS41NmMzLjY5IDEgNS40MiA1LjE4IDYuNDEgOC41MSAxLjE0IDMuNjYgMS42NiA5Ljg3LjUyIDEzLjY4em03NS4yMS0zMS4xNWMuMjgtMTYuNDMgMS4zOC0zOCAxOC00Ni4zIDMuODItMS45IDE0LTIuNyAxOC44OC0xLjUzIDcuMTMgMi45NCAxMC4wNiA2LjkyIDEwLjQgMTIuMDdBMjkuNiAyOS42IDAgMDExNjcgMzYuM2MtNC45NCAxMi4zNS0xMCAyMi41NS0yMy41IDMyLjA5YTExNS42MyAxMTUuNjMgMCAwMS0yMC4yOCAxMS40NCA5NS41NiA5NS41NiAwIDAxLTEuNjMtMjEuNjd6bTE4LjMyIDExMi4xOWM1LjY0IDIwLjM5IDguNTUgNDAuNzUgNi43NCA2MC4zMS0xLjMxIDE0LjE3LTcgMjMuODEtMTUuMjQgMzEuNTQtOS42NiA5LTIyLjMyIDEzLjY1LTMzLjg4IDEyLjM5LTIwLjc4LTIuMjUtMzQuNzItMjItNDEuMTctMzMuNTktOS4yNi0xNi42LTExLjc4LTMwLjUyLTExLTQ0Ljg0LjkyLTE3LjM5IDcuODgtMzYuNzQgMjIuMjItNTAgMTIuOS0xMiAzMC4zMS0yMC43IDUwLjM1LTI1LjI2bDQtLjkyYzEuMTEgMy4zMiAyLjcyIDcuNTYgMy44NSAxMC4zNmEzNjcuNzUgMzY3Ljc1IDAgMDExNC4xMyA0MC4wMXptMzguNTgtMTEuNDNjLTMuOSAxLjc4LTkuOC4xNC0xMy41NS00Ljc2LTMuMDgtNC0zLjI1LTExLjI4LTMuNDUtMTUuMDctLjI3LTUuMjIgMS4zMi0xMC41IDMtMTUuNDYgNS40NiAyLjU1IDExLjI4IDUuNzUgMTUgMTAuNjUgMy4yMSA0LjIgNC41OCA3Ljc4IDQuNjkgMTQuNTVhMTEuMDYgMTEuMDYgMCAwMS01LjY5IDEwLjA5em01LjI4LTI4YTQzLjU2IDQzLjU2IDAgMDAtMTYuOTEtMTMuMmMzLjI1LTcgNy45Mi0xMy44IDEzLjEtMjAuNnEzLjIxIDIwLjM5IDcuNTIgNDAuNjlhMjUuMzMgMjUuMzMgMCAwMC0zLjcxLTYuOTJ6bTY5LjM4LTM0LjgyYTcuNjggNy42OCAwIDAxLTQuMDctMi40MmMtNy4zNi02LjgzLTEwLjYyLTE1LjI5LTEzLjQxLTI2LjgzLTIuMzItOS41OS01LTIxLjUxLTItMzQuNjcgMS00LjU3IDIuMzEtMTIuNTggNy40NS0xMy44NCA1LjY2LS4zMiA4LjMzIDQuNjcgOS42NSA3LjMzIDIuNDIgNC44NiAzLjMzIDEyLjA3IDQgMTcuNzUgMS45OSAxNy43Mi0uOTcgMzUuMzctMS42MiA1Mi42NXptNDguNzUtNTQuMjljMS43NC0yLjgyIDQtNi45MiA4LjgzLTEwLjEzIDIuMjItMS40MSA1Ljc4LTEuNjkgNi41LTEuMzMgMi4yIDEuMTMgMi42MiAzIDIuOTQgNS40NC42NCA0Ljc5LTUuMSAxNy03LjIyIDIxLjktNi4xNCAxNC4yMi0xMyAyMi42My0yMiAyOS4zNyAxLjUtMTguMiAzLjI1LTMyLjc0IDEwLjk1LTQ1LjI1em02NiAxOTUuNjFjLTkuNTktNi4xOC0xNC0xMC4yNy0yMC4xNC0yNS44NC02LjQxLTE2LjItNi45My0yOC44NC02LjE4LTQwLjkzIDEtMTUuNTkgNS4xNS0yNi41OCAxMi4xMy0zMy45MiAzLjc5LTQgMTEuNDMtOS4xNSAxOS44OS05LjE1IDIxLjA4IDAgMzEuMzMgMTUuMDYgMzUuNDkgMjMuNzYgNS40MSAxMS4zMiA3LjgxIDM2Ljk1IDcuMTIgNTIuMDctLjQ5IDEwLjg4LTUuMzUgMjguODItOS4yIDQ0LjEyLTExLjU3LjA1LTMwLjUxLTQuNTktMzkuMDctMTAuMTF6IiBmaWxsPSIjMWQxZDFiIiBkYXRhLW5hbWU9IkxheWVyIDIiPjwvcGF0aD48L3N2Zz4="
+                                                alt=""
+                                            />
+                                        </div>
+                                        <ul class="project-card__tech-list">
+                                            <li
+                                                class="project-card__tech-list__item"
+                                            >
+                                                <img
+                                                    src="<%= require('./assets/laravel-logo.svg').default %>"
+                                                    alt="Laravel logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                            </li>
+                                            <li
+                                                class="project-card__tech-list__item"
+                                            >
+                                                <img
+                                                    src="<%= require('./assets/vue-logo.svg').default %>"
+                                                    alt="Vue logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                            </li>
+                                            <li
+                                                class="project-card__tech-list__item"
+                                            >
+                                                <img
+                                                    src="<%= require('./assets/react-logo.svg').default %>"
+                                                    alt="React logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-card__pullout">
+                                        <p class="project-card__title">
+                                            Joanne McClung
+                                        </p>
+                                        <p class="project-card__url">
+                                            <a href="#">joannemcclung.com</a>
+                                        </p>
+                                        <p class="project-card__read-more">
+                                            Read more...
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="projects-list__item">
+                                <div class="project-card">
+                                    <div class="project-card__main">
+                                        <div
+                                            class="project-card__corner project-card__corner--top-left"
+                                        >
+                                            <a href="#">
+                                                <img
+                                                    class="project-card__corner__icon"
+                                                    src="<%= require('./assets/github_142.svg').default %>"
+                                                />
+                                            </a>
+                                        </div>
+                                        <div
+                                            class="project-card__image-container"
+                                        >
+                                            <img
+                                                class="project-card__image"
+                                                src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQ2LjQ2IDI4OC4xNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBjbGFzcz0ibG9nb19faWNvbiI+PHBhdGggZD0iTTQ0Ni40NiAyMDUuNTFjLTQuOTQgNy4wNy02LjU2IDE4LjI2LTE1LjYxIDI5LjMtNC40NyA1LjQ1LTkuNyA4LjU0LTE1LjcgMTAuODFhNTQuNTYgNTQuNTYgMCAwMS03LjQ4IDEuODVjNC43Ny0xNS41NyAxMC41MS0zMS44NiAxMC01OC4wOC0uMzMtMTcuMTctNC4xNC0zOS41NC0xMi44OS00OS43OS04LTkuNC0yMS41NS0xNy43OS0zMy44OC0xNy4yMi04LjI3LjM4LTE0LjcyIDIuODctMjMuMTIgMTAtMTAuOSA5LjI1LTE3Ljk1IDI4LjE1LTE4LjQgNDQuMzItLjQ0IDE2IC43MiAyNS40NSA3LjM0IDQwLjQ3IDYuOTMgMTUuNyAxNi43MiAyNS4xNCAyOC4xNCAzMC40MiAxNC43NyA2LjgyIDI3LjQ1IDcuNTQgNDAuMzIgNi41NWE4MiA4MiAwIDAxLTEwLjYxIDEzLjM2Yy0xMi4zNCAxMi4xMy00MS4zIDIxLjc1LTYyLjEuMTgtNS4xMi01LjMyLTE0LjQzLTIwLTE5LjY1LTMxLjc5LTMtNi42Ni0xMy41OS01MS4yNS0xNS45NC03NS0zLTMwLjUtMy44Ny00Ni4xLTUuMzMtNjUuNTggMS41My0uODQgMy4xNC0yLjYzIDQuNTItMy43MyA4LTYuMzQgMTguODgtMTUuNDUgMjYuMDYtMzIuMDkgMi40My01LjYzIDUuNDYtMTYuNjUgMy43OS0yMy4xNS0xLTQuMDctMy44MS02LTcuNjUtNy45My0zLjE3LTEuNjItOS4zMi0xLjQ3LTEyLjI2LS4wNi00IDEuOTQtNy42NSA1LjkyLTEwIDkuMzlDMjg0LjU2IDU0LjggMjgyLjU2IDcyIDI4MS4zNCA5Mi44NWMtNS45NCA0LjgxLTEwLjkgNi4zNy0xOC4yNiA0IC42Ny0xNy43MSAxLjA4LTM2LjgtMS01NWEzNS44NSAzNS44NSAwIDAwLTYuODQtMTguMDdjLTQuNDItNS45NC0xMy40MS05Ljg3LTIwLjgtNi4xNy02LjExIDMuMDctOC40MyA5LjgtOS43NyAxNS4zMWE3MS42NyA3MS42NyAwIDAwLjE0IDM1LjY4QzIyOCA4MS44OSAyMzUuMTIgOTQgMjQ2LjE0IDk5LjM2YzMuMTcgMS41MyAzLjE3IDEuNTMgNi41OSAyLjkxLTIuODMgMjUtNy43NSA0Ny43LTExLjI1IDY5LjM0LTEuNDggOS4xMy0yLjczIDE0LjYxLTUuMjcgMjEuNjgtMy4zOSA5LjQyLTQuNDkgMTYuMzMtMTQuMjggMTYuMTktNy44MS0uMTEtMTMuMTQtMTcuODgtMTUuNzMtMjctOC0yOC4zNS0xMi41OS02MS41MS0yMC44Ny05My43OGwtMS4xLTcuNDgtNC43NiA2Yy03LjM2IDkuMjYtMTQuMjcgMTguNDgtMTguNzUgMjguMTlhNzYuNjQgNzYuNjQgMCAwMC0yNi0zLjEyIDIuNTYgMi41NiAwIDAxLS4xMS0uMjQgMTY5LjM3IDE2OS4zNyAwIDAxLTkuODEtMjUuODQgMTIyLjc5IDEyMi43OSAwIDAwMjIuNi0xMi42OGMxNC40OC0xMC4yNiAxOS4yNC0xMy42MyAyNS4wNy0yNi45NSA5LjM1LTIxLjM1IDMuMzctMzQuODMtLjE3LTM5LjE4LTcuOS05Ljc0LTI1LjY1LTguNjItMzYtMy43NS0xMy4zOCA2LjMtMjMuNzUgMjcuNjctMjUuOTMgNDYtMS40MiAxMS44OS0uNTEgMjYuNjUgMS4yNiAzNC41OS0yMC4wOSA3LjU5LTM3LjM4IDguNC02MC4xNSA1LjY3YTI1LjA4IDI1LjA4IDAgMDAuMjktMTQuMDhjLTEuNjEtNS40NC02LjY1LTEwLjE0LTEyLjU0LTExLjY5QTEyLjkgMTIuOSAwIDAwMjcgNjYuODNhMTIuNDYgMTIuNDYgMCAwMC0zLjkxIDkuMjggMTcgMTcgMCAwMDUuMzggMTIuMjRjNCAzLjY5IDExLjM0IDUuODYgMTYuNDUgNy0uNTcgMS4yNS0yIDQuMTEtMi41NCA1LjMzLTEwLjU3IDIzLjcxLTE5LjYgMzMuNTUtNDIuMzggNDAuODd2MS44MmMxNy00LjkyIDM0LjE5LTE2LjY0IDQ2LjgtNDEuOTEuODktMS43NyAxLjc0LTMuNTYgMi41MS01LjM3IDI0IDMuMDkgNDIuNTcgMi4yOCA2My44Ny01LjYxIDIgOC45MSAyLjU0IDEyLjI0IDUuMTcgMTkuNTUtNC42IDEuMDktNy42NSAyLTkuMTUgMi40Ny0xNy4xMSA1LjUtMzQuNDMgMTQuMTItNDguMiAyNi44Ny0xNS41NSAxNC40MS0yNy42OCAzMi40NC0zMC43NiA1MS4yNC0zLjE0IDE5LjE5LTEuNjQgNDQuMSA4LjIgNjEuNzMgNy4wNiAxMi42OCAyNyAzMy45MiA1My42OSAzNS43MiAxMy41My45MSAzMy44OS02IDQ0Ljk0LTE2LjM0IDkuMS04LjUgMTgtMjIuNjQgMjIuNTItMzcuMzMgNi43LTIxLjY0IDQtNDcuMTctMi4wNS02OS0zLjg4LTE0LTEwLjM0LTI3LjI4LTE2LjYtNDAuMDlsLTMuMjktNi43OWE2OC4yIDY4LjIgMCAwMTIwLjY2IDIuNzYgNDcuMTEgNDcuMTEgMCAwMC0yLjY3IDE3LjkzYy4zNiA3IDIuNTggMTIuNzQgNi40MSAxNi43NiA1IDUuMjQgMTIuOTMgNyAxOC44NiA0LjE5YTEzLjY0IDEzLjY0IDAgMDA3LjUyLTkuMzYgMTkuOSAxOS45IDAgMDAuNDgtNi4zNmMzIDEzLjQ5IDYuMTQgMjYuOTUgMTAgNDAuMTUgMy41NCAxMiA4LjA2IDIxLjkxIDIwLjA2IDI3IDEwLjQ4IDQuNDMgMjEuNjctMy43IDI3LTExLjM0czctMTYuNDMgOC42My0yNi4zM2MzLjUxLTIxLjczIDYuODUtNDUuNyA4LjE3LTcwLjczYTQ4LjgyIDQ4LjgyIDAgMDAxOC4yOC0zLjI4Yy0uMzUgMTguODIgMS43NSA0OC4xMSA0LjYxIDcxLjU2IDMuNzUgMzAuNjMgMS45NCA0OC4yNyAyMS44NyA4MC40NCA2LjYxIDEwLjY4IDE0LjIxIDE3LjcyIDIxLjQxIDIzLjUyIDcuNTkgNi4xIDE3LjQgOC43MiAyOC41OSA4LjcyYTU0LjM5IDU0LjM5IDAgMDAzNC4yNi0xMi4yM2M2LTUuMSAxMC40My0xMS41NiAxNC4wNy0xOEE3NC41NyA3NC41NyAwIDAwNDE4IDI0OC44YzQuNjktMi4yNCAxMC4wNi02Ljg4IDE0LTEyLjA4IDktMTEuOTIgMTAtMjMuNzIgMTQuNDYtMjkuMjJhMTguODcgMTguODcgMCAwMTAtMS45OXpNNDYuMzggODkuMzFjLTQuNTUtLjg3LTEwLjI3LTIuNjUtMTMuNC01LjU2LTItMS45LTQuNzUtNC40My01LjEyLTcuNTQtLjE2LTEuMzQtLjc1LTQuNzggMS43Ny03LjMzQTEwLjQ2IDEwLjQ2IDAgMDEzNSA2Ni41NmExNC44OSAxNC44OSAwIDAxNC40NS41NmMzLjY5IDEgNS40MiA1LjE4IDYuNDEgOC41MSAxLjE0IDMuNjYgMS42NiA5Ljg3LjUyIDEzLjY4em03NS4yMS0zMS4xNWMuMjgtMTYuNDMgMS4zOC0zOCAxOC00Ni4zIDMuODItMS45IDE0LTIuNyAxOC44OC0xLjUzIDcuMTMgMi45NCAxMC4wNiA2LjkyIDEwLjQgMTIuMDdBMjkuNiAyOS42IDAgMDExNjcgMzYuM2MtNC45NCAxMi4zNS0xMCAyMi41NS0yMy41IDMyLjA5YTExNS42MyAxMTUuNjMgMCAwMS0yMC4yOCAxMS40NCA5NS41NiA5NS41NiAwIDAxLTEuNjMtMjEuNjd6bTE4LjMyIDExMi4xOWM1LjY0IDIwLjM5IDguNTUgNDAuNzUgNi43NCA2MC4zMS0xLjMxIDE0LjE3LTcgMjMuODEtMTUuMjQgMzEuNTQtOS42NiA5LTIyLjMyIDEzLjY1LTMzLjg4IDEyLjM5LTIwLjc4LTIuMjUtMzQuNzItMjItNDEuMTctMzMuNTktOS4yNi0xNi42LTExLjc4LTMwLjUyLTExLTQ0Ljg0LjkyLTE3LjM5IDcuODgtMzYuNzQgMjIuMjItNTAgMTIuOS0xMiAzMC4zMS0yMC43IDUwLjM1LTI1LjI2bDQtLjkyYzEuMTEgMy4zMiAyLjcyIDcuNTYgMy44NSAxMC4zNmEzNjcuNzUgMzY3Ljc1IDAgMDExNC4xMyA0MC4wMXptMzguNTgtMTEuNDNjLTMuOSAxLjc4LTkuOC4xNC0xMy41NS00Ljc2LTMuMDgtNC0zLjI1LTExLjI4LTMuNDUtMTUuMDctLjI3LTUuMjIgMS4zMi0xMC41IDMtMTUuNDYgNS40NiAyLjU1IDExLjI4IDUuNzUgMTUgMTAuNjUgMy4yMSA0LjIgNC41OCA3Ljc4IDQuNjkgMTQuNTVhMTEuMDYgMTEuMDYgMCAwMS01LjY5IDEwLjA5em01LjI4LTI4YTQzLjU2IDQzLjU2IDAgMDAtMTYuOTEtMTMuMmMzLjI1LTcgNy45Mi0xMy44IDEzLjEtMjAuNnEzLjIxIDIwLjM5IDcuNTIgNDAuNjlhMjUuMzMgMjUuMzMgMCAwMC0zLjcxLTYuOTJ6bTY5LjM4LTM0LjgyYTcuNjggNy42OCAwIDAxLTQuMDctMi40MmMtNy4zNi02LjgzLTEwLjYyLTE1LjI5LTEzLjQxLTI2LjgzLTIuMzItOS41OS01LTIxLjUxLTItMzQuNjcgMS00LjU3IDIuMzEtMTIuNTggNy40NS0xMy44NCA1LjY2LS4zMiA4LjMzIDQuNjcgOS42NSA3LjMzIDIuNDIgNC44NiAzLjMzIDEyLjA3IDQgMTcuNzUgMS45OSAxNy43Mi0uOTcgMzUuMzctMS42MiA1Mi42NXptNDguNzUtNTQuMjljMS43NC0yLjgyIDQtNi45MiA4LjgzLTEwLjEzIDIuMjItMS40MSA1Ljc4LTEuNjkgNi41LTEuMzMgMi4yIDEuMTMgMi42MiAzIDIuOTQgNS40NC42NCA0Ljc5LTUuMSAxNy03LjIyIDIxLjktNi4xNCAxNC4yMi0xMyAyMi42My0yMiAyOS4zNyAxLjUtMTguMiAzLjI1LTMyLjc0IDEwLjk1LTQ1LjI1em02NiAxOTUuNjFjLTkuNTktNi4xOC0xNC0xMC4yNy0yMC4xNC0yNS44NC02LjQxLTE2LjItNi45My0yOC44NC02LjE4LTQwLjkzIDEtMTUuNTkgNS4xNS0yNi41OCAxMi4xMy0zMy45MiAzLjc5LTQgMTEuNDMtOS4xNSAxOS44OS05LjE1IDIxLjA4IDAgMzEuMzMgMTUuMDYgMzUuNDkgMjMuNzYgNS40MSAxMS4zMiA3LjgxIDM2Ljk1IDcuMTIgNTIuMDctLjQ5IDEwLjg4LTUuMzUgMjguODItOS4yIDQ0LjEyLTExLjU3LjA1LTMwLjUxLTQuNTktMzkuMDctMTAuMTF6IiBmaWxsPSIjMWQxZDFiIiBkYXRhLW5hbWU9IkxheWVyIDIiPjwvcGF0aD48L3N2Zz4="
+                                                alt=""
+                                            />
+                                        </div>
+                                        <ul class="project-card__tech-list">
+                                            <li
+                                                class="project-card__tech-list__item"
+                                            >
+                                                <img
+                                                    src="<%= require('./assets/js-logo.svg').default %>"
+                                                    alt="React logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-card__pullout">
+                                        <p class="project-card__title">
+                                            JS Countdown
+                                        </p>
+                                        <p class="project-card__url">
+                                            <a href="#"></a>
+                                        </p>
+                                        <p class="project-card__read-more">
+                                            Read more...
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <%= require('html-loader!./partials/contact/index.html') %>
         </div>
-    </div>
 
-    <div id="app">
-        <%= require('html-loader!./partials/introduction/index.html') %> <%=
-            require('html-loader!./partials/about/index.html') %> <%=
-            require('html-loader!./partials/projects/index.html') %> <%=
-            require('html-loader!./partials/contact/index.html') %>
-    </div>
-
-    <div class="toolbar">
-        <div class="toolbar__inner">
-            <div class="toolbar__block toolbar__block--logo">
-                <a
-                    href="#"
-                    title="Home"
-                    class="logo"
+        <div class="toolbar">
+            <div class="toolbar__inner">
+                <div class="toolbar__block toolbar__block--logo">
+                    <button
+                        data-target="#introduction"
+                        title="Home"
+                        class="logo js-page-scroller"
+                    >
+                        <span class="logo__content logo__content--icon">M</span>
+                        <span class="logo__content logo__content--text"
+                            >Markus</span
+                        >
+                    </button>
+                </div>
+                <div
+                    class="toolbar__block toolbar__block--btn"
+                    onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
                 >
-                    <span class="logo__content logo__content--icon">M</span>
-                    <span class="logo__content logo__content--text">Markus</span>
-                </a>
-            </div>
-            <div
-                class="toolbar__block toolbar__block--btn"
-                onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
-            >
-                <button class="toolbar__menu-btn">
-                    <span class="toolbar__menu-btn--line"></span>
-                    <span class="toolbar__menu-btn--line"></span>
-                    <span class="toolbar__menu-btn--line"></span>
-                    <span class="toolbar__menu-btn--text">Menu</span>
-                </button>
-            </div>
-            <div class="toolbar__block toolbar__block--main">
-                <nav class="navigation">
-                    <ul class="navigation__list">
-                        <li class="navigation__list-item">
-                            <a
-                                href="#"
-                                class="navigation__link"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/home_1391.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">Home</span>
-                            </a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a
-                                href="#"
-                                class="navigation__link"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/desktop_232.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">Projects</span>
-                            </a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a
-                                href="#"
-                                class="navigation__link"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/emoji_happy_518.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">About</span>
-                            </a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a
-                                href="#"
-                                class="navigation__link"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/messages_chat_1557.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">Contact</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="toolbar__block toolbar__block--secondary">
-                <nav class="navigation">
-                    <ul class="navigation__list">
-                        <li class="navigation__list-item">
-                            <a
-                                href="https://www.linkedin.com"
-                                class="navigation__link"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/linkedin_161.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">LinkedIn</span>
-                            </a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a
-                                href="https://www.github.com/MarkusAleksander"
-                                class="navigation__link"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/github_142.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">Github</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                    <button class="toolbar__menu-btn">
+                        <span class="toolbar__menu-btn--line"></span>
+                        <span class="toolbar__menu-btn--line"></span>
+                        <span class="toolbar__menu-btn--line"></span>
+                        <span class="toolbar__menu-btn--text">Menu</span>
+                    </button>
+                </div>
+                <div class="toolbar__block toolbar__block--main">
+                    <nav class="navigation">
+                        <ul class="navigation__list">
+                            <li class="navigation__list-item">
+                                <button
+                                    data-target="#introduction"
+                                    class="navigation__link js-page-scroller"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/home_1391.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span
+                                        class="navigation__content navigation__content--text"
+                                        >Home</span
+                                    >
+                                </button>
+                            </li>
+                            <li class="navigation__list-item">
+                                <button
+                                    data-target="#about"
+                                    class="navigation__link js-page-scroller"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/emoji_happy_518.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span
+                                        class="navigation__content navigation__content--text"
+                                        >About</span
+                                    >
+                                </button>
+                            </li>
+                            <li class="navigation__list-item">
+                                <button
+                                    data-target="#projects"
+                                    class="navigation__link js-page-scroller"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/desktop_232.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span
+                                        class="navigation__content navigation__content--text"
+                                        >Projects</span
+                                    >
+                                </button>
+                            </li>
+                            <li class="navigation__list-item">
+                                <button
+                                    data-target="#contact"
+                                    class="navigation__link js-page-scroller"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/messages_chat_1557.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span
+                                        class="navigation__content navigation__content--text"
+                                        >Contact</span
+                                    >
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="toolbar__block toolbar__block--secondary">
+                    <nav class="navigation">
+                        <ul class="navigation__list">
+                            <li class="navigation__list-item">
+                                <a
+                                    href="https://www.linkedin.com"
+                                    class="navigation__link"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/linkedin_161.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span
+                                        class="navigation__content navigation__content--text"
+                                        >LinkedIn</span
+                                    >
+                                </a>
+                            </li>
+                            <li class="navigation__list-item">
+                                <a
+                                    href="https://www.github.com/MarkusAleksander"
+                                    class="navigation__link"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/github_142.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span
+                                        class="navigation__content navigation__content--text"
+                                        >Github</span
+                                    >
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

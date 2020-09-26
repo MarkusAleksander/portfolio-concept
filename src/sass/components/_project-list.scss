@@ -1,9 +1,9 @@
 .projects-list {
-
     $projects_list: &;
-    
+
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     overflow-x: scroll;
     padding: 2em;
 
@@ -13,6 +13,9 @@
 
     &__item {
         padding: 0 1em;
-    }
 
+        @media (min-width: 1024px) {
+            padding: 0 2em;
+        }
+    }
 }

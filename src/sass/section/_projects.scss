@@ -1,3 +1,15 @@
 .section--projects {
+    align-items: stretch;
 
+    .inner-content {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .block--projects-list {
+        max-width: 100%;
+    }
 }

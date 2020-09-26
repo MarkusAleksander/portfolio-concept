@@ -1,0 +1,59 @@
+.work-history {
+    text-align: left;
+
+    &__item {
+        & + & {
+            margin-top: 2em;
+        }
+    }
+
+    &__company {
+        &__logo {
+            display: block;
+            width: auto;
+            height: auto;
+            max-height: 50px;
+            max-width: 150px;
+            margin-bottom: 1em;
+        }
+
+        margin-bottom: 0.5em;
+        white-space: nowrap;
+
+        span {
+            position: relative;
+
+            &:before {
+                position: absolute;
+                content: "";
+                background-color: #fff;
+                border: 3px solid $light_black;
+                display: block;
+                width: 9px;
+                height: 9px;
+                border-radius: 50%;
+                top: 50%;
+                transform: translate3d(0, -50%, 0);
+                left: -15px;
+            }
+        }
+    }
+
+    &__role {
+        margin-bottom: 0.5em;
+        white-space: nowrap;
+    }
+
+    &__dates {
+        margin-bottom: 0.5em;
+        white-space: nowrap;
+        &__start {
+        }
+
+        &__end {
+        }
+    }
+
+    &__description {
+    }
+}

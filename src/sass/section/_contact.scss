@@ -1,3 +1,20 @@
 .section--contact {
+    .block--contact {
+        text-align: center;
+    }
 
+    .preamble {
+        font-size: 2em;
+        margin-bottom: 2em;
+        font-family: $headline-font;
+        font-weight: bold;
+    }
+
+    .contact-address {
+        font-size: 2em;
+
+        span {
+            display: inline-block;
+        }
+    }
 }

@@ -1,5 +1,4 @@
 .project-card {
-
     $project_card: &;
 
     padding: 0;
@@ -8,12 +7,13 @@
     position: relative;
     border-radius: 25px;
     cursor: pointer;
+    transition: height 0.3s ease-in-out;
 
     &__main,
     &__pullout {
         background-color: #fff;
     }
-    
+
     &__main {
         border-radius: 25px;
         position: relative;
@@ -26,6 +26,11 @@
 
         & > * {
             position: absolute;
+        }
+
+        @media (min-width: 1024px) {
+            max-width: 500px;
+            width: 20vw;
         }
     }
 
@@ -41,9 +46,9 @@
             top: calc(50% - 2em);
             left: 50%;
             transform: translate3d(-50%, -50%, 0);
-            width: 100%;
+            width: 150%;
             height: auto;
-            max-width: 100%;
+            min-width: 100%;
         }
     }
 
@@ -57,6 +62,14 @@
         justify-content: space-around;
         align-items: center;
         padding: 1em 0.5em;
+
+        &__icon {
+            display: block;
+            width: 100%;
+            max-width: 30px;
+            max-height: 30px;
+            height: auto;
+        }
     }
 
     &__pullout {
@@ -71,4 +84,34 @@
         box-shadow: 1px 1px 2px 1px #ccc;
     }
 
+    &__corner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 0;
+        width: 20%;
+        transform: translate3d(50%, -50%, 0) rotate(45deg);
+        z-index: 1;
+        background-color: #eee;
+        padding: 20%;
+
+        a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+        }
+
+        &__icon {
+            display: block;
+            position: absolute;
+            width: 25%;
+            bottom: 20%;
+            left: 50%;
+            transform: translate3d(-50%, 50%, 0) rotate(-45deg);
+            z-index: 1;
+        }
+    }
 }

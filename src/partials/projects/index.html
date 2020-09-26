@@ -1,11 +1,13 @@
-<div class="section section--projects">
+<div class="section section--projects" id="projects">
     <div class="inner-content">
         <div class="block block--projects-list">
             <ul class="projects-list">
                 <li class="projects-list__item">
                     <div class="project-card">
                         <div class="project-card__main">
-                            <div class="project-card__corner project-card__corner--top-left">
+                            <div
+                                class="project-card__corner project-card__corner--top-left"
+                            >
                                 <a href="#">G</a>
                             </div>
                             <div class="project-card__image-container">
@@ -19,21 +21,26 @@
                                 <li class="project-card__tech-list__item">R</li>
                                 <li class="project-card__tech-list__item">V</li>
                                 <li class="project-card__tech-list__item">L</li>
-                                <li class="project-card__tech-list__item">JS</li>
+                                <li class="project-card__tech-list__item">
+                                    JS
+                                </li>
                             </ul>
                         </div>
                         <div class="project-card__pullout">
                             <p class="project-card__title">Joanne McClung</p>
-                            <p class="project-card__url"><a href="#">joannemcclung.com</a></p>
+                            <p class="project-card__url">
+                                <a href="#">joannemcclung.com</a>
+                            </p>
                             <p class="project-card__read-more">Read more...</p>
                         </div>
-
                     </div>
                 </li>
                 <li class="projects-list__item">
                     <div class="project-card">
                         <div class="project-card__main">
-                            <div class="project-card__corner project-card__corner--top-left">
+                            <div
+                                class="project-card__corner project-card__corner--top-left"
+                            >
                                 <a href="#">G</a>
                             </div>
                             <div class="project-card__image-container">
@@ -47,21 +54,26 @@
                                 <li class="project-card__tech-list__item">R</li>
                                 <li class="project-card__tech-list__item">V</li>
                                 <li class="project-card__tech-list__item">L</li>
-                                <li class="project-card__tech-list__item">JS</li>
+                                <li class="project-card__tech-list__item">
+                                    JS
+                                </li>
                             </ul>
                         </div>
                         <div class="project-card__pullout">
                             <p class="project-card__title">Joanne McClung</p>
-                            <p class="project-card__url"><a href="#">joannemcclung.com</a></p>
+                            <p class="project-card__url">
+                                <a href="#">joannemcclung.com</a>
+                            </p>
                             <p class="project-card__read-more">Read more...</p>
                         </div>
-
                     </div>
                 </li>
                 <li class="projects-list__item">
                     <div class="project-card">
                         <div class="project-card__main">
-                            <div class="project-card__corner project-card__corner--top-left">
+                            <div
+                                class="project-card__corner project-card__corner--top-left"
+                            >
                                 <a href="#">G</a>
                             </div>
                             <div class="project-card__image-container">
@@ -75,20 +87,27 @@
                                 <li class="project-card__tech-list__item">R</li>
                                 <li class="project-card__tech-list__item">V</li>
                                 <li class="project-card__tech-list__item">L</li>
-                                <li class="project-card__tech-list__item">JS</li>
+                                <li class="project-card__tech-list__item">
+                                    JS
+                                </li>
                             </ul>
                         </div>
                         <div class="project-card__pullout">
                             <p class="project-card__title">Joanne McClung</p>
-                            <p class="project-card__url"><a href="#">joannemcclung.com</a></p>
+                            <p class="project-card__url">
+                                <a href="#">joannemcclung.com</a>
+                            </p>
                             <p class="project-card__read-more">Read more...</p>
                         </div>
-
                     </div>
                 </li>
-                <!--  -->
+            </ul>
+        </div>
+    </div>
+</div>
+<!--  -->
 
-                <!-- <div class="project-card">
+<!-- <div class="project-card">
                         <h3 class="project-card__title">Joanne McClung</h3>
                         <div class="project-card__image-container">
                             <div class="project-card__image-container__border">
@@ -124,8 +143,8 @@
                             </ul>
                         </div>
                     </div> -->
-                </li>
-                <!-- <li class="projects-list__item">
+<!-- </li> -->
+<!-- <li class="projects-list__item">
                     <div class="project-card">
                         <h3 class="project-card__title">Joanne McClung</h3>
                         <div class="project-card__image-container">
@@ -285,73 +304,3 @@
                         </div>
                     </div>
                 </li> -->
-            </ul>
-            <script>
-                (function () {
-
-                    function onProjectCardClick(card, e) {
-                        e.stopPropagation();
-                        let is_current_card = card === document.querySelector(".project-card.open");
-                        closeAllCards();
-                        if (!is_current_card) {
-                            openCard(card);
-                        }
-                    }
-
-                    function openCard(card) {
-                        let pullout = card.querySelector(".project-card__pullout");
-                        if (!pullout) return;
-
-                        let pullout_height = (pullout.clientHeight - 25);
-                        let card_height = card.clientHeight;
-
-                        let new_height = card_height + pullout_height;
-
-                        card.classList.add("open");
-                        card.style.height = new_height + "px";
-
-                        window.addEventListener("resize", handleOpenCardSize);
-                    }
-
-                    function closeCard(card) {
-                        let main = card.querySelector(".project-card__main");
-                        if (!main) return;
-
-                        let new_height = main.clientHeight;
-
-                        card.classList.remove("open");
-                        card.style.height = new_height + "px";
-                        card.style.height = null;
-
-                        window.removeEventListener("resize", handleOpenCardSize);
-                    }
-
-                    function handleOpenCardSize() {
-                        let card = document.querySelector(".project-card.open");
-
-                        if (!card) return;
-
-                        let main_height = card.querySelector(".project-card__main").clientHeight;
-                        let pullout_height = card.querySelector(".project-card__pullout").clientHeight - 25;
-
-                        card.style.height = (main_height + pullout_height) + "px";
-                    }
-
-                    function closeAllCards() {
-                        let openCards = document.querySelectorAll(".project-card.open");
-                        for (let i = 0; i < openCards.length; i++) {
-                            closeCard(openCards[i]);
-                        }
-                    }
-
-                    let project_cards = document.querySelectorAll(".project-card");
-                    for (let i = 0; i < project_cards.length; i++) {
-                        let card = project_cards[i];
-                        card.addEventListener("click", onProjectCardClick.bind(null, card));
-                    }
-                    document.body.addEventListener("click", closeAllCards);
-                })();
-            </script>
-        </div>
-    </div>
-</div>
