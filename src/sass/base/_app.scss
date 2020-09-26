@@ -2,4 +2,12 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+
+    @media (min-width: 1024px) {
+        padding-left: 80px;
+    }
+
+    @media (min-width: 1440px) {
+        padding-left: 110px;
+    }
 }
