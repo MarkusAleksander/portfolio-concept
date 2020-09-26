@@ -21,6 +21,12 @@ body {
         font-size: 1rem;
     }
 
+    &.body-fix {
+        height: 100vw;
+        overflow-y: hidden;
+        padding-right: 5px;
+    }
+
     font-family: $body-font;
     // overflow: hidden;
     max-width: 100%;
