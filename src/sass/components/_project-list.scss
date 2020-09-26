@@ -1,15 +1,19 @@
 .projects-list {
     $projects_list: &;
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    overflow-x: scroll;
-    padding: 2em;
+    &__outer {
+        overflow-x: scroll;
+        padding: 2em 0;
 
-    &::-webkit-scrollbar {
-        display: none;
+        // &::-webkit-scrollbar {
+        //     display: none;
+        // }
     }
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-right: 2em;
 
     &__item {
         padding: 0 1em;

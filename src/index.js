@@ -8,7 +8,7 @@ setupProjectSlider();
 setupProjectCards();
 setupPageScroll();
 
-let nav_items = document.querySelectorAll(".toolbar .js-page-scroller");
+let nav_items = document.querySelectorAll(".js-page-scroller");
 
 for (let i = 0; i < nav_items.length; i++) {
     let nav_item = nav_items[i];

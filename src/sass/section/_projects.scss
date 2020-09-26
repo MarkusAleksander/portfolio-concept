@@ -1,15 +1,31 @@
 .section--projects {
-    align-items: stretch;
+    // align-items: stretch;
 
     .inner-content {
-        width: 100%;
-        min-height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // width: 100%;
+        // min-height: 100%;
+        // // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // flex-wrap: wrap;
     }
 
+    .block--header,
     .block--projects-list {
-        max-width: 100%;
+        h2 {
+            margin-bottom: 0.5em;
+            text-align: center;
+            font-size: 7vw;
+
+            @media (min-width: 768px) {
+                font-size: 4vw;
+            }
+
+            @media (min-width: 1440px) {
+                font-size: 58px;
+            }
+        }
+        width: 100%;
+        flex: 1 0 100%;
     }
 }

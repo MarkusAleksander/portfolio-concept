@@ -4,12 +4,32 @@
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
 
-            & > * {
-                flex: 1 1 50%;
-                padding: 1em;
+    .block--header {
+        flex: 1 0 100%;
+        h2 {
+            margin-bottom: 0.5em;
+            text-align: center;
+            font-size: 7vw;
+
+            @media (min-width: 768px) {
+                font-size: 4vw;
+            }
+
+            @media (min-width: 1440px) {
+                font-size: 58px;
             }
         }
+    }
+
+    .block--about,
+    .block--work-history {
+        flex: 1 0 50%;
+        max-width: 50%;
+        padding: 1em;
     }
 
     .block--about {
@@ -19,10 +39,6 @@
         @media (min-width: 768px) {
             text-align: right;
             margin-bottom: 0;
-        }
-
-        h2 {
-            margin-bottom: 1em;
         }
     }
 }

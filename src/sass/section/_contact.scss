@@ -5,16 +5,62 @@
 
     .preamble {
         font-size: 2em;
-        margin-bottom: 2em;
+        margin-bottom: 0;
         font-family: $headline-font;
         font-weight: bold;
     }
 
     .contact-address {
         font-size: 2em;
+        margin: 1em 0;
 
-        span {
-            display: inline-block;
+        @media (min-width: 768px) {
+            a {
+                position: relative;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -0.2em;
+                    left: 50%;
+                    width: 0%;
+                    transition: width 0.3s ease-in-out;
+                    background-color: #111;
+                    height: 4px;
+                    transform: translate3d(-50%, 0, 0) skew(-45deg);
+                }
+
+                &:hover {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-links {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+
+        &__item {
+            width: 35px;
+            height: 35px;
+            margin: 0 2em;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                display: block;
+                height: auto;
+            }
         }
     }
 }

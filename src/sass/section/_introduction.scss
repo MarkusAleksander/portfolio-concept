@@ -1,40 +1,44 @@
 .section--introduction {
-    // h1,
-    // p {
     h1 {
         margin: 0;
+        font-size: 7vw;
+
+        @media (min-width: 1440px) {
+            font-size: 100px;
+        }
     }
 
-    .block {
-        // position: absolute;
-        // top: 50%;
-        // padding: 0 1em;
-        // overflow: hidden;
+    .introduction {
+        &__cta {
+            margin-top: 1em;
+            display: inline-block;
+            padding: 0.5em 1em;
+            border: 2px solid $light_black;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: $light_black;
+            position: relative;
+            transition: color 0.3s ease-in-out;
 
-        &--header {
-            // transform: translateY(-50%);
-            // width: 66%;
-            // left: 15%;
+            &:before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: 100%;
+                background-color: $light_black;
+                transition: top 0.3s ease-in-out;
+                content: "";
+                z-index: -1;
+            }
 
-            h1 {
-                font-size: 7vw;
+            &:hover {
+                color: #fff;
 
-                @media (min-width: 1440px) {
-                    font-size: 100px;
+                &:before {
+                    top: 0%;
                 }
             }
         }
-
-        // &--preamble {
-        //     transform: translateY(-50%);
-        //     width: 33%;
-        //     left: 0;
-
-        //     p {
-        //         font-size: 1.8vw;
-        //         transform: translate3d(0, 100%, 0);
-        //         text-align: center;
-        //     }
-        // }
     }
 }
