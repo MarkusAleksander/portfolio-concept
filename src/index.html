@@ -4,721 +4,777 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-    <!--<![endif]-->
+<!--<![endif]-->
 
-    <head>
-        <%= require('html-loader!./partials/head.html') %>
-        <title><%= htmlWebpackPlugin.options.title %></title>
-    </head>
+<head>
+    <%= require('html-loader!./partials/head.html') %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
 
-    <body>
-        <!--[if lt IE 7]>
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">
                 You are using an <strong>outdated</strong> browser. Please
                 <a href="#">upgrade your browser</a> to improve your experience.
             </p>
         <![endif]-->
-        <div class="personal-icon  js-page-scroller" data-target="#about">
-            <div class="personal-icon__rotations"></div>
-            <div class="personal-icon__frame">
-                <img
-                    class="personal-icon__img"
-                    src="<%= require('./assets/me.jpg').default %>"
-                />
-            </div>
-            <div class="personal-icon__popup">
-                <p class="personal-icon__copy">That's me!</p>
+    <div
+        class="personal-icon  js-page-scroller"
+        data-target="#about"
+    >
+        <div class="personal-icon__rotations"></div>
+        <div class="personal-icon__frame">
+            <img
+                class="personal-icon__img"
+                src="<%= require('./assets/me.jpg').default %>"
+            />
+        </div>
+        <div class="personal-icon__popup">
+            <p class="personal-icon__copy">That's me!</p>
+        </div>
+    </div>
+
+    <div id="app">
+        <%= require('html-loader!./partials/introduction/index.html') %>
+
+        <div
+            class="section section--about"
+            id="about"
+        >
+            <div class="inner-content">
+                <div class="block block--header">
+                    <h2>About.</h2>
+                </div>
+                <div class="block block--about">
+                    <p class="about--headline">I'm Mark, a Front&#8209;End Developer working in the fast-paced world of
+                        Fashion.</p>
+                    <p>Currently I work at Rivendell Europe Ltd providing a service to <span>N Brown Group PLC</span> as
+                        the
+                        <span>Javascript</span> maestro, developing
+                        <span>responsive</span> &amp;
+                        <span>interactive</span> campaign pages across different brands, creating <span>A/B tests</span>
+                        using
+                        <span>Monetate</span> and assisting the wider team with
+                        dev help &amp; knowledge on all things <span>HTML</span>, <span>CSS</span> and
+                        <span>Javascript</span>.
+                    </p>
+                    <p>I've also spent time building <span>dynamic</span> websites for small businesses from scratch
+                        using <span>PHP</span> and
+                        <span>Laravel</span>, ranging from the basic brochure to the e-commerce.</p>
+
+                    <button
+                        class="about__cta js-page-scroller"
+                        data-target="#projects"
+                    >
+                        View some work
+                    </button>
+                    <p class="about--headline">Skills include:</p>
+                    <p>HTML, CSS, SASS/SCSS, BEM, Javascript, JQuery, React, VueJS, PHP, Laravel, SQL, APIs, Monetate,
+                        Adobe Photoshop, Adobe Dreamweaver, VSCode,
+                        Bootstrap, Bulma, Git, JSON, Gulp, Webpack,
+                    </p>
+                </div>
+                <div class="block block--work-history">
+                    <ul class="work-history">
+                        <li class="work-history__item">
+                            <h3 class="work-history__company">
+                                <img
+                                    src="<%= require('./assets/rivendell-logo.png').default %>"
+                                    alt=""
+                                    class="work-history__company__logo"
+                                />
+                                <span>Rivendell Europe Ltd</span>
+                            </h3>
+                            <p class="work-history__role">
+                                Front End Developer
+                            </p>
+                            <p class="work-history__dates">
+                                <span class="work-history__dates__start">May 2018</span>
+                                to
+                                <span class="work-history__dates__end">Present</span>
+                            </p>
+                            <p class="work-history__description">
+                                Building campaign &amp; promo pages. Finding and providing solutions to complex
+                                requirements. Understanding the systems provided by N Brown PLC. Assisting and helping
+                                the design team with dev help, queries &amp; bug fixes. Consulting with Marketing and
+                                the UX team on future ideas for A/B testing and creative builds.
+                            </p>
+                        </li>
+                        <li class="work-history__item">
+                            <h3 class="work-history__company">
+                                <span>Freelancing</span>
+                            </h3>
+                            <p class="work-history__dates">
+                                <span class="work-history__dates__start">February 2018</span>
+                                to
+                                <span class="work-history__dates__end">May 2018</span>
+                            </p>
+                            <p class="work-history__description">
+                                Self educating on current and newly-emerging technology and frameworks.
+                            </p>
+                        </li>
+                        <li class="work-history__item">
+                            <h3 class="work-history__company">
+                                <img
+                                    src="<%= require('./assets/web-best-practice-logo.png').default %>"
+                                    alt=""
+                                    class="work-history__company__logo"
+                                />
+                                <span>Web Best Practice Ltd</span>
+                            </h3>
+                            <p class="work-history__role">
+                                Junior Web Developer
+                            </p>
+                            <p class="work-history__dates">
+                                <span class="work-history__dates__start">April 2017</span>
+                                to
+                                <span class="work-history__dates__end">February 2018</span>
+                            </p>
+                            <p class="work-history__description">
+                                Building fully responsive &amp; dynamic brochure and e-commerce sites initially using
+                                vanilla PHP then Laravel. Taking assets from PSDs and quickly developing and delivering
+                                a functional website. Working with clients to achieve their website aims.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <div id="app">
-            <%= require('html-loader!./partials/introduction/index.html') %>
+        <div
+            class="section section--projects"
+            id="projects"
+        >
+            <div class="inner-content">
+                <div class="block block--header">
+                    <h2>Selected works.</h2>
+                </div>
+                <div class="block block--projects-list">
+                    <div class="projects-list__outer">
+                        <ul class="projects-list">
+                            <li class="projects-list__item">
+                                <div class="project-card">
+                                    <div class="project-card__main">
+                                        <div class="project-card__corner project-card__corner--top-left">
+                                            <a
+                                                href="https://github.com/MarkusAleksander/react-music-library"
+                                                target="_blank"
+                                                rel="noopener noreferrer nofollow"
+                                            >
+                                                <img
+                                                    class="project-card__corner__icon"
+                                                    src="<%= require('./assets/github_142_black.svg').default %>"
+                                                />
+                                                <div class="project-card__corner__popup">
+                                                    <p>View on Github</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="project-card__image-container">
+                                            <img
+                                                class="project-card__image"
+                                                src="<%= require('./assets/music-library.jpg').default %>"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <ul class="project-card__tech-list">
+                                            <li class="project-card__tech-list__item">
+                                                <img
+                                                    src="<%= require('./assets/react-logo.svg').default %>"
+                                                    alt="React logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                                <div class="project-card__tech-list__popup">
+                                                    <p>React</p>
+                                                </div>
+                                            </li>
+                                            <li class="project-card__tech-list__item">
+                                                <img
+                                                    src="<%= require('./assets/firebase-logo.svg').default %>"
+                                                    alt="Firebase logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                                <div class="project-card__tech-list__popup">
+                                                    <p>Firebase</p>
+                                                </div>
+                                            </li>
+                                            <li class="project-card__tech-list__item">
+                                                <img
+                                                    src="<%= require('./assets/netlify-logo.svg').default %>"
+                                                    alt="Netlify logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                                <div class="project-card__tech-list__popup">
+                                                    <p>Netlify</p>
+                                                </div>
+                                            </li>
+                                            <li class="project-card__tech-list__item">
+                                                <img
+                                                    src="<%= require('./assets/bulma-logo.svg').default %>"
+                                                    alt="Bulma logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                                <div class="project-card__tech-list__popup">
+                                                    <p>Bulma</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-card__pullout">
+                                        <p class="project-card__title">
+                                            React Music Library
+                                        </p>
+                                        <p class="project-card__url">
+                                            <a
+                                                href="https://5f6f33ac3aa9ee85e4663333--trusting-bose-32f2ef.netlify.app/"
+                                                target="_blank"
+                                                rel="noopener noreferrer nofollow"
+                                            >View on Netlify</a>
+                                        </p>
+                                        <button class="project-card__read-more">
+                                            Read more...
+                                        </button>
+                                    </div>
+                                    <div class="project-card__modal">
+                                        <div class="project-card__modal__underlay"></div>
+                                        <div class="project-card__modal__content">
+                                            <div class="project-card__modal__inner">
+                                                <button class="project-card__modal__close"><span>Close</span></button>
+                                                <p class="project-card__title">React Music Library</p>
+                                                <p>React, Firebase, Netlify, Bulma, Spotify API</p>
+                                                <p>This project was started so that I could learn React through doing,
+                                                    and
+                                                    to get to grips with a few other bits of tech aswell. The idea came
+                                                    about when each time I went to a music store to buy new CDs, I would
+                                                    always forget what I did and didn't have, so having a library I
+                                                    could
+                                                    reference would be useful to keep track of my collection.</p>
+                                                <p>I decided to use Bulma for the styling as I'd become familiar using
+                                                    it in
+                                                    other personal projects, and it allowed me to focus purely on the
+                                                    functional side of the app. I then setup a series of cloud functions
+                                                    in
+                                                    Netlify which would allow me to interact both with Spotify to
+                                                    collect an
+                                                    API Key &amp; artist/album data and Google's Firebase, where I would
+                                                    store the saved artist/album IDs.</p>
+                                                <p>The functionality of the publicly accessible one has been locked so
+                                                    as to
+                                                    prevent messing about, but eventually I aim to create a
+                                                    user-specific
+                                                    version, where anyone can have an account.</p>
+                                                <p class="project-card__url">
+                                                    <a
+                                                        href="https://5f6f33ac3aa9ee85e4663333--trusting-bose-32f2ef.netlify.app/"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer nofollow"
+                                                    >View on Netlify</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="projects-list__item">
+                                <div class="project-card">
+                                    <div class="project-card__main">
+                                        <div class="project-card__image-container">
+                                            <img
+                                                class="project-card__image"
+                                                src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQ2LjQ2IDI4OC4xNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBjbGFzcz0ibG9nb19faWNvbiI+PHBhdGggZD0iTTQ0Ni40NiAyMDUuNTFjLTQuOTQgNy4wNy02LjU2IDE4LjI2LTE1LjYxIDI5LjMtNC40NyA1LjQ1LTkuNyA4LjU0LTE1LjcgMTAuODFhNTQuNTYgNTQuNTYgMCAwMS03LjQ4IDEuODVjNC43Ny0xNS41NyAxMC41MS0zMS44NiAxMC01OC4wOC0uMzMtMTcuMTctNC4xNC0zOS41NC0xMi44OS00OS43OS04LTkuNC0yMS41NS0xNy43OS0zMy44OC0xNy4yMi04LjI3LjM4LTE0LjcyIDIuODctMjMuMTIgMTAtMTAuOSA5LjI1LTE3Ljk1IDI4LjE1LTE4LjQgNDQuMzItLjQ0IDE2IC43MiAyNS40NSA3LjM0IDQwLjQ3IDYuOTMgMTUuNyAxNi43MiAyNS4xNCAyOC4xNCAzMC40MiAxNC43NyA2LjgyIDI3LjQ1IDcuNTQgNDAuMzIgNi41NWE4MiA4MiAwIDAxLTEwLjYxIDEzLjM2Yy0xMi4zNCAxMi4xMy00MS4zIDIxLjc1LTYyLjEuMTgtNS4xMi01LjMyLTE0LjQzLTIwLTE5LjY1LTMxLjc5LTMtNi42Ni0xMy41OS01MS4yNS0xNS45NC03NS0zLTMwLjUtMy44Ny00Ni4xLTUuMzMtNjUuNTggMS41My0uODQgMy4xNC0yLjYzIDQuNTItMy43MyA4LTYuMzQgMTguODgtMTUuNDUgMjYuMDYtMzIuMDkgMi40My01LjYzIDUuNDYtMTYuNjUgMy43OS0yMy4xNS0xLTQuMDctMy44MS02LTcuNjUtNy45My0zLjE3LTEuNjItOS4zMi0xLjQ3LTEyLjI2LS4wNi00IDEuOTQtNy42NSA1LjkyLTEwIDkuMzlDMjg0LjU2IDU0LjggMjgyLjU2IDcyIDI4MS4zNCA5Mi44NWMtNS45NCA0LjgxLTEwLjkgNi4zNy0xOC4yNiA0IC42Ny0xNy43MSAxLjA4LTM2LjgtMS01NWEzNS44NSAzNS44NSAwIDAwLTYuODQtMTguMDdjLTQuNDItNS45NC0xMy40MS05Ljg3LTIwLjgtNi4xNy02LjExIDMuMDctOC40MyA5LjgtOS43NyAxNS4zMWE3MS42NyA3MS42NyAwIDAwLjE0IDM1LjY4QzIyOCA4MS44OSAyMzUuMTIgOTQgMjQ2LjE0IDk5LjM2YzMuMTcgMS41MyAzLjE3IDEuNTMgNi41OSAyLjkxLTIuODMgMjUtNy43NSA0Ny43LTExLjI1IDY5LjM0LTEuNDggOS4xMy0yLjczIDE0LjYxLTUuMjcgMjEuNjgtMy4zOSA5LjQyLTQuNDkgMTYuMzMtMTQuMjggMTYuMTktNy44MS0uMTEtMTMuMTQtMTcuODgtMTUuNzMtMjctOC0yOC4zNS0xMi41OS02MS41MS0yMC44Ny05My43OGwtMS4xLTcuNDgtNC43NiA2Yy03LjM2IDkuMjYtMTQuMjcgMTguNDgtMTguNzUgMjguMTlhNzYuNjQgNzYuNjQgMCAwMC0yNi0zLjEyIDIuNTYgMi41NiAwIDAxLS4xMS0uMjQgMTY5LjM3IDE2OS4zNyAwIDAxLTkuODEtMjUuODQgMTIyLjc5IDEyMi43OSAwIDAwMjIuNi0xMi42OGMxNC40OC0xMC4yNiAxOS4yNC0xMy42MyAyNS4wNy0yNi45NSA5LjM1LTIxLjM1IDMuMzctMzQuODMtLjE3LTM5LjE4LTcuOS05Ljc0LTI1LjY1LTguNjItMzYtMy43NS0xMy4zOCA2LjMtMjMuNzUgMjcuNjctMjUuOTMgNDYtMS40MiAxMS44OS0uNTEgMjYuNjUgMS4yNiAzNC41OS0yMC4wOSA3LjU5LTM3LjM4IDguNC02MC4xNSA1LjY3YTI1LjA4IDI1LjA4IDAgMDAuMjktMTQuMDhjLTEuNjEtNS40NC02LjY1LTEwLjE0LTEyLjU0LTExLjY5QTEyLjkgMTIuOSAwIDAwMjcgNjYuODNhMTIuNDYgMTIuNDYgMCAwMC0zLjkxIDkuMjggMTcgMTcgMCAwMDUuMzggMTIuMjRjNCAzLjY5IDExLjM0IDUuODYgMTYuNDUgNy0uNTcgMS4yNS0yIDQuMTEtMi41NCA1LjMzLTEwLjU3IDIzLjcxLTE5LjYgMzMuNTUtNDIuMzggNDAuODd2MS44MmMxNy00LjkyIDM0LjE5LTE2LjY0IDQ2LjgtNDEuOTEuODktMS43NyAxLjc0LTMuNTYgMi41MS01LjM3IDI0IDMuMDkgNDIuNTcgMi4yOCA2My44Ny01LjYxIDIgOC45MSAyLjU0IDEyLjI0IDUuMTcgMTkuNTUtNC42IDEuMDktNy42NSAyLTkuMTUgMi40Ny0xNy4xMSA1LjUtMzQuNDMgMTQuMTItNDguMiAyNi44Ny0xNS41NSAxNC40MS0yNy42OCAzMi40NC0zMC43NiA1MS4yNC0zLjE0IDE5LjE5LTEuNjQgNDQuMSA4LjIgNjEuNzMgNy4wNiAxMi42OCAyNyAzMy45MiA1My42OSAzNS43MiAxMy41My45MSAzMy44OS02IDQ0Ljk0LTE2LjM0IDkuMS04LjUgMTgtMjIuNjQgMjIuNTItMzcuMzMgNi43LTIxLjY0IDQtNDcuMTctMi4wNS02OS0zLjg4LTE0LTEwLjM0LTI3LjI4LTE2LjYtNDAuMDlsLTMuMjktNi43OWE2OC4yIDY4LjIgMCAwMTIwLjY2IDIuNzYgNDcuMTEgNDcuMTEgMCAwMC0yLjY3IDE3LjkzYy4zNiA3IDIuNTggMTIuNzQgNi40MSAxNi43NiA1IDUuMjQgMTIuOTMgNyAxOC44NiA0LjE5YTEzLjY0IDEzLjY0IDAgMDA3LjUyLTkuMzYgMTkuOSAxOS45IDAgMDAuNDgtNi4zNmMzIDEzLjQ5IDYuMTQgMjYuOTUgMTAgNDAuMTUgMy41NCAxMiA4LjA2IDIxLjkxIDIwLjA2IDI3IDEwLjQ4IDQuNDMgMjEuNjctMy43IDI3LTExLjM0czctMTYuNDMgOC42My0yNi4zM2MzLjUxLTIxLjczIDYuODUtNDUuNyA4LjE3LTcwLjczYTQ4LjgyIDQ4LjgyIDAgMDAxOC4yOC0zLjI4Yy0uMzUgMTguODIgMS43NSA0OC4xMSA0LjYxIDcxLjU2IDMuNzUgMzAuNjMgMS45NCA0OC4yNyAyMS44NyA4MC40NCA2LjYxIDEwLjY4IDE0LjIxIDE3LjcyIDIxLjQxIDIzLjUyIDcuNTkgNi4xIDE3LjQgOC43MiAyOC41OSA4LjcyYTU0LjM5IDU0LjM5IDAgMDAzNC4yNi0xMi4yM2M2LTUuMSAxMC40My0xMS41NiAxNC4wNy0xOEE3NC41NyA3NC41NyAwIDAwNDE4IDI0OC44YzQuNjktMi4yNCAxMC4wNi02Ljg4IDE0LTEyLjA4IDktMTEuOTIgMTAtMjMuNzIgMTQuNDYtMjkuMjJhMTguODcgMTguODcgMCAwMTAtMS45OXpNNDYuMzggODkuMzFjLTQuNTUtLjg3LTEwLjI3LTIuNjUtMTMuNC01LjU2LTItMS45LTQuNzUtNC40My01LjEyLTcuNTQtLjE2LTEuMzQtLjc1LTQuNzggMS43Ny03LjMzQTEwLjQ2IDEwLjQ2IDAgMDEzNSA2Ni41NmExNC44OSAxNC44OSAwIDAxNC40NS41NmMzLjY5IDEgNS40MiA1LjE4IDYuNDEgOC41MSAxLjE0IDMuNjYgMS42NiA5Ljg3LjUyIDEzLjY4em03NS4yMS0zMS4xNWMuMjgtMTYuNDMgMS4zOC0zOCAxOC00Ni4zIDMuODItMS45IDE0LTIuNyAxOC44OC0xLjUzIDcuMTMgMi45NCAxMC4wNiA2LjkyIDEwLjQgMTIuMDdBMjkuNiAyOS42IDAgMDExNjcgMzYuM2MtNC45NCAxMi4zNS0xMCAyMi41NS0yMy41IDMyLjA5YTExNS42MyAxMTUuNjMgMCAwMS0yMC4yOCAxMS40NCA5NS41NiA5NS41NiAwIDAxLTEuNjMtMjEuNjd6bTE4LjMyIDExMi4xOWM1LjY0IDIwLjM5IDguNTUgNDAuNzUgNi43NCA2MC4zMS0xLjMxIDE0LjE3LTcgMjMuODEtMTUuMjQgMzEuNTQtOS42NiA5LTIyLjMyIDEzLjY1LTMzLjg4IDEyLjM5LTIwLjc4LTIuMjUtMzQuNzItMjItNDEuMTctMzMuNTktOS4yNi0xNi42LTExLjc4LTMwLjUyLTExLTQ0Ljg0LjkyLTE3LjM5IDcuODgtMzYuNzQgMjIuMjItNTAgMTIuOS0xMiAzMC4zMS0yMC43IDUwLjM1LTI1LjI2bDQtLjkyYzEuMTEgMy4zMiAyLjcyIDcuNTYgMy44NSAxMC4zNmEzNjcuNzUgMzY3Ljc1IDAgMDExNC4xMyA0MC4wMXptMzguNTgtMTEuNDNjLTMuOSAxLjc4LTkuOC4xNC0xMy41NS00Ljc2LTMuMDgtNC0zLjI1LTExLjI4LTMuNDUtMTUuMDctLjI3LTUuMjIgMS4zMi0xMC41IDMtMTUuNDYgNS40NiAyLjU1IDExLjI4IDUuNzUgMTUgMTAuNjUgMy4yMSA0LjIgNC41OCA3Ljc4IDQuNjkgMTQuNTVhMTEuMDYgMTEuMDYgMCAwMS01LjY5IDEwLjA5em01LjI4LTI4YTQzLjU2IDQzLjU2IDAgMDAtMTYuOTEtMTMuMmMzLjI1LTcgNy45Mi0xMy44IDEzLjEtMjAuNnEzLjIxIDIwLjM5IDcuNTIgNDAuNjlhMjUuMzMgMjUuMzMgMCAwMC0zLjcxLTYuOTJ6bTY5LjM4LTM0LjgyYTcuNjggNy42OCAwIDAxLTQuMDctMi40MmMtNy4zNi02LjgzLTEwLjYyLTE1LjI5LTEzLjQxLTI2LjgzLTIuMzItOS41OS01LTIxLjUxLTItMzQuNjcgMS00LjU3IDIuMzEtMTIuNTggNy40NS0xMy44NCA1LjY2LS4zMiA4LjMzIDQuNjcgOS42NSA3LjMzIDIuNDIgNC44NiAzLjMzIDEyLjA3IDQgMTcuNzUgMS45OSAxNy43Mi0uOTcgMzUuMzctMS42MiA1Mi42NXptNDguNzUtNTQuMjljMS43NC0yLjgyIDQtNi45MiA4LjgzLTEwLjEzIDIuMjItMS40MSA1Ljc4LTEuNjkgNi41LTEuMzMgMi4yIDEuMTMgMi42MiAzIDIuOTQgNS40NC42NCA0Ljc5LTUuMSAxNy03LjIyIDIxLjktNi4xNCAxNC4yMi0xMyAyMi42My0yMiAyOS4zNyAxLjUtMTguMiAzLjI1LTMyLjc0IDEwLjk1LTQ1LjI1em02NiAxOTUuNjFjLTkuNTktNi4xOC0xNC0xMC4yNy0yMC4xNC0yNS44NC02LjQxLTE2LjItNi45My0yOC44NC02LjE4LTQwLjkzIDEtMTUuNTkgNS4xNS0yNi41OCAxMi4xMy0zMy45MiAzLjc5LTQgMTEuNDMtOS4xNSAxOS44OS05LjE1IDIxLjA4IDAgMzEuMzMgMTUuMDYgMzUuNDkgMjMuNzYgNS40MSAxMS4zMiA3LjgxIDM2Ljk1IDcuMTIgNTIuMDctLjQ5IDEwLjg4LTUuMzUgMjguODItOS4yIDQ0LjEyLTExLjU3LjA1LTMwLjUxLTQuNTktMzkuMDctMTAuMTF6IiBmaWxsPSIjMWQxZDFiIiBkYXRhLW5hbWU9IkxheWVyIDIiPjwvcGF0aD48L3N2Zz4="
+                                                alt=""
+                                            />
+                                        </div>
+                                        <ul class="project-card__tech-list">
+                                            <li class="project-card__tech-list__item">
+                                                <img
+                                                    src="<%= require('./assets/laravel-logo.svg').default %>"
+                                                    alt="Laravel logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                                <div class="project-card__tech-list__popup">
+                                                    <p>Laravel</p>
+                                                </div>
+                                            </li>
+                                            <li class="project-card__tech-list__item">
+                                                <img
+                                                    src="<%= require('./assets/vue-logo.svg').default %>"
+                                                    alt="Vue logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                                <div class="project-card__tech-list__popup">
+                                                    <p>VueJS</p>
+                                                </div>
+                                            </li>
+                                            <li class="project-card__tech-list__item">
+                                                <img
+                                                    src="<%= require('./assets/react-logo.svg').default %>"
+                                                    alt="React logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                                <div class="project-card__tech-list__popup">
+                                                    <p>React</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-card__pullout">
+                                        <p class="project-card__title">
+                                            Joanne McClung
+                                        </p>
+                                        <p class="project-card__url">
+                                            <a
+                                                href="https://www.joannemcclung.com"
+                                                target="_blank"
+                                                rel="noopener noreferrer nofollow"
+                                            >View The Site</a>
+                                        </p>
+                                        <button class="project-card__read-more">
+                                            Read more...
+                                        </button>
+                                    </div>
+                                    <div class="project-card__modal">
+                                        <div class="project-card__modal__underlay"></div>
+                                        <div class="project-card__modal__content">
 
-            <div class="section section--about" id="about">
-                <div class="inner-content">
-                    <div class="block block--header">
-                        <h2>About.</h2>
-                    </div>
-                    <div class="block block--about">
-                        <p>Lorem ipsum</p>
-                    </div>
-                    <div class="block block--work-history">
-                        <ul class="work-history">
-                            <li class="work-history__item">
-                                <h3 class="work-history__company">
-                                    <img
-                                        src="<%= require('./assets/rivendell-logo.png').default %>"
-                                        alt=""
-                                        class="work-history__company__logo"
-                                    />
-                                    <span>Rivendell Europe Ltd</span>
-                                </h3>
-                                <p class="work-history__role">
-                                    Front End Developer
-                                </p>
-                                <p class="work-history__dates">
-                                    <span class="work-history__dates__start"
-                                        >May 2018</span
-                                    >
-                                    to
-                                    <span class="work-history__dates__end"
-                                        >Present</span
-                                    >
-                                </p>
-                                <p class="work-history__description">
-                                    Lorem ipsum
-                                </p>
+                                            <div class="project-card__modal__inner">
+                                                <button class="project-card__modal__close"><span>Close</span></button>
+                                                <p class="project-card__title">
+                                                    Joanne McClung
+                                                </p>
+                                                <p>Laravel, Javascript, VueJS, React, Bulma</p>
+                                                <p>I was asked to create a portfolio website for Joanne from designs
+                                                    shes
+                                                    had created to show off her skills and work. It needed to be fully
+                                                    dynamic so that she could continually add and edit work to it</p>
+                                                <p>Using VueJS for the front end provides a number of benefits,
+                                                    including
+                                                    being able to quickly create interactive experiences and a
+                                                    navigation
+                                                    experience that doesn't refresh the page and break user flow.</p>
+                                                <p>For this project, I decided to use Laravel for the backend and VueJS
+                                                    for
+                                                    the front end with a custom built API linking the two together. A
+                                                    admin
+                                                    area was also built using a mix of vanilla JS and React and styled
+                                                    with
+                                                    Bulma.</p>
+                                                <p class="project-card__url">
+                                                    <a
+                                                        href="https://www.joannemcclung.com"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer nofollow"
+                                                    >View The Site</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
-                            <li class="work-history__item">
-                                <h3 class="work-history__company">
-                                    <span>Freelancing</span>
-                                </h3>
-                                <p class="work-history__dates">
-                                    <span class="work-history__dates__start"
-                                        >February 2018</span
-                                    >
-                                    to
-                                    <span class="work-history__dates__end"
-                                        >May 2018</span
-                                    >
-                                </p>
-                                <p class="work-history__description">
-                                    Lorem ipsum
-                                </p>
+                            <li class="projects-list__item">
+                                <div class="project-card">
+                                    <div class="project-card__main">
+                                        <div class="project-card__corner project-card__corner--top-left">
+                                            <a
+                                                href="https://github.com/MarkusAleksander/countdown-timer"
+                                                target="_blank"
+                                                rel="noopener noreferrer nofollow"
+                                            >
+                                                <img
+                                                    class="project-card__corner__icon"
+                                                    src="<%= require('./assets/github_142_black.svg').default %>"
+                                                />
+                                                <div class="project-card__corner__popup">
+                                                    <p>View on Github</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="project-card__image-container">
+                                            <img
+                                                class="project-card__image"
+                                                src="<%= require('./assets/prague-clock.jpg').default %>"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <ul class="project-card__tech-list">
+                                            <li class="project-card__tech-list__item">
+                                                <img
+                                                    src="<%= require('./assets/js-logo.svg').default %>"
+                                                    alt="JS logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                                <div class="project-card__tech-list__popup">
+                                                    <p>
+                                                        Vanilla Javascript
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-card__pullout">
+                                        <p class="project-card__title">
+                                            JS Countdown
+                                        </p>
+                                        <button class="project-card__read-more">
+                                            Read more...
+                                        </button>
+                                    </div>
+                                    <div class="project-card__modal">
+                                        <div class="project-card__modal__underlay"></div>
+                                        <div class="project-card__modal__content">
+                                            <div class="project-card__modal__inner">
+                                                <button class="project-card__modal__close"><span>Close</span></button>
+                                                <p class="project-card__title">JS Countdown</p>
+                                                <p>Vanilla JS, HTML</p>
+                                                <p>One of the issues I faced during a campaign with N Brown would be the
+                                                    usage of a countdown timer across the sites. I found the currently
+                                                    used
+                                                    solution contained bugs and wasn't always straightforward to set up
+                                                </p>
+                                                <p>In order to correct this (and make my life easier) I decided to
+                                                    develop a
+                                                    countdown from scratch using vanilla JS. As a result, this new
+                                                    solution
+                                                    has been used to great success in various campaigns that required a
+                                                    timer (and I have fewer bugs to fix!).</p>
+                                                <p class="project-card__url">
+                                                    <a
+                                                        href="https://github.com/MarkusAleksander/countdown-timer"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer nofollow"
+                                                    >View on Github</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
-                            <li class="work-history__item">
-                                <h3 class="work-history__company">
-                                    <img
-                                        src="<%= require('./assets/web-best-practice-logo.png').default %>"
-                                        alt=""
-                                        class="work-history__company__logo"
-                                    />
-                                    <span>Web Best Practice Ltd</span>
-                                </h3>
-                                <p class="work-history__role">
-                                    Junior Web Developer
-                                </p>
-                                <p class="work-history__dates">
-                                    <span class="work-history__dates__start"
-                                        >April 2017</span
-                                    >
-                                    to
-                                    <span class="work-history__dates__end"
-                                        >February 2018</span
-                                    >
-                                </p>
-                                <p class="work-history__description">
-                                    Lorem ipsum
-                                </p>
+                            <li class="projects-list__item">
+                                <div class="project-card">
+                                    <div class="project-card__main">
+                                        <div class="project-card__image-container">
+                                            <img
+                                                class="project-card__image"
+                                                src="<%= require('./assets/jdw-iwd.png').default %>"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <ul class="project-card__tech-list">
+                                            <li class="project-card__tech-list__item">
+                                                <img
+                                                    src="<%= require('./assets/vue-logo.svg').default %>"
+                                                    alt="Vue logo"
+                                                    class="project-card__tech-list__icon"
+                                                />
+                                                <div class="project-card__tech-list__popup">
+                                                    <p>VueJS</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-card__pullout">
+                                        <p class="project-card__title">
+                                            JDWilliams IWD Campaign
+                                        </p>
+                                        <p class="project-card__url">
+                                            <a
+                                                href="https://www.jdwilliams.co.uk/shop/page/womens-rights-decide-their-fate/show.action"
+                                                target="_blank"
+                                                rel="noopener noreferrer nofollow"
+                                            >View The Campaign</a>
+                                        </p>
+                                        <button class="project-card__read-more">
+                                            Read more...
+                                        </button>
+                                    </div>
+                                    <div class="project-card__modal">
+                                        <div class="project-card__modal__underlay"></div>
+                                        <div class="project-card__modal__content">
+                                            <div class="project-card__modal__inner">
+                                                <button class="project-card__modal__close"><span>Close</span></button>
+                                                <p class="project-card__title">
+                                                    JDWilliams International Women's Day Campaign.
+                                                </p>
+                                                <p>VueJS</p>
+                                                <p>For International Women's Day 2019, I was brief to create an
+                                                    interactive
+                                                    page that highlighted the history of Women's rights throughout
+                                                    history,
+                                                    and an alternative timeline based on The Handmaid's Tale.</p>
+                                                <p>I was given the PSDs for each slide and an outline of how they would
+                                                    fit
+                                                    together. To my knowledge, no JS Framework had been used on the
+                                                    sites
+                                                    before so this was a first for using VueJS on JDWilliams (and a
+                                                    first
+                                                    for me to create a commercial page with VueJS).</p>
+                                                <p>Using VueJS allowed me to quickly fit together the slides along with
+                                                    making the page interactive and engaging.</p>
+                                                <p class="project-card__url">
+                                                    <a
+                                                        href="https://www.jdwilliams.co.uk/shop/page/womens-rights-decide-their-fate/show.action"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer nofollow"
+                                                    >View The Campaign</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </div>
+                        <script>
+                            (function () {
+                                let card_ctas = document.querySelectorAll(
+                                    ".project-card__read-more"
+                                );
+                                let modals = document.querySelectorAll(
+                                    ".project-card__modal"
+                                );
+                                let modal_close_btns = document.querySelectorAll(
+                                    ".project-card__modal__close"
+                                )
 
-            <div class="section section--projects" id="projects">
-                <div class="inner-content">
-                    <div class="block block--header">
-                        <h2>Selected works.</h2>
-                    </div>
-                    <div class="block block--projects-list">
-                        <div class="projects-list__outer">
-                            <ul class="projects-list">
-                                <li class="projects-list__item">
-                                    <div class="project-card">
-                                        <div class="project-card__main">
-                                            <div
-                                                class="project-card__corner project-card__corner--top-left"
-                                            >
-                                                <a
-                                                    href="https://github.com/MarkusAleksander/react-music-library"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer nofollow"
-                                                >
-                                                    <img
-                                                        class="project-card__corner__icon"
-                                                        src="<%= require('./assets/github_142_black.svg').default %>"
-                                                    />
-                                                    <div
-                                                        class="project-card__corner__popup"
-                                                    >
-                                                        <p>View on Github</p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div
-                                                class="project-card__image-container"
-                                            >
-                                                <img
-                                                    class="project-card__image"
-                                                    src="<%= require('./assets/music-library.jpg').default %>"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <ul class="project-card__tech-list">
-                                                <li
-                                                    class="project-card__tech-list__item"
-                                                >
-                                                    <img
-                                                        src="<%= require('./assets/react-logo.svg').default %>"
-                                                        alt="React logo"
-                                                        class="project-card__tech-list__icon"
-                                                    />
-                                                    <div
-                                                        class="project-card__tech-list__popup"
-                                                    >
-                                                        <p>React</p>
-                                                    </div>
-                                                </li>
-                                                <li
-                                                    class="project-card__tech-list__item"
-                                                >
-                                                    <img
-                                                        src="<%= require('./assets/firebase-logo.svg').default %>"
-                                                        alt="Firebase logo"
-                                                        class="project-card__tech-list__icon"
-                                                    />
-                                                    <div
-                                                        class="project-card__tech-list__popup"
-                                                    >
-                                                        <p>Firebase</p>
-                                                    </div>
-                                                </li>
-                                                <li
-                                                    class="project-card__tech-list__item"
-                                                >
-                                                    <img
-                                                        src="<%= require('./assets/netlify-logo.svg').default %>"
-                                                        alt="Netlify logo"
-                                                        class="project-card__tech-list__icon"
-                                                    />
-                                                    <div
-                                                        class="project-card__tech-list__popup"
-                                                    >
-                                                        <p>Netlify</p>
-                                                    </div>
-                                                </li>
-                                                <li
-                                                    class="project-card__tech-list__item"
-                                                >
-                                                    <img
-                                                        src="<%= require('./assets/bulma-logo.svg').default %>"
-                                                        alt="Bulma logo"
-                                                        class="project-card__tech-list__icon"
-                                                    />
-                                                    <div
-                                                        class="project-card__tech-list__popup"
-                                                    >
-                                                        <p>Bulma</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="project-card__pullout">
-                                            <p class="project-card__title">
-                                                React Music Library
-                                            </p>
-                                            <p class="project-card__url">
-                                                <a
-                                                    href="https://5f6f33ac3aa9ee85e4663333--trusting-bose-32f2ef.netlify.app/"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer nofollow"
-                                                    >View on Netlify</a
-                                                >
-                                            </p>
-                                            <p class="project-card__read-more">
-                                                Read more...
-                                            </p>
-                                        </div>
-                                        <div class="project-card__modal">
-                                            <div
-                                                class="project-card__modal__underlay"
-                                            ></div>
-                                            <div
-                                                class="project-card__modal__content"
-                                            >
-                                                <p>Some text</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="projects-list__item">
-                                    <div class="project-card">
-                                        <div class="project-card__main">
-                                            <div
-                                                class="project-card__image-container"
-                                            >
-                                                <img
-                                                    class="project-card__image"
-                                                    src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDQ2LjQ2IDI4OC4xNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBjbGFzcz0ibG9nb19faWNvbiI+PHBhdGggZD0iTTQ0Ni40NiAyMDUuNTFjLTQuOTQgNy4wNy02LjU2IDE4LjI2LTE1LjYxIDI5LjMtNC40NyA1LjQ1LTkuNyA4LjU0LTE1LjcgMTAuODFhNTQuNTYgNTQuNTYgMCAwMS03LjQ4IDEuODVjNC43Ny0xNS41NyAxMC41MS0zMS44NiAxMC01OC4wOC0uMzMtMTcuMTctNC4xNC0zOS41NC0xMi44OS00OS43OS04LTkuNC0yMS41NS0xNy43OS0zMy44OC0xNy4yMi04LjI3LjM4LTE0LjcyIDIuODctMjMuMTIgMTAtMTAuOSA5LjI1LTE3Ljk1IDI4LjE1LTE4LjQgNDQuMzItLjQ0IDE2IC43MiAyNS40NSA3LjM0IDQwLjQ3IDYuOTMgMTUuNyAxNi43MiAyNS4xNCAyOC4xNCAzMC40MiAxNC43NyA2LjgyIDI3LjQ1IDcuNTQgNDAuMzIgNi41NWE4MiA4MiAwIDAxLTEwLjYxIDEzLjM2Yy0xMi4zNCAxMi4xMy00MS4zIDIxLjc1LTYyLjEuMTgtNS4xMi01LjMyLTE0LjQzLTIwLTE5LjY1LTMxLjc5LTMtNi42Ni0xMy41OS01MS4yNS0xNS45NC03NS0zLTMwLjUtMy44Ny00Ni4xLTUuMzMtNjUuNTggMS41My0uODQgMy4xNC0yLjYzIDQuNTItMy43MyA4LTYuMzQgMTguODgtMTUuNDUgMjYuMDYtMzIuMDkgMi40My01LjYzIDUuNDYtMTYuNjUgMy43OS0yMy4xNS0xLTQuMDctMy44MS02LTcuNjUtNy45My0zLjE3LTEuNjItOS4zMi0xLjQ3LTEyLjI2LS4wNi00IDEuOTQtNy42NSA1LjkyLTEwIDkuMzlDMjg0LjU2IDU0LjggMjgyLjU2IDcyIDI4MS4zNCA5Mi44NWMtNS45NCA0LjgxLTEwLjkgNi4zNy0xOC4yNiA0IC42Ny0xNy43MSAxLjA4LTM2LjgtMS01NWEzNS44NSAzNS44NSAwIDAwLTYuODQtMTguMDdjLTQuNDItNS45NC0xMy40MS05Ljg3LTIwLjgtNi4xNy02LjExIDMuMDctOC40MyA5LjgtOS43NyAxNS4zMWE3MS42NyA3MS42NyAwIDAwLjE0IDM1LjY4QzIyOCA4MS44OSAyMzUuMTIgOTQgMjQ2LjE0IDk5LjM2YzMuMTcgMS41MyAzLjE3IDEuNTMgNi41OSAyLjkxLTIuODMgMjUtNy43NSA0Ny43LTExLjI1IDY5LjM0LTEuNDggOS4xMy0yLjczIDE0LjYxLTUuMjcgMjEuNjgtMy4zOSA5LjQyLTQuNDkgMTYuMzMtMTQuMjggMTYuMTktNy44MS0uMTEtMTMuMTQtMTcuODgtMTUuNzMtMjctOC0yOC4zNS0xMi41OS02MS41MS0yMC44Ny05My43OGwtMS4xLTcuNDgtNC43NiA2Yy03LjM2IDkuMjYtMTQuMjcgMTguNDgtMTguNzUgMjguMTlhNzYuNjQgNzYuNjQgMCAwMC0yNi0zLjEyIDIuNTYgMi41NiAwIDAxLS4xMS0uMjQgMTY5LjM3IDE2OS4zNyAwIDAxLTkuODEtMjUuODQgMTIyLjc5IDEyMi43OSAwIDAwMjIuNi0xMi42OGMxNC40OC0xMC4yNiAxOS4yNC0xMy42MyAyNS4wNy0yNi45NSA5LjM1LTIxLjM1IDMuMzctMzQuODMtLjE3LTM5LjE4LTcuOS05Ljc0LTI1LjY1LTguNjItMzYtMy43NS0xMy4zOCA2LjMtMjMuNzUgMjcuNjctMjUuOTMgNDYtMS40MiAxMS44OS0uNTEgMjYuNjUgMS4yNiAzNC41OS0yMC4wOSA3LjU5LTM3LjM4IDguNC02MC4xNSA1LjY3YTI1LjA4IDI1LjA4IDAgMDAuMjktMTQuMDhjLTEuNjEtNS40NC02LjY1LTEwLjE0LTEyLjU0LTExLjY5QTEyLjkgMTIuOSAwIDAwMjcgNjYuODNhMTIuNDYgMTIuNDYgMCAwMC0zLjkxIDkuMjggMTcgMTcgMCAwMDUuMzggMTIuMjRjNCAzLjY5IDExLjM0IDUuODYgMTYuNDUgNy0uNTcgMS4yNS0yIDQuMTEtMi41NCA1LjMzLTEwLjU3IDIzLjcxLTE5LjYgMzMuNTUtNDIuMzggNDAuODd2MS44MmMxNy00LjkyIDM0LjE5LTE2LjY0IDQ2LjgtNDEuOTEuODktMS43NyAxLjc0LTMuNTYgMi41MS01LjM3IDI0IDMuMDkgNDIuNTcgMi4yOCA2My44Ny01LjYxIDIgOC45MSAyLjU0IDEyLjI0IDUuMTcgMTkuNTUtNC42IDEuMDktNy42NSAyLTkuMTUgMi40Ny0xNy4xMSA1LjUtMzQuNDMgMTQuMTItNDguMiAyNi44Ny0xNS41NSAxNC40MS0yNy42OCAzMi40NC0zMC43NiA1MS4yNC0zLjE0IDE5LjE5LTEuNjQgNDQuMSA4LjIgNjEuNzMgNy4wNiAxMi42OCAyNyAzMy45MiA1My42OSAzNS43MiAxMy41My45MSAzMy44OS02IDQ0Ljk0LTE2LjM0IDkuMS04LjUgMTgtMjIuNjQgMjIuNTItMzcuMzMgNi43LTIxLjY0IDQtNDcuMTctMi4wNS02OS0zLjg4LTE0LTEwLjM0LTI3LjI4LTE2LjYtNDAuMDlsLTMuMjktNi43OWE2OC4yIDY4LjIgMCAwMTIwLjY2IDIuNzYgNDcuMTEgNDcuMTEgMCAwMC0yLjY3IDE3LjkzYy4zNiA3IDIuNTggMTIuNzQgNi40MSAxNi43NiA1IDUuMjQgMTIuOTMgNyAxOC44NiA0LjE5YTEzLjY0IDEzLjY0IDAgMDA3LjUyLTkuMzYgMTkuOSAxOS45IDAgMDAuNDgtNi4zNmMzIDEzLjQ5IDYuMTQgMjYuOTUgMTAgNDAuMTUgMy41NCAxMiA4LjA2IDIxLjkxIDIwLjA2IDI3IDEwLjQ4IDQuNDMgMjEuNjctMy43IDI3LTExLjM0czctMTYuNDMgOC42My0yNi4zM2MzLjUxLTIxLjczIDYuODUtNDUuNyA4LjE3LTcwLjczYTQ4LjgyIDQ4LjgyIDAgMDAxOC4yOC0zLjI4Yy0uMzUgMTguODIgMS43NSA0OC4xMSA0LjYxIDcxLjU2IDMuNzUgMzAuNjMgMS45NCA0OC4yNyAyMS44NyA4MC40NCA2LjYxIDEwLjY4IDE0LjIxIDE3LjcyIDIxLjQxIDIzLjUyIDcuNTkgNi4xIDE3LjQgOC43MiAyOC41OSA4LjcyYTU0LjM5IDU0LjM5IDAgMDAzNC4yNi0xMi4yM2M2LTUuMSAxMC40My0xMS41NiAxNC4wNy0xOEE3NC41NyA3NC41NyAwIDAwNDE4IDI0OC44YzQuNjktMi4yNCAxMC4wNi02Ljg4IDE0LTEyLjA4IDktMTEuOTIgMTAtMjMuNzIgMTQuNDYtMjkuMjJhMTguODcgMTguODcgMCAwMTAtMS45OXpNNDYuMzggODkuMzFjLTQuNTUtLjg3LTEwLjI3LTIuNjUtMTMuNC01LjU2LTItMS45LTQuNzUtNC40My01LjEyLTcuNTQtLjE2LTEuMzQtLjc1LTQuNzggMS43Ny03LjMzQTEwLjQ2IDEwLjQ2IDAgMDEzNSA2Ni41NmExNC44OSAxNC44OSAwIDAxNC40NS41NmMzLjY5IDEgNS40MiA1LjE4IDYuNDEgOC41MSAxLjE0IDMuNjYgMS42NiA5Ljg3LjUyIDEzLjY4em03NS4yMS0zMS4xNWMuMjgtMTYuNDMgMS4zOC0zOCAxOC00Ni4zIDMuODItMS45IDE0LTIuNyAxOC44OC0xLjUzIDcuMTMgMi45NCAxMC4wNiA2LjkyIDEwLjQgMTIuMDdBMjkuNiAyOS42IDAgMDExNjcgMzYuM2MtNC45NCAxMi4zNS0xMCAyMi41NS0yMy41IDMyLjA5YTExNS42MyAxMTUuNjMgMCAwMS0yMC4yOCAxMS40NCA5NS41NiA5NS41NiAwIDAxLTEuNjMtMjEuNjd6bTE4LjMyIDExMi4xOWM1LjY0IDIwLjM5IDguNTUgNDAuNzUgNi43NCA2MC4zMS0xLjMxIDE0LjE3LTcgMjMuODEtMTUuMjQgMzEuNTQtOS42NiA5LTIyLjMyIDEzLjY1LTMzLjg4IDEyLjM5LTIwLjc4LTIuMjUtMzQuNzItMjItNDEuMTctMzMuNTktOS4yNi0xNi42LTExLjc4LTMwLjUyLTExLTQ0Ljg0LjkyLTE3LjM5IDcuODgtMzYuNzQgMjIuMjItNTAgMTIuOS0xMiAzMC4zMS0yMC43IDUwLjM1LTI1LjI2bDQtLjkyYzEuMTEgMy4zMiAyLjcyIDcuNTYgMy44NSAxMC4zNmEzNjcuNzUgMzY3Ljc1IDAgMDExNC4xMyA0MC4wMXptMzguNTgtMTEuNDNjLTMuOSAxLjc4LTkuOC4xNC0xMy41NS00Ljc2LTMuMDgtNC0zLjI1LTExLjI4LTMuNDUtMTUuMDctLjI3LTUuMjIgMS4zMi0xMC41IDMtMTUuNDYgNS40NiAyLjU1IDExLjI4IDUuNzUgMTUgMTAuNjUgMy4yMSA0LjIgNC41OCA3Ljc4IDQuNjkgMTQuNTVhMTEuMDYgMTEuMDYgMCAwMS01LjY5IDEwLjA5em01LjI4LTI4YTQzLjU2IDQzLjU2IDAgMDAtMTYuOTEtMTMuMmMzLjI1LTcgNy45Mi0xMy44IDEzLjEtMjAuNnEzLjIxIDIwLjM5IDcuNTIgNDAuNjlhMjUuMzMgMjUuMzMgMCAwMC0zLjcxLTYuOTJ6bTY5LjM4LTM0LjgyYTcuNjggNy42OCAwIDAxLTQuMDctMi40MmMtNy4zNi02LjgzLTEwLjYyLTE1LjI5LTEzLjQxLTI2LjgzLTIuMzItOS41OS01LTIxLjUxLTItMzQuNjcgMS00LjU3IDIuMzEtMTIuNTggNy40NS0xMy44NCA1LjY2LS4zMiA4LjMzIDQuNjcgOS42NSA3LjMzIDIuNDIgNC44NiAzLjMzIDEyLjA3IDQgMTcuNzUgMS45OSAxNy43Mi0uOTcgMzUuMzctMS42MiA1Mi42NXptNDguNzUtNTQuMjljMS43NC0yLjgyIDQtNi45MiA4LjgzLTEwLjEzIDIuMjItMS40MSA1Ljc4LTEuNjkgNi41LTEuMzMgMi4yIDEuMTMgMi42MiAzIDIuOTQgNS40NC42NCA0Ljc5LTUuMSAxNy03LjIyIDIxLjktNi4xNCAxNC4yMi0xMyAyMi42My0yMiAyOS4zNyAxLjUtMTguMiAzLjI1LTMyLjc0IDEwLjk1LTQ1LjI1em02NiAxOTUuNjFjLTkuNTktNi4xOC0xNC0xMC4yNy0yMC4xNC0yNS44NC02LjQxLTE2LjItNi45My0yOC44NC02LjE4LTQwLjkzIDEtMTUuNTkgNS4xNS0yNi41OCAxMi4xMy0zMy45MiAzLjc5LTQgMTEuNDMtOS4xNSAxOS44OS05LjE1IDIxLjA4IDAgMzEuMzMgMTUuMDYgMzUuNDkgMjMuNzYgNS40MSAxMS4zMiA3LjgxIDM2Ljk1IDcuMTIgNTIuMDctLjQ5IDEwLjg4LTUuMzUgMjguODItOS4yIDQ0LjEyLTExLjU3LjA1LTMwLjUxLTQuNTktMzkuMDctMTAuMTF6IiBmaWxsPSIjMWQxZDFiIiBkYXRhLW5hbWU9IkxheWVyIDIiPjwvcGF0aD48L3N2Zz4="
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <ul class="project-card__tech-list">
-                                                <li
-                                                    class="project-card__tech-list__item"
-                                                >
-                                                    <img
-                                                        src="<%= require('./assets/laravel-logo.svg').default %>"
-                                                        alt="Laravel logo"
-                                                        class="project-card__tech-list__icon"
-                                                    />
-                                                    <div
-                                                        class="project-card__tech-list__popup"
-                                                    >
-                                                        <p>Laravel</p>
-                                                    </div>
-                                                </li>
-                                                <li
-                                                    class="project-card__tech-list__item"
-                                                >
-                                                    <img
-                                                        src="<%= require('./assets/vue-logo.svg').default %>"
-                                                        alt="Vue logo"
-                                                        class="project-card__tech-list__icon"
-                                                    />
-                                                    <div
-                                                        class="project-card__tech-list__popup"
-                                                    >
-                                                        <p>VueJS</p>
-                                                    </div>
-                                                </li>
-                                                <li
-                                                    class="project-card__tech-list__item"
-                                                >
-                                                    <img
-                                                        src="<%= require('./assets/react-logo.svg').default %>"
-                                                        alt="React logo"
-                                                        class="project-card__tech-list__icon"
-                                                    />
-                                                    <div
-                                                        class="project-card__tech-list__popup"
-                                                    >
-                                                        <p>React</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="project-card__pullout">
-                                            <p class="project-card__title">
-                                                Joanne McClung
-                                            </p>
-                                            <p class="project-card__url">
-                                                <a
-                                                    href="https://www.joannemcclung.com"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer nofollow"
-                                                    >View The Site</a
-                                                >
-                                            </p>
-                                            <p class="project-card__read-more">
-                                                Read more...
-                                            </p>
-                                        </div>
-                                        <div class="project-card__modal">
-                                            <div
-                                                class="project-card__modal__underlay"
-                                            ></div>
-                                            <div
-                                                class="project-card__modal__content"
-                                            >
-                                                <p>Some text</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="projects-list__item">
-                                    <div class="project-card">
-                                        <div class="project-card__main">
-                                            <div
-                                                class="project-card__corner project-card__corner--top-left"
-                                            >
-                                                <a
-                                                    href="https://github.com/MarkusAleksander/countdown-timer"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer nofollow"
-                                                >
-                                                    <img
-                                                        class="project-card__corner__icon"
-                                                        src="<%= require('./assets/github_142_black.svg').default %>"
-                                                    />
-                                                    <div
-                                                        class="project-card__corner__popup"
-                                                    >
-                                                        <p>View on Github</p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div
-                                                class="project-card__image-container"
-                                            >
-                                                <img
-                                                    class="project-card__image"
-                                                    src="<%= require('./assets/prague-clock.jpg').default %>"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <ul class="project-card__tech-list">
-                                                <li
-                                                    class="project-card__tech-list__item"
-                                                >
-                                                    <img
-                                                        src="<%= require('./assets/js-logo.svg').default %>"
-                                                        alt="JS logo"
-                                                        class="project-card__tech-list__icon"
-                                                    />
-                                                    <div
-                                                        class="project-card__tech-list__popup"
-                                                    >
-                                                        <p>
-                                                            Vanilla Javascript
-                                                        </p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="project-card__pullout">
-                                            <p class="project-card__title">
-                                                JS Countdown
-                                            </p>
-                                            <p class="project-card__read-more">
-                                                Read more...
-                                            </p>
-                                        </div>
-                                        <div class="project-card__modal">
-                                            <div
-                                                class="project-card__modal__underlay"
-                                            ></div>
-                                            <div
-                                                class="project-card__modal__content"
-                                            >
-                                                <p>Some text</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="projects-list__item">
-                                    <div class="project-card">
-                                        <div class="project-card__main">
-                                            <div
-                                                class="project-card__image-container"
-                                            >
-                                                <img
-                                                    class="project-card__image"
-                                                    src="<%= require('./assets/jdw-iwd.png').default %>"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <ul class="project-card__tech-list">
-                                                <li
-                                                    class="project-card__tech-list__item"
-                                                >
-                                                    <img
-                                                        src="<%= require('./assets/vue-logo.svg').default %>"
-                                                        alt="Vue logo"
-                                                        class="project-card__tech-list__icon"
-                                                    />
-                                                    <div
-                                                        class="project-card__tech-list__popup"
-                                                    >
-                                                        <p>VueJS</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="project-card__pullout">
-                                            <p class="project-card__title">
-                                                JDWilliams IWD Campaign
-                                            </p>
-                                            <p class="project-card__url">
-                                                <a
-                                                    href="https://www.jdwilliams.co.uk/shop/page/womens-rights-decide-their-fate/show.action"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer nofollow"
-                                                    >View The Campaign</a
-                                                >
-                                            </p>
-                                            <p class="project-card__read-more">
-                                                Read more...
-                                            </p>
-                                        </div>
-                                        <div class="project-card__modal">
-                                            <div
-                                                class="project-card__modal__underlay"
-                                            ></div>
-                                            <div
-                                                class="project-card__modal__content"
-                                            >
-                                                <p>Some text</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <script>
-                                (function() {
-                                    let card_ctas = document.querySelectorAll(
-                                        ".project-card__read-more"
+                                for (let i = 0; i < modals.length; i++) {
+                                    modals[i].addEventListener(
+                                        "click",
+                                        function (e) {
+                                            e.stopPropagation();
+                                        }
                                     );
-                                    let modals = document.querySelectorAll(
+                                }
+
+                                for (let i = 0; i < card_ctas.length; i++) {
+                                    card_ctas[i].addEventListener(
+                                        "click",
+                                        function (e) {
+                                            let el = e.target;
+                                            let card = null;
+                                            e.stopPropagation();
+
+                                            while (el && !card) {
+                                                if (
+                                                    el.matches(
+                                                        ".project-card"
+                                                    )
+                                                ) {
+                                                    card = el;
+                                                }
+                                                el = el.parentElement;
+                                            }
+                                            openModal(card);
+                                        }
+                                    );
+                                }
+
+                                for (let i = 0; i < modal_close_btns.length; i++) {
+                                    let btn = modal_close_btns[i];
+                                    btn.addEventListener("click", closeModal);
+                                }
+
+                                function openModal(card) {
+                                    let modal = card.querySelector(
                                         ".project-card__modal"
                                     );
+                                    if (!modal) return;
 
-                                    for (let i = 0; i < modals.length; i++) {
-                                        modals[i].addEventListener(
-                                            "click",
-                                            function(e) {
-                                                e.stopPropagation();
-                                            }
-                                        );
-                                    }
+                                    modal.classList.add("open");
+                                    let underlay = modal.querySelector(
+                                        ".project-card__modal__underlay"
+                                    );
+                                    document.body.classList.add("body-fix");
+                                    underlay.addEventListener(
+                                        "click",
+                                        closeModal
+                                    );
+                                }
 
-                                    for (let i = 0; i < card_ctas.length; i++) {
-                                        card_ctas[i].addEventListener(
-                                            "click",
-                                            function(e) {
-                                                let el = e.target;
-                                                let card = null;
-                                                e.stopPropagation();
-
-                                                while (el && !card) {
-                                                    if (
-                                                        el.matches(
-                                                            ".project-card"
-                                                        )
-                                                    ) {
-                                                        card = el;
-                                                    }
-                                                    el = el.parentElement;
-                                                }
-                                                openModal(card);
-                                            }
-                                        );
-                                    }
-
-                                    function openModal(card) {
-                                        let modal = card.querySelector(
-                                            ".project-card__modal"
-                                        );
-                                        if (!modal) return;
-
-                                        modal.classList.add("open");
-                                        let underlay = modal.querySelector(
-                                            ".project-card__modal__underlay"
-                                        );
-                                        document.body.classList.add("body-fix");
-                                        underlay.addEventListener(
-                                            "click",
-                                            closeModal
-                                        );
-                                    }
-
-                                    function closeModal(e) {
-                                        e.stopPropagation();
-                                        let modal = document.querySelector(
-                                            ".project-card__modal.open"
-                                        );
-                                        modal.classList.remove("open");
-                                        let underlay = modal.querySelector(
-                                            ".project-card__modal__underlay"
-                                        );
-                                        document.body.classList.remove(
-                                            "body-fix"
-                                        );
-                                        underlay.removeEventListener(
-                                            "click",
-                                            closeModal
-                                        );
-                                    }
-                                })();
-                            </script>
-                        </div>
+                                function closeModal(e) {
+                                    e.stopPropagation();
+                                    let modal = document.querySelector(
+                                        ".project-card__modal.open"
+                                    );
+                                    modal.classList.remove("open");
+                                    let underlay = modal.querySelector(
+                                        ".project-card__modal__underlay"
+                                    );
+                                    document.body.classList.remove(
+                                        "body-fix"
+                                    );
+                                    underlay.removeEventListener(
+                                        "click",
+                                        closeModal
+                                    );
+                                }
+                            })();
+                        </script>
                     </div>
                 </div>
             </div>
-            <div class="section section--contact" id="contact">
-                <div class="inner-content">
-                    <div class="block block--contact">
-                        <p class="preamble">
-                            Get in contact for more info or to work with me:
-                        </p>
-                        <p class="contact-address">
-                            <a href="mailto:markholden1989@googlemail.com"
-                                >markholden1989<wbr />@<wbr />googlemail.com</a
+        </div>
+        <div
+            class="section section--contact"
+            id="contact"
+        >
+            <div class="inner-content">
+                <div class="block block--contact">
+                    <p class="preamble">
+                        Get in contact for more info or to work with me:
+                    </p>
+                    <p class="contact-address">
+                        <a href="mailto:markholden1989@googlemail.com">markholden1989<wbr />@<wbr />googlemail.com</a>
+                    </p>
+                    <!-- <p class="block block--preamble"></p> -->
+                </div>
+                <div class="block block--contact-links">
+                    <ul class="contact-links">
+                        <li class="contact-links__item">
+                            <a
+                                href="https://www.github.com/MarkusAleksander"
+                                target="_blank"
+                                rel="noopener noreferrer nofollow"
                             >
-                        </p>
-                        <!-- <p class="block block--preamble"></p> -->
-                    </div>
-                    <div class="block block--contact-links">
-                        <ul class="contact-links">
-                            <li class="contact-links__item">
-                                <a
-                                    href="https://www.github.com/MarkusAleksander"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
-                                >
-                                    <img
-                                        src="<%= require('./assets/github_142_black.svg').default %>"
-                                        alt="Github"
-                                    />
-                                </a>
-                            </li>
-                            <li class="contact-links__item">
-                                <a
-                                    href="https://www.linkedin.com/in/mark-holden-69b419b6/"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
-                                >
-                                    <img
-                                        src="<%= require('./assets/linkedin_161_black.svg').default %>"
-                                        alt="LinkedIn"
-                                    />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                                <img
+                                    src="<%= require('./assets/github_142_black.svg').default %>"
+                                    alt="Github"
+                                />
+                            </a>
+                        </li>
+                        <li class="contact-links__item">
+                            <a
+                                href="https://www.linkedin.com/in/mark-holden-69b419b6/"
+                                target="_blank"
+                                rel="noopener noreferrer nofollow"
+                            >
+                                <img
+                                    src="<%= require('./assets/linkedin_161_black.svg').default %>"
+                                    alt="LinkedIn"
+                                />
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="toolbar">
-            <div class="toolbar__inner">
-                <div class="toolbar__block toolbar__block--logo">
-                    <button
-                        data-target="#introduction"
-                        title="Home"
-                        class="logo js-page-scroller"
-                    >
-                        <span class="logo__content logo__content--icon">M</span>
-                        <span class="logo__content logo__content--text"
-                            >Markus</span
-                        >
-                    </button>
-                </div>
-                <div
-                    class="toolbar__block toolbar__block--btn"
-                    onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
+    <div class="toolbar">
+        <div class="toolbar__inner">
+            <div class="toolbar__block toolbar__block--logo">
+                <button
+                    data-target="#introduction"
+                    title="Home"
+                    class="logo js-page-scroller"
                 >
-                    <button class="toolbar__menu-btn">
-                        <span class="toolbar__menu-btn--line"></span>
-                        <span class="toolbar__menu-btn--line"></span>
-                        <span class="toolbar__menu-btn--line"></span>
-                        <span class="toolbar__menu-btn--text">Menu</span>
-                    </button>
-                </div>
-                <div class="toolbar__block toolbar__block--main">
-                    <nav class="navigation">
-                        <ul class="navigation__list">
-                            <li class="navigation__list-item">
-                                <button
-                                    data-target="#introduction"
-                                    class="navigation__link js-page-scroller"
-                                >
-                                    <img
-                                        class="navigation__content navigation__content--icon"
-                                        src="<%= require('./assets/home_1391.svg').default %>"
-                                        width="20px"
-                                    />
-                                    <span
-                                        class="navigation__content navigation__content--text"
-                                        >Home</span
-                                    >
-                                </button>
-                            </li>
-                            <li class="navigation__list-item">
-                                <button
-                                    data-target="#about"
-                                    class="navigation__link js-page-scroller"
-                                >
-                                    <img
-                                        class="navigation__content navigation__content--icon"
-                                        src="<%= require('./assets/emoji_happy_518.svg').default %>"
-                                        width="20px"
-                                    />
-                                    <span
-                                        class="navigation__content navigation__content--text"
-                                        >About</span
-                                    >
-                                </button>
-                            </li>
-                            <li class="navigation__list-item">
-                                <button
-                                    data-target="#projects"
-                                    class="navigation__link js-page-scroller"
-                                >
-                                    <img
-                                        class="navigation__content navigation__content--icon"
-                                        src="<%= require('./assets/desktop_232.svg').default %>"
-                                        width="20px"
-                                    />
-                                    <span
-                                        class="navigation__content navigation__content--text"
-                                        >Projects</span
-                                    >
-                                </button>
-                            </li>
-                            <li class="navigation__list-item">
-                                <button
-                                    data-target="#contact"
-                                    class="navigation__link js-page-scroller"
-                                >
-                                    <img
-                                        class="navigation__content navigation__content--icon"
-                                        src="<%= require('./assets/messages_chat_1557.svg').default %>"
-                                        width="20px"
-                                    />
-                                    <span
-                                        class="navigation__content navigation__content--text"
-                                        >Contact</span
-                                    >
-                                </button>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="toolbar__block toolbar__block--secondary">
-                    <nav class="navigation">
-                        <ul class="navigation__list">
-                            <li class="navigation__list-item">
-                                <a
-                                    href="https://www.linkedin.com/in/mark-holden-69b419b6/"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
-                                    class="navigation__link"
-                                >
-                                    <img
-                                        class="navigation__content navigation__content--icon"
-                                        src="<%= require('./assets/linkedin_161.svg').default %>"
-                                        width="20px"
-                                    />
-                                    <span
-                                        class="navigation__content navigation__content--text"
-                                        >LinkedIn</span
-                                    >
-                                </a>
-                            </li>
-                            <li class="navigation__list-item">
-                                <a
-                                    href="https://www.github.com/MarkusAleksander"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
-                                    class="navigation__link"
-                                >
-                                    <img
-                                        class="navigation__content navigation__content--icon"
-                                        src="<%= require('./assets/github_142.svg').default %>"
-                                        width="20px"
-                                    />
-                                    <span
-                                        class="navigation__content navigation__content--text"
-                                        >Github</span
-                                    >
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                    <span class="logo__content logo__content--icon">M</span>
+                    <span class="logo__content logo__content--text">Mark</span>
+                </button>
+            </div>
+            <div
+                class="toolbar__block toolbar__block--btn"
+                onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
+            >
+                <button class="toolbar__menu-btn">
+                    <span class="toolbar__menu-btn--line"></span>
+                    <span class="toolbar__menu-btn--line"></span>
+                    <span class="toolbar__menu-btn--line"></span>
+                    <span class="toolbar__menu-btn--text">Menu</span>
+                </button>
+            </div>
+            <div class="toolbar__block toolbar__block--main">
+                <nav class="navigation">
+                    <ul class="navigation__list">
+                        <li class="navigation__list-item">
+                            <button
+                                data-target="#introduction"
+                                class="navigation__link js-page-scroller"
+                            >
+                                <img
+                                    class="navigation__content navigation__content--icon"
+                                    src="<%= require('./assets/home_1391.svg').default %>"
+                                    width="20px"
+                                />
+                                <span class="navigation__content navigation__content--text">Home</span>
+                            </button>
+                        </li>
+                        <li class="navigation__list-item">
+                            <button
+                                data-target="#about"
+                                class="navigation__link js-page-scroller"
+                            >
+                                <img
+                                    class="navigation__content navigation__content--icon"
+                                    src="<%= require('./assets/emoji_happy_518.svg').default %>"
+                                    width="20px"
+                                />
+                                <span class="navigation__content navigation__content--text">About</span>
+                            </button>
+                        </li>
+                        <li class="navigation__list-item">
+                            <button
+                                data-target="#projects"
+                                class="navigation__link js-page-scroller"
+                            >
+                                <img
+                                    class="navigation__content navigation__content--icon"
+                                    src="<%= require('./assets/desktop_232.svg').default %>"
+                                    width="20px"
+                                />
+                                <span class="navigation__content navigation__content--text">Projects</span>
+                            </button>
+                        </li>
+                        <li class="navigation__list-item">
+                            <button
+                                data-target="#contact"
+                                class="navigation__link js-page-scroller"
+                            >
+                                <img
+                                    class="navigation__content navigation__content--icon"
+                                    src="<%= require('./assets/messages_chat_1557.svg').default %>"
+                                    width="20px"
+                                />
+                                <span class="navigation__content navigation__content--text">Contact</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="toolbar__block toolbar__block--secondary">
+                <nav class="navigation">
+                    <ul class="navigation__list">
+                        <li class="navigation__list-item">
+                            <a
+                                href="https://www.linkedin.com/in/mark-holden-69b419b6/"
+                                target="_blank"
+                                rel="noopener noreferrer nofollow"
+                                class="navigation__link"
+                            >
+                                <img
+                                    class="navigation__content navigation__content--icon"
+                                    src="<%= require('./assets/linkedin_161.svg').default %>"
+                                    width="20px"
+                                />
+                                <span class="navigation__content navigation__content--text">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li class="navigation__list-item">
+                            <a
+                                href="https://www.github.com/MarkusAleksander"
+                                target="_blank"
+                                rel="noopener noreferrer nofollow"
+                                class="navigation__link"
+                            >
+                                <img
+                                    class="navigation__content navigation__content--icon"
+                                    src="<%= require('./assets/github_142.svg').default %>"
+                                    width="20px"
+                                />
+                                <span class="navigation__content navigation__content--text">Github</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

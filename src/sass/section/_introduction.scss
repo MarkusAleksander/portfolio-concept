@@ -10,6 +10,9 @@
 
     .introduction {
         &__cta {
+            appearance: none;
+            border-radius: 0;
+            background: transparent;
             margin-top: 1em;
             display: inline-block;
             padding: 0.5em 1em;
@@ -19,13 +22,15 @@
             color: $light_black;
             position: relative;
             transition: color 0.3s ease-in-out;
+            max-width: 220px;
+            // overflow: hidden;
 
             &:before {
                 position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                top: 100%;
+                bottom: -1px;
+                left: -1px;
+                right: -1px;
+                top: 101%;
                 background-color: $light_black;
                 transition: top 0.3s ease-in-out;
                 content: "";
@@ -36,7 +41,7 @@
                 color: #fff;
 
                 &:before {
-                    top: 0%;
+                    top: -1%;
                 }
             }
         }

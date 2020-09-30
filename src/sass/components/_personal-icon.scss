@@ -93,8 +93,8 @@
         transition: transform 0.4s ease-in, opacity 0.4s ease-in;
 
         @media (min-width: 768px) {
-            top: calc(50%);
-            transform: translateX(-30px) translateY(-50%);
+            top: calc(100% + 10px);
+            transform: translateX(-50%) translateY(-30px);
         }
 
         @media (min-width: 1024px) {

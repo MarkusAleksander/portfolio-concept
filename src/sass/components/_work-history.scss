@@ -1,5 +1,8 @@
 .work-history {
-    text-align: left;
+    text-align: center;
+    @media (min-width: 768px) {
+        text-align: left;
+    }
 
     &__item {
         & + & {
@@ -15,6 +18,11 @@
             max-height: 50px;
             max-width: 150px;
             margin-bottom: 1em;
+
+            @media (max-width: 767px) {
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
 
         margin-bottom: 0.5em;
