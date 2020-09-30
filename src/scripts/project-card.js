@@ -2,6 +2,8 @@ export default function setupProjectCards() {
     const project_cards = document.querySelectorAll(".project-card");
 
     function onProjectCardClick(card, e) {
+        if (e.target.classList.contains("project-card__tech-list__icon"))
+            return;
         e.stopPropagation();
         let is_current_card =
             card === document.querySelector(".project-card.open");

@@ -4,13 +4,19 @@
 
         @media (max-width: 767px) {
             display: flex;
+            // justify-content: space-between;
+            // align-items: center;
         }
     }
     &__list-item {
         width: 100%;
-        max-width: 80px;
+        max-width: 25%;
         min-width: 30px;
         height: 50px;
+
+        @media (min-width: 768px) {
+            max-width: 80px;
+        }
 
         @media (min-width: 1024px) {
             width: 80px;
