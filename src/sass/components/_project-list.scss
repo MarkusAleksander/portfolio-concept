@@ -1,18 +1,24 @@
 .projects-list {
     $projects_list: &;
     // -webkit-backface-visibility: hidden;
-    transform: /*translateZ(0) scale(1, 1)*/ rotate3d(1, 0, 0, 180deg);
+    // transform: /*translateZ(0) scale(1, 1)*/ rotate3d(1, 0, 0, 180deg);
 
     &__outer {
         overflow-x: scroll;
         padding: 2em 0;
         // -webkit-backface-visibility: hidden;
-        transform: /*translateZ(0) scale(1, 1)*/ rotate3d(1, 0, 0, 180deg);
+        // transform: /*translateZ(0) scale(1, 1)*/ rotate3d(1, 0, 0, 180deg);
 
         // -webkit-transform: translateZ(0) scale(1, 1);
         // &::-webkit-scrollbar {
         //     display: none;
         // }
+
+        @media (min-width: 768px) {
+            overflow: hidden;
+            width: 82vw;
+            max-width: 1260px;
+        }
     }
 
     display: flex;
@@ -20,11 +26,26 @@
     justify-content: flex-start;
     padding-right: 2em;
 
+    @media (min-width: 768px) {
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     &__item {
         padding: 0 1em;
 
+
+        @media (min-width: 768px) {
+            // padding: 0 1%;
+            padding: 0;
+            margin-bottom: 4%;
+            width: 48%;
+        }
+    
         @media (min-width: 1024px) {
-            padding: 0 1%;
+            width: 32%;
+            margin-bottom: 2%;
         }
     }
 }

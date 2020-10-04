@@ -1,10 +1,15 @@
 .section--introduction {
     h1 {
         margin: 0;
-        font-size: 7vw;
+
+        font-size: 8vw;
+
+        @media (min-width: 768px) {
+            font-size: 6vw;
+        }
 
         @media (min-width: 1440px) {
-            font-size: 100px;
+            font-size: 86px;
         }
     }
 
@@ -42,6 +47,39 @@
 
                 &:before {
                     top: -1%;
+                }
+            }
+        }
+    }
+
+    .block--header {
+
+        > div + div {
+            margin-top: 3em;
+
+            @media (min-width: 768px) {
+                margin-top: 0;
+                margin-left: 4vw;
+            }
+
+            @media (min-width: 1440px) {
+                margin-left: 6em;
+            }
+        }
+
+        @media (max-width: 767px) {
+            transform: translate3d(0, -50px, 0);
+        }
+
+        @media (min-width: 768px) {
+            display: flex;
+
+            > div:first-of-type {
+                display: flex;
+                align-items: center;
+
+                > div {
+                    transform: translate3d(0,-28px,0);
                 }
             }
         }

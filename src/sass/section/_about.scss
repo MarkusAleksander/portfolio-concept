@@ -1,15 +1,15 @@
 .section--about {
-    @media (max-width: 767px) {
-        padding-top: 70px;
-    }
+    // @media (max-width: 767px) {
+    //     padding-top: 70px;
+    // }
 
     .inner-content {
         @media (min-width: 768px) {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            max-width: 1500px;
+        //     display: flex;
+        //     align-items: flex-start;
+        //     justify-content: space-between;
+        //     flex-wrap: wrap;
+            max-width: 1000px;
         }
     }
 
@@ -33,10 +33,10 @@
     .block--about,
     .block--work-history {
         padding: 1em;
-        @media (min-width: 768px) {
-            flex: 1 0 50%;
-            max-width: 50%;
-        }
+        // @media (min-width: 768px) {
+        //     flex: 1 0 50%;
+        //     max-width: 50%;
+        // }
     }
 
     .block--about {
@@ -44,7 +44,7 @@
         // margin-bottom: 4em;
 
         @media (min-width: 768px) {
-            text-align: right;
+            // text-align: right;
             // margin-bottom: 0;
         }
 

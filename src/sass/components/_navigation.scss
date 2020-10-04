@@ -4,8 +4,6 @@
 
         @media (max-width: 767px) {
             display: flex;
-            // justify-content: space-between;
-            // align-items: center;
         }
     }
     &__list-item {
@@ -48,6 +46,27 @@
         &:focus {
             border: 0;
             outline: 0;
+        }
+        
+        &:before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%,-50%,0);
+            border-width: 2px;
+            border-style: solid;
+            border-color: #111;
+            border-radius: 50%;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        &.active {
+            &:before {
+                border-color: #fff;
+            }
         }
     }
 

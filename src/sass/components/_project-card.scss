@@ -8,8 +8,6 @@
     border-radius: 25px;
     cursor: pointer;
     transition: height 0.3s ease-in-out;
-    // -webkit-backface-visibility: hidden;
-    // -webkit-transform: translateZ(0) scale(1, 1);
 
     &__main,
     &__pullout {
@@ -17,7 +15,7 @@
     }
 
     &__main {
-        border-radius: 25px;
+        // border-radius: 25px;
         position: relative;
         z-index: 2;
         overflow: hidden;
@@ -27,15 +25,22 @@
         min-width: 230px;
         box-shadow: 1px 1px 2px 1px #ccc;
 
+        @media (min-width: 768px) {
+            padding-top: 100%;
+            width: 100%;
+            max-width: none;
+            min-width: 100%;
+        }
+
         & > * {
             position: absolute;
         }
 
-        @media (min-width: 1024px) {
-            min-width: 320px;
-            max-width: 500px;
-            width: 20vw;
-        }
+        // @media (min-width: 1024px) {
+        //     min-width: 320px;
+        //     max-width: 500px;
+        //     width: 20vw;
+        // }
     }
 
     &__image-container {
