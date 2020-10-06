@@ -1,11 +1,11 @@
 import "./sass/main.scss";
 
-import setupProjectSlider from "./scripts/project-slider.js";
-import setupProjectCards from "./scripts/project-card.js";
+// import setupProjectSlider from "./scripts/project-slider.js";
+// import setupProjectCards from "./scripts/project-card.js";
 import setupPageScroll from "./scripts/page-scroll.js";
 
-setupProjectSlider();
-setupProjectCards();
+// setupProjectSlider();
+// setupProjectCards();
 setupPageScroll();
 
 let nav_items = document.querySelectorAll(".js-page-scroller");
@@ -31,7 +31,8 @@ for (let i = 0; i < nav_menu_items.length; i++) {
     }
 }
 
-window.addEventListener("scroll", function () {
+function updateNavHighlight() {
+
     let target_idx = 0;
 
     for (let i = 0; i < sections.length; i++) {
@@ -40,8 +41,6 @@ window.addEventListener("scroll", function () {
             target_idx = i;
         }
     }
-
-    console.log(target_idx);
 
     if (current_idx === target_idx) return;
 
@@ -52,5 +51,7 @@ window.addEventListener("scroll", function () {
     current_target = nav_menu_items[target_idx];
 
     current_target.classList.add("active");
+}
 
-});
+window.addEventListener("scroll", updateNavHighlight);
+updateNavHighlight();
