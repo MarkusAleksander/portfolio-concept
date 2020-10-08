@@ -7,8 +7,10 @@
         "serve": "webpack-dev-server --open"
     },
     "dependencies": {
+        "autoprefixer": "^10.0.1",
         "history": "^5.0.0",
-        "normalize.css": "^8.0.1"
+        "normalize.css": "^8.0.1",
+        "postcss-loader": "^4.0.3"
     },
     "devDependencies": {
         "babel-eslint": "^10.1.0",

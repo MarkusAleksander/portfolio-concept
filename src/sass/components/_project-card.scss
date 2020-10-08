@@ -6,19 +6,15 @@
     border: 0;
     position: relative;
     border-radius: 25px;
-    // cursor: pointer;
     transition: height 0.3s ease-in-out;
     
     &__main {
         background-color: #fff;
-        // border-radius: 25px;
         position: relative;
         z-index: 2;
         overflow: hidden;
         padding-top: 100%;
         width: 100%;
-        // max-width: 250px;
-        // min-width: 230px;
         box-shadow: 1px 1px 2px 1px #ccc;
 
         @media (min-width: 768px) {
@@ -31,12 +27,6 @@
         & > * {
             position: absolute;
         }
-
-        // @media (min-width: 1024px) {
-        //     min-width: 320px;
-        //     max-width: 500px;
-        //     width: 20vw;
-        // }
     }
 
     &__image-container {
@@ -57,6 +47,56 @@
             opacity: 0.8;
             transition: opacity 0.6s ease-in-out;
         }
+    }
+
+    &__overlay {
+        position: absolute;
+        z-index: 2;
+        padding: 1em;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        right: 0;
+        text-align: center;
+        overflow: hidden;
+        background-color: rgba(255,255,255,0.7);
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+        #{$project_card}__overlay {
+            opacity: 1;
+        }
+    }
+
+    &__center-content {
+        position: absolute;
+        left: 50%;
+        transform: translate3d(-50%,-50%,0);
+        width: 100%;
+        top: calc(50% - 31px);
+        
+
+        & > #{$project_card}__title {
+            transform: translateY(-300%);
+            transition: transform 0.6s ease-in-out;
+            margin-bottom: 1.5em;
+            
+            @media (min-width: 768px) {
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    &:hover,    
+    &:focus {
+        #{$project_card}__center-content > #{$project_card}__title {
+            transform: translateY(0%);
+            transition: transform 0.6s ease-in-out;
+        }
+
     }
 
     &__tech-list {
@@ -156,86 +196,12 @@
         }
     }
 
-    &__overlay {
-        position: absolute;
-        z-index: 2;
-        padding: 1em;
-        bottom: 0;
-        left: 0;
-        top: 0;
-        right: 0;
-        text-align: center;
-        overflow: hidden;
-        background-color: rgba(255,255,255,0.7);
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-
-        p + * {
-            margin-top: 0.5em;
-        }
-
-        &__center-content {
-            position: absolute;
-            left: 50%;
-            transform: translate3d(-50%,-50%,0);
-            width: 100%;
-            top: 45%;
-            
-            @media (min-width: 768px) {
-                top: 50%;
-            }
-            @media (min-width: 1024px) {
-                top: 45%;
-            }
-            @media (min-width: 1200px) {
-                top: 50%;
-            }
-
-            & > .project-card__title {
-                transform: translateY(-300%);
-                transition: transform 0.6s ease-in-out;
-                margin-bottom: 1.5em;
-                
-                @media (min-width: 768px) {
-                    margin-bottom: 1em;
-                }
-
-                // @media (min-width: 1024px) {
-                //     margin-bottom: 1em;
-                // }
-            }
-        
-        }
-    }
-
-    &:hover,    
-    &:focus {
-        .project-card__overlay__center-content > .project-card__title {
-            transform: translateY(0%);
-            transition: transform 0.6s ease-in-out;
-        }
-
-    }
-    
-    &:hover,
-    &:focus {
-        .project-card__overlay {
-            opacity: 1;
-        }
-    }
-
     &__title {
         user-select: none;
         font-family: $headline_font;
         font-weight: bold;
         font-size: 1em;
 
-        @media (min-width: 768px) {
-            font-size: 1.4em;
-        }
-        @media (min-width: 1024px) {
-            font-size: 1em;
-        }
         @media (min-width: 1200px) {
             font-size: 1.4em;
         }
@@ -248,7 +214,7 @@
 
     &:hover,
     &:focus {
-        .project-card__ctas {
+        #{$project_card}__ctas {
             transform: translateY(0%);
             transition: transform 0.6s ease-in-out;
         }
@@ -273,7 +239,6 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        // width: 100%;
         max-width: 220px;
 
         &:after {
@@ -311,7 +276,7 @@
     &__read-more + &__url {
         margin-top: 1em;
 
-        @media (min-width: 1024px) {
+        @media (min-width: 768px) {
             margin-top: 0.5em;
         }
         @media (min-width: 1200px) {
@@ -414,15 +379,6 @@
     &:focus {
         #{$project_card}__corner {
             transform: translate3d(50%, -50%, 0) rotate(45deg);
-        }
-    }
-
-    &:hover,
-    &.open {
-        #{$project_card}__corner,
-        #{$project_card}__tech-list,
-        #{$project_card}__image-container img {
-            // opacity: 1;
         }
     }
 

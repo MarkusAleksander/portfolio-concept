@@ -1,57 +1,32 @@
 .projects-list {
     $projects_list: &;
-    // -webkit-backface-visibility: hidden;
-    // transform: /*translateZ(0) scale(1, 1)*/ rotate3d(1, 0, 0, 180deg);
-
-    @media (max-width: 767px) {
-        padding: 1em 0;
-    }
-
-    &__outer {
-        // overflow-x: scroll;
-        // padding: 2em 0;
-        // -webkit-backface-visibility: hidden;
-        // transform: /*translateZ(0) scale(1, 1)*/ rotate3d(1, 0, 0, 180deg);
-
-        // -webkit-transform: translateZ(0) scale(1, 1);
-        // &::-webkit-scrollbar {
-        //     display: none;
-        // }
-        overflow: hidden;
-        max-width: 1260px;
-        width: 100%;
-
-        @media (min-width: 768px) {
-            width: 82vw;
-        }
-    }
-
+    
+    padding: 1em 0;
+    overflow: hidden;
+    max-width: 1260px;
+    width: 100%;
     display: flex;
-    // align-items: flex-start;
     justify-content: flex-start;
-    // padding-right: 2em;
     flex-wrap: wrap;
 
     @media (min-width: 768px) {
+        width: 82vw;
         padding: 0;
         justify-content: flex-start;
         margin: 0 -1%;
     }
 
     &__item {
-        // padding: 0 1%;
         width: 100%;
 
         @media (min-width: 768px) {
             width: 50%;
             padding: 0 1%;
             margin-bottom: 2%;
-            // width: 48%;
         }
     
         @media (min-width: 1024px) {
             width: 33.3333%;
-            // margin-bottom: 2%;
         }
     }
 }

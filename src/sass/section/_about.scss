@@ -1,7 +1,4 @@
 .section--about {
-    // @media (max-width: 767px) {
-    //     padding-top: 70px;
-    // }
 
     .inner-content {
         @media (min-width: 768px) {
@@ -33,19 +30,12 @@
     .block--about,
     .block--work-history {
         padding: 1em;
-        // @media (min-width: 768px) {
-        //     flex: 1 0 50%;
-        //     max-width: 50%;
-        // }
     }
 
     .block--about {
         text-align: center;
-        // margin-bottom: 4em;
 
         @media (min-width: 768px) {
-            // text-align: right;
-            // margin-bottom: 0;
         }
 
         p + p,
@@ -79,7 +69,6 @@
             color: $light_black;
             position: relative;
             transition: color 0.3s ease-in-out;
-            // overflow: hidden;
 
             &:before {
                 position: absolute;
@@ -99,6 +88,26 @@
                 &:before {
                     top: -1%;
                 }
+            }
+        }
+    }
+
+    .skills-list {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        &__item {
+            flex: 0 0 30px;
+            max-width: 30px;
+            margin: 0 5px;
+
+            img {
+                max-width: 100%;
+                display: block;
+                height: auto;
             }
         }
     }

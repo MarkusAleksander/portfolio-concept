@@ -19,7 +19,6 @@
     display: block;
     padding: 5px;
     text-decoration: none;
-    // height: 100%;
 
     @media (min-width: 768px) {
         width: 80px;
@@ -33,7 +32,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translate3d(-50%,-50%, 0);
         display: block;
         width: 100%;
         height: auto;
@@ -43,13 +42,18 @@
         color: $white;
         font-family: $headline-font;
 
-        // @media (min-width: 768px) {
-        // }
-
         &--icon {
             font-size: 17px;
             opacity: 1;
             transition: opacity 0.3s 0.2s ease-in;
+
+            img {
+                max-width: 40px;
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+                image-rendering: -webkit-optimize-contrast;
+            }
 
             #{$logo}:hover & {
                 opacity: 0;

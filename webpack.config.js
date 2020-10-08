@@ -6,6 +6,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // * extract css to file
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const autoprefixer = require('autoprefixer');
+
 const config = {
     src_dir: "src",
     output_dir: "dist",
@@ -34,6 +36,7 @@ module.exports = {
             title: `${config.html.title}`,
             template: `./${config.src_dir}/${config.html.input_filename}`,
         }),
+        require('autoprefixer')
     ],
     // * create source maps for debugging
     devtool: "inline-source-map",
@@ -61,12 +64,20 @@ module.exports = {
                 // * test the file type
                 test: /\.css$/,
                 // * matching files are then sent to the below plugins
-                use: ["style-loader", "css-loader"],
+                use: ["style-loader", "css-loader", "postcss-loader"]
             },
             // * Handling SCSS
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader",
+                    // {
+                    //     loader: 'postcss-loader',
+                    //     options: {
+                    //         plugins: () => [autoprefixer()]
+                    //     }
+                    // },
+                    "postcss-loader",
+                    "sass-loader"],
             },
             // * Handling images
             {
