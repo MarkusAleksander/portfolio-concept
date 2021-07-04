@@ -5,8 +5,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // * extract css to file
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
-const autoprefixer = require('autoprefixer');
 
 const config = {
     src_dir: "src",
@@ -36,7 +37,6 @@ module.exports = {
             title: `${config.html.title}`,
             template: `./${config.src_dir}/${config.html.input_filename}`,
         }),
-        require('autoprefixer')
     ],
     // * create source maps for debugging
     devtool: "inline-source-map",
@@ -70,12 +70,6 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader",
-                    // {
-                    //     loader: 'postcss-loader',
-                    //     options: {
-                    //         plugins: () => [autoprefixer()]
-                    //     }
-                    // },
                     "postcss-loader",
                     "sass-loader"],
             },
@@ -84,6 +78,15 @@ module.exports = {
                 test: /\.(png|jpg|svg|gif)$/,
                 use: ["file-loader"],
             },
+        ],
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+            // `...`,
+            new CssMinimizerPlugin(),
+            new TerserPlugin(),
         ],
     },
 };
