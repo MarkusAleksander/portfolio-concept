@@ -15,7 +15,7 @@
         overflow: hidden;
         padding-top: 100%;
         width: 100%;
-        box-shadow: 1px 1px 2px 1px #ccc;
+        // box-shadow: 1px 1px 2px 1px #ccc;
 
         @media (min-width: 768px) {
             padding-top: 100%;
@@ -197,6 +197,7 @@
     }
 
     &__title {
+        color: $light_black;
         user-select: none;
         font-family: $headline_font;
         font-weight: bold;
@@ -240,6 +241,7 @@
         justify-content: center;
         align-items: center;
         max-width: 220px;
+        user-select: none;
 
         &:after {
             position: absolute;
@@ -307,6 +309,7 @@
             right: 0;
             bottom: 0;
             display: block;
+            background-color: #eee;
         }
 
         &__icon {
@@ -465,8 +468,12 @@
             }
         }
 
-        p + * {
-            margin-top: 1em;
+        p {
+            color: $light_black;
+
+            & + * {
+                margin-top: 1em;
+            }
         }
     }
 }

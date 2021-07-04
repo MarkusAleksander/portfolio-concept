@@ -7,7 +7,28 @@
 <!--<![endif]-->
 
 <head>
-    <%= require('html-loader!./partials/head.html') %>
+    <meta charset="utf-8" />
+<meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+/>
+<meta
+    name="description"
+    content=""
+/>
+<title>Mark Alexander Holden | Web Developer</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+/>
+<link
+    href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
+    rel="stylesheet"
+/>
+<link
+    href="https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap"
+    rel="stylesheet"
+/>
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 
@@ -18,7 +39,138 @@
                 <a href="#">upgrade your browser</a> to improve your experience.
             </p>
         <![endif]-->
-    <div id="app">
+    <header>
+        <div class="toolbar">
+            <div class="toolbar__inner">
+                <div class="toolbar__block toolbar__block--logo">
+                    <button
+                        data-target="#introduction"
+                        title="Home"
+                        class="logo js-page-scroller"
+                    >
+                        <span class="logo__content logo__content--icon">
+                            <img
+                                src="<%= require('./assets/me.jpg').default %>"
+                                alt="Logo"
+                            />
+                        </span>
+                        <span class="logo__content logo__content--text">Mark</span>
+                    </button>
+                </div>
+                <div
+                    class="toolbar__block toolbar__block--btn"
+                    onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
+                >
+                    <button class="toolbar__menu-btn">
+                        <span class="toolbar__menu-btn--line"></span>
+                        <span class="toolbar__menu-btn--line"></span>
+                        <span class="toolbar__menu-btn--line"></span>
+                        <span class="toolbar__menu-btn--text">Menu</span>
+                    </button>
+                </div>
+                <div class="toolbar__block toolbar__block--main">
+                    <nav class="navigation">
+                        <ul class="navigation__list">
+                            <li class="navigation__list-item">
+                                <button
+                                    data-target="#introduction"
+                                    class="navigation__link js-page-scroller"
+                                    onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/home_1391.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span class="navigation__content navigation__content--text">Home</span>
+                                </button>
+                            </li>
+                            <li class="navigation__list-item">
+                                <button
+                                    data-target="#about"
+                                    class="navigation__link js-page-scroller"
+                                    onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/emoji_happy_518.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span class="navigation__content navigation__content--text">About</span>
+                                </button>
+                            </li>
+                            <li class="navigation__list-item">
+                                <button
+                                    data-target="#projects"
+                                    class="navigation__link js-page-scroller"
+                                    onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/desktop_232.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span class="navigation__content navigation__content--text">Projects</span>
+                                </button>
+                            </li>
+                            <li class="navigation__list-item">
+                                <button
+                                    data-target="#contact"
+                                    class="navigation__link js-page-scroller"
+                                    onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/messages_chat_1557.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span class="navigation__content navigation__content--text">Contact</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="toolbar__block toolbar__block--secondary">
+                    <nav class="navigation">
+                        <ul class="navigation__list">
+                            <li class="navigation__list-item">
+                                <a
+                                    href="https://www.linkedin.com/in/mark-holden-69b419b6/"
+                                    target="_blank"
+                                    rel="noopener noreferrer nofollow"
+                                    class="navigation__link"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/linkedin_161.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span class="navigation__content navigation__content--text">LinkedIn</span>
+                                </a>
+                            </li>
+                            <li class="navigation__list-item">
+                                <a
+                                    href="https://www.github.com/MarkusAleksander"
+                                    target="_blank"
+                                    rel="noopener noreferrer nofollow"
+                                    class="navigation__link"
+                                >
+                                    <img
+                                        class="navigation__content navigation__content--icon"
+                                        src="<%= require('./assets/github_142.svg').default %>"
+                                        width="20px"
+                                    />
+                                    <span class="navigation__content navigation__content--text">Github</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="app">
+        <canvas id="starry-background"></canvas>
         <div
             class="section section--introduction"
             id="introduction"
@@ -44,10 +196,7 @@
                     </div>
                     <div>
 
-                        <h1 class="headline">
-                            Hi!
-                            <br />I'm Mark <br />Alexander Holden.
-                        </h1>
+                        <h1 class="headline js-wobble">Hi!<br />I'm Mark <br />Alexander Holden.</h1>
                         <button
                             class="introduction__cta js-page-scroller"
                             data-target="#about"
@@ -65,7 +214,7 @@
         >
             <div class="inner-content">
                 <div class="block block--header">
-                    <h2>About.</h2>
+                    <h2 class="js-wobble">About.</h2>
                 </div>
                 <div class="block block--about">
                     <p class="about--headline">
@@ -73,13 +222,12 @@
                         fast-paced world of Fashion.
                     </p>
                     <p>
-                        Currently I work at Rivendell Europe Ltd providing a
-                        service to N Brown Group PLC as the
+                        Currently I work at N Brown Group PLC providing as a
                         Javascript maestro, developing
                         responsive &amp; interactive campaign pages across
                         different brands, creating A/B tests
                         using Monetate and assisting the wider team
-                        with dev help &amp; knowledge on all things
+                        with development help &amp; knowledge on all things
                         HTML, CSS and
                         Javascript.
                     </p>
@@ -87,7 +235,8 @@
                         I've also spent time building
                         dynamic websites for small businesses
                         from scratch using PHP and
-                        Laravel, ranging from the basic
+                        Laravel while in my first role at Web Best Practice,
+                        ranging from the basic
                         brochure to the e-commerce.
                     </p>
                     <p class="about--headline">Skills include:</p>
@@ -103,6 +252,39 @@
                         <li class="work-history__item">
                             <h3 class="work-history__company">
                                 <img
+                                    src="<%= require('./assets/nbrown-logo.png').default %>"
+                                    alt=""
+                                    class="work-history__company__logo"
+                                />
+                                <span>N Brown Group Plc</span>
+                            </h3>
+                            <p class="work-history__role">
+                                Tactical Frontend Developer
+                            </p>
+                            <p class="work-history__dates">
+                                <span class="work-history__dates__start">November 2020</span>
+                                to
+                                <span class="work-history__dates__end">Present</span>
+                            </p>
+                            <p class="work-history__description">
+                                Building campaign and promotional pages.
+                                Consulting with the Marketing teams about
+                                campaign ideas or with the CRO team about
+                                A/B testing and potential site constraints.
+                                Understanding the systems set up by N Brown
+                                PLC. Assisting the design team with page
+                                builds, HTML/CSS knowledge, JS implementation
+                                and general bug fixes. Developing and
+                                maintaining a suite of templates to help
+                                the design team create builds quickly.
+                                Managing personal development workloads
+                                and priorities depending on business needs
+                                and requirements.
+                            </p>
+                        </li>
+                        <li class="work-history__item">
+                            <h3 class="work-history__company">
+                                <img
                                     src="<%= require('./assets/rivendell-logo.png').default %>"
                                     alt=""
                                     class="work-history__company__logo"
@@ -115,7 +297,7 @@
                             <p class="work-history__dates">
                                 <span class="work-history__dates__start">May 2018</span>
                                 to
-                                <span class="work-history__dates__end">Present</span>
+                                <span class="work-history__dates__end">October 2020</span>
                             </p>
                             <p class="work-history__description">
                                 Building campaign &amp; promo pages. Finding
@@ -181,14 +363,13 @@
                 </div>
             </div>
         </div>
-
         <div
             class="section section--projects"
             id="projects"
         >
             <div class="inner-content">
                 <div class="block block--header">
-                    <h2>Selected works.</h2>
+                    <h2 class="js-wobble">Selected works.</h2>
                 </div>
                 <div class="block block--projects-list">
                     <ul class="projects-list">
@@ -969,7 +1150,7 @@
                                 rel="noopener noreferrer nofollow"
                             >
                                 <img
-                                    src="<%= require('./assets/github_142_black.svg').default %>"
+                                    src="<%= require('./assets/github_142.svg').default %>"
                                     alt="Github"
                                 />
                             </a>
@@ -981,7 +1162,7 @@
                                 rel="noopener noreferrer nofollow"
                             >
                                 <img
-                                    src="<%= require('./assets/linkedin_161_black.svg').default %>"
+                                    src="<%= require('./assets/linkedin_161.svg').default %>"
                                     alt="LinkedIn"
                                 />
                             </a>
@@ -990,136 +1171,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="toolbar">
-        <div class="toolbar__inner">
-            <div class="toolbar__block toolbar__block--logo">
-                <button
-                    data-target="#introduction"
-                    title="Home"
-                    class="logo js-page-scroller"
-                >
-                    <span class="logo__content logo__content--icon">
-                        <img
-                            src="<%= require('./assets/logo.png').default %>"
-                            alt="Logo"
-                        />
-                    </span>
-                    <span class="logo__content logo__content--text">Mark</span>
-                </button>
-            </div>
-            <div
-                class="toolbar__block toolbar__block--btn"
-                onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
-            >
-                <button class="toolbar__menu-btn">
-                    <span class="toolbar__menu-btn--line"></span>
-                    <span class="toolbar__menu-btn--line"></span>
-                    <span class="toolbar__menu-btn--line"></span>
-                    <span class="toolbar__menu-btn--text">Menu</span>
-                </button>
-            </div>
-            <div class="toolbar__block toolbar__block--main">
-                <nav class="navigation">
-                    <ul class="navigation__list">
-                        <li class="navigation__list-item">
-                            <button
-                                data-target="#introduction"
-                                class="navigation__link js-page-scroller"
-                                onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/home_1391.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">Home</span>
-                            </button>
-                        </li>
-                        <li class="navigation__list-item">
-                            <button
-                                data-target="#about"
-                                class="navigation__link js-page-scroller"
-                                onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/emoji_happy_518.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">About</span>
-                            </button>
-                        </li>
-                        <li class="navigation__list-item">
-                            <button
-                                data-target="#projects"
-                                class="navigation__link js-page-scroller"
-                                onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/desktop_232.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">Projects</span>
-                            </button>
-                        </li>
-                        <li class="navigation__list-item">
-                            <button
-                                data-target="#contact"
-                                class="navigation__link js-page-scroller"
-                                onClick="(function () {document.querySelector('.toolbar').classList.toggle('open-menu')})();"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/messages_chat_1557.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">Contact</span>
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="toolbar__block toolbar__block--secondary">
-                <nav class="navigation">
-                    <ul class="navigation__list">
-                        <li class="navigation__list-item">
-                            <a
-                                href="https://www.linkedin.com/in/mark-holden-69b419b6/"
-                                target="_blank"
-                                rel="noopener noreferrer nofollow"
-                                class="navigation__link"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/linkedin_161.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">LinkedIn</span>
-                            </a>
-                        </li>
-                        <li class="navigation__list-item">
-                            <a
-                                href="https://www.github.com/MarkusAleksander"
-                                target="_blank"
-                                rel="noopener noreferrer nofollow"
-                                class="navigation__link"
-                            >
-                                <img
-                                    class="navigation__content navigation__content--icon"
-                                    src="<%= require('./assets/github_142.svg').default %>"
-                                    width="20px"
-                                />
-                                <span class="navigation__content navigation__content--text">Github</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
+    </main>
 </body>
 
 </html>

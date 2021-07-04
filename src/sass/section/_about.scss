@@ -69,6 +69,7 @@
             color: $light_black;
             position: relative;
             transition: color 0.3s ease-in-out;
+            user-select: none;
 
             &:before {
                 position: absolute;

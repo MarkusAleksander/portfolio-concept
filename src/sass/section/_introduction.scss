@@ -21,13 +21,14 @@
             margin-top: 1em;
             display: inline-block;
             padding: 0.5em 1em;
-            border: 2px solid $light_black;
+            border: 2px solid $white;
             font-size: 1.2em;
             cursor: pointer;
-            color: $light_black;
+            color: $white;
             position: relative;
             transition: color 0.3s ease-in-out;
             max-width: 220px;
+            user-select: none;
             // overflow: hidden;
 
             &:before {
@@ -36,14 +37,14 @@
                 left: -1px;
                 right: -1px;
                 top: 101%;
-                background-color: $light_black;
+                background-color: $white;
                 transition: top 0.3s ease-in-out;
                 content: "";
                 z-index: -1;
             }
 
             &:hover {
-                color: #fff;
+                color: $light_black;
 
                 &:before {
                     top: -1%;

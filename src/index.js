@@ -3,6 +3,9 @@ import "./sass/main.scss";
 // import setupProjectSlider from "./scripts/project-slider.js";
 // import setupProjectCards from "./scripts/project-card.js";
 import setupPageScroll from "./scripts/page-scroll.js";
+import starryBackground from "./scripts/starry-background.js";
+
+starryBackground.startRendering(10);
 
 // setupProjectSlider();
 // setupProjectCards();
@@ -55,3 +58,49 @@ function updateNavHighlight() {
 
 window.addEventListener("scroll", updateNavHighlight);
 updateNavHighlight();
+
+// * -- * //
+function spanify (selector) {
+    let targets = document.querySelectorAll(selector);
+
+    for(let i = 0; i < targets.length; i++) {
+        let target = targets[i];
+        
+        let chars = [...target.innerText];
+        for (let i = 0; i < chars.length; i++) {
+            if (chars[i] == "\n") {
+                chars[i] = "<br />";
+            } else if (chars[i] == " ") {
+                chars[i] = "<span>&nbsp;</span>";
+            } else {
+                chars[i] = "<span>" + chars[i] + "</span>";
+            }
+        }
+    
+        target.innerHTML = chars.join("");
+
+        setWobbleTimeout(target);
+    }
+}
+
+function removeWobblerClass() {
+    this.classList.remove("do-wobble");
+    this.removeEventListener("animationend", removeWobblerClass);
+}
+
+function setWobbleTimeout(target) {
+    let num_children = target.children.length;
+
+    let wobbler = target.children[Math.floor(Math.random() * num_children)];
+
+    wobbler.addEventListener("animationend", removeWobblerClass);
+
+    wobbler.classList.add("do-wobble");
+
+    setTimeout(
+        setWobbleTimeout.bind(null, target),
+        Math.floor(Math.random() * (3 - 1) + 1) * 1000
+    );
+}
+
+spanify(".js-wobble");
