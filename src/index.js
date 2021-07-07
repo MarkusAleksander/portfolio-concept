@@ -60,27 +60,63 @@ window.addEventListener("scroll", updateNavHighlight);
 updateNavHighlight();
 
 // * -- * //
-function spanify (selector) {
+function prepareForWobblyText(selector) {
+    // * select all targets to wobble
     let targets = document.querySelectorAll(selector);
 
-    for(let i = 0; i < targets.length; i++) {
-        let target = targets[i];
-        
-        let chars = [...target.innerText];
-        for (let i = 0; i < chars.length; i++) {
-            if (chars[i] == "\n") {
-                chars[i] = "<br />";
-            } else if (chars[i] == " ") {
-                chars[i] = "<span>&nbsp;</span>";
-            } else {
-                chars[i] = "<span>" + chars[i] + "</span>";
-            }
-        }
-    
-        target.innerHTML = chars.join("");
-
-        setWobbleTimeout(target);
+    // * loop through targets
+    for (let i = 0; i < targets.length; i++) {
+        setupWobblyText(targets[i]);
     }
+}
+
+function setupWobblyText(target) {
+    // * prepare text into spans so they can be wobbled
+    let chars = [...target.innerText];
+    for (let i = 0; i < chars.length; i++) {
+        if (chars[i] == "\n") {
+            chars[i] = "<br />";
+        } else if (chars[i] == " ") {
+            chars[i] = "<span>&nbsp;</span>";
+        } else {
+            chars[i] = "<span>" + chars[i] + "</span>";
+        }
+    }
+
+    // * join them together and reinsert
+    target.innerHTML = chars.join("");
+
+    let num_spans = target.children.length;
+    let time_till_wobble = getTimeTillNextWobble();
+    let timeout_id = null;
+
+    let set_wobble_timeout = function () {
+        let target_wobbler = target.children[Math.floor(Math.random() * num_spans)];
+
+        doWobble(target_wobbler);
+
+        timeout_id = setTimeout(
+            set_wobble_timeout,
+            time_till_wobble
+        );
+
+        time_till_wobble = getTimeTillNextWobble();
+    };
+
+    set_wobble_timeout();
+
+    document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "hidden") {
+            clearTimeout(timeout_id);
+        } else {
+            set_wobble_timeout();
+        }
+    });
+}
+
+function doWobble(el) {
+    el.addEventListener("animationend", removeWobblerClass);
+    el.classList.add("do-wobble");
 }
 
 function removeWobblerClass() {
@@ -88,19 +124,8 @@ function removeWobblerClass() {
     this.removeEventListener("animationend", removeWobblerClass);
 }
 
-function setWobbleTimeout(target) {
-    let num_children = target.children.length;
-
-    let wobbler = target.children[Math.floor(Math.random() * num_children)];
-
-    wobbler.addEventListener("animationend", removeWobblerClass);
-
-    wobbler.classList.add("do-wobble");
-
-    setTimeout(
-        setWobbleTimeout.bind(null, target),
-        Math.floor(Math.random() * (3 - 1) + 1) * 1000
-    );
+function getTimeTillNextWobble() {
+    return Math.floor(Math.random() * (4 - 1) + 1) * 1000;
 }
 
-spanify(".js-wobble");
+prepareForWobblyText(".js-wobble");
