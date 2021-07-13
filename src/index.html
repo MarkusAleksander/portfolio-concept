@@ -781,49 +781,30 @@
                                                 Bulma, Spotify API
                                             </p>
                                             <p>
-                                                This project was started so
-                                                that I could learn React
-                                                through doing, and to get to
-                                                grips with a few other bits
-                                                of tech aswell. The idea
-                                                came about when each time I
-                                                went to a music store to buy
-                                                new CDs, I would always
-                                                forget what I did and didn't
-                                                have, so having a library I
-                                                could reference would be
-                                                useful to keep track of my
-                                                collection.
+                                                This project came out of an issue where each time I went to a music
+                                                store to buy some new CDs (old-school, I know) I would always forget
+                                                what I had in my collection and what I wanted to get. So to solve this,
+                                                I decided to build a library where I could list what albums I had and
+                                                what albums I wanted. I chose React as the framework to build this to
+                                                practice my skills with, and to link it up with Firebase for data
+                                                storage, Netlify for hosting and serverless functions, and the Spotify
+                                                API for all the artist and album data. Bulma was used for the styling
+                                                and layout so I could focus on functionality of the app. This currently
+                                                doesn't take advantage of React Hooks and use Redux for storage.
                                             </p>
                                             <p>
-                                                I decided to use Bulma for
-                                                the styling as I'd become
-                                                familiar using it in other
-                                                personal projects, and it
-                                                allowed me to focus purely
-                                                on the functional side of
-                                                the app. I then setup a
-                                                series of cloud functions in
-                                                Netlify which would allow me
-                                                to interact both with
-                                                Spotify to collect an API
-                                                Key &amp; artist/album data
-                                                and Google's Firebase, where
-                                                I would store the saved
-                                                artist/album IDs.
+                                                I created a set of functions on Netlify that would act as the inbetween
+                                                point for the client side, the Spotify API and firebase. On Firebase I
+                                                store minimal references for artists and albums, such as IDs, and then
+                                                these are used to request full datasets from the Spotify API.
                                             </p>
                                             <p>
-                                                The functionality of the
-                                                publicly accessible one has
-                                                been locked so as to prevent
-                                                messing about, but
-                                                eventually I aim to create a
-                                                user-specific version, where
-                                                anyone can have an account.
+                                                As this is publicly available, I've implemented a lock so that it can't
+                                                be easily messed about with.
                                             </p>
                                             <p class="project-card__url">
                                                 <a
-                                                    href="https://5f6f33ac3aa9ee85e4663333--trusting-bose-32f2ef.netlify.app/"
+                                                    href="https://trusting-bose-32f2ef.netlify.app/"
                                                     target="_blank"
                                                     rel="noopener noreferrer nofollow"
                                                 >View on Netlify</a>
